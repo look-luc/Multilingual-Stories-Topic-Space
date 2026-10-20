@@ -1,0 +1,20 @@
+[project]
+name = "multilingual-stories-topic-space"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "look-luc", email = "denardiluc@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "datasets>=5.1.0",
+    "transformers>=5.20.2",
+]
+
+[project.scripts]
+multilingual-stories-topic-space = "multilingual_stories_topic_space:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
