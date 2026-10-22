@@ -21,5 +21,11 @@ def get_some_data():
         "google/WaxalNLP", f"{WAXAL_LANG_CODE.get("Acholi")}_asr", streaming=True
     )["train"]
 
+    return (
+        ds_deep_as,
+        ds_dxniz_viet,
+        ds_waxal_Acholi
+    )
+
 def get_all_data():
     pass
