@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --partition=artxpro6000
-#SBATCH --qos=gpu-normal
+#SBATCH --partition=aa100
+#SBATCH --qos=gpu-testing
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --time=7:30:00
+#SBATCH --time=1:00:00
 #SBATCH --output=/projects/%u/Multilingual-Stories-Topic-Space/logs/%j.log
 #SBATCH --job-name=topic-space
 #SBATCH --account=ucb-general
