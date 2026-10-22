@@ -57,8 +57,7 @@ class LDA:
         plt.scatter(X_reduced[:, 0], X_reduced[:, 1], alpha=0.7)
         plt.xlabel("PCA Component 1")
         plt.ylabel("PCA Component 2")
-        plt.savefig(f"{output_name}.png", dpi=300, bbox_inches="tight")
-        plt.close()
+        plt.savefig(f"./{output_name}.png", dpi=300, bbox_inches="tight")
 
         if len(set(label_list)) > 1:
             score = silhouette_score(embedding_matrix, label_list, metric='euclidean')
@@ -116,8 +115,7 @@ class XLM_RoBerta:
         plt.scatter(X_reduced[:, 0], X_reduced[:, 1], alpha=0.7)
         plt.xlabel("PCA Component 1")
         plt.ylabel("PCA Component 2")
-        plt.savefig(f"{output_name}.png", dpi=300, bbox_inches="tight")
-        plt.close()
+        plt.savefig(f"./{output_name}.png", dpi=300, bbox_inches="tight")
 
         if len(set(label_list)) > 1:
             score = silhouette_score(embedding_matrix, label_list, metric='euclidean')

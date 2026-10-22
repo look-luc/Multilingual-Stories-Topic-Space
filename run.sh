@@ -7,8 +7,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --time=7:30:00
-#SBATCH --output=/projects/%u/spec-decoding-capstone/logs/%j.log
-#SBATCH --job-name=specdec_l40
+#SBATCH --output=/projects/%u/Multilingual-Stories-Topic-Space/logs/%j.log
+#SBATCH --job-name=topic-space
 #SBATCH --account=ucb-general
 #SBATCH --mail-type=END,FAIL
 
@@ -18,9 +18,10 @@ export CUDA_LAUNCH_BLOCKING=1
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 mkdir -p $HF_HOME
 
-# 1. Define local scratch directories for active logging and checkpoints
 export LOCAL_OUTPUT_DIR="$SLURM_TMPDIR/outputs"
 
 module load uv
+module load python
+
 uv sync
-uv run python run.py
+uv run run.py
