@@ -24,7 +24,7 @@ def main():
             print(f"Skipping {lang}: No text data retrieved.")
             continue
 
-        print(f"Processing {lang} ({len(texts)} samples)...")
+        print(f"Processing {lang}...")
 
         # Run LDA model visualization
         lda_model.visualize_embeddings(

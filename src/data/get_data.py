@@ -1,35 +1,39 @@
-from datasets import load_dataset
+from datasets import Audio, load_dataset
 
 from src.data.lang_codes import DEEPON_LANG_CODE, DXNIZ_LANG_CODE, WAXAL_LANG_CODE
 
 
-def get_some_data(limit=30):
-    assamese_code = DEEPON_LANG_CODE.get("Assamese")
-    ds_deep = load_dataset(
+def get_some_data():
+    # 1. Load deeponh/multilingual-tinystories using its specific language split ("as") and select text column
+    ds_indic_tinystories = load_dataset(
         "deeponh/multilingual-tinystories",
-        split=assamese_code,
+        split=DEEPON_LANG_CODE.get("Assamese"),
+        streaming=True
+    ).select_columns(["text"])
+
+    # 2. Load Dxniz/TinyStories-Multilingual using the train split and select text column
+    ds_tinystories_multi = load_dataset(
+        "Dxniz/TinyStories-Multilingual",
+        split="train",
+        streaming=True
+    ).filter(lambda x: x["language_code"] == DXNIZ_LANG_CODE.get("Vietnamese")).select_columns(["output"]).rename_column("output", "text")
+
+    # 3. Load google/WaxalNLP using the train split, disable audio decoding, and select transcription column
+    ds_waxal = load_dataset(
+        "google/WaxalNLP",
+        f"{WAXAL_LANG_CODE.get("Acholi")}_asr",
+        split="train",
         streaming=True
     )
-    ds_deep_as = [ex["text"] for ex in ds_deep.take(limit)]
+    if "audio" in ds_waxal.features:
+        ds_waxal = ds_waxal.cast_column("audio", Audio(decode=False))
 
-    ds_dxniz = load_dataset("Dxniz/TinyStories-Multilingual", streaming=True)["train"]
-    ds_dxniz_viet = [
-        ex["output"] for ex in ds_dxniz.filter(
-            lambda example: DXNIZ_LANG_CODE.get("Vietnamese") in example["language_code"]
-        ).take(limit)
-    ]
-
-    ds_waxal_acholi = load_dataset(
-        "google/WaxalNLP", f"{WAXAL_LANG_CODE.get('Acholi')}_asr", streaming=True
-    )["train"]
-    ds_waxal_acholi = [
-        ex["transcription"] for ex in ds_waxal_acholi.take(limit)
-    ]
+    ds_waxal = ds_waxal.select_columns(["transcription"]).rename_column("transcription","text")
 
     return {
-        "Assamese": ds_deep_as,
-        "Vietnamese": ds_dxniz_viet,
-        "Acholi": ds_waxal_acholi
+        "Assamese": ds_indic_tinystories,
+        "Vietnamese": ds_tinystories_multi,
+        "Acholi": ds_waxal
     }
 
 def get_all_data():
