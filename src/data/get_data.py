@@ -4,12 +4,13 @@ from src.data.lang_codes import DEEPON_LANG_CODE, DXNIZ_LANG_CODE, WAXAL_LANG_CO
 
 
 def get_some_data(limit=30):
-    ds_deep = load_dataset("deeponh/multilingual-tinystories", streaming=True)["train"]
-    ds_deep_as = [
-        ex["text"] for ex in ds_deep.filter(
-            lambda example: DEEPON_LANG_CODE.get("Assamese") in example["index"]
-        ).take(limit)
-    ]
+    assamese_code = DEEPON_LANG_CODE.get("Assamese")
+    ds_deep = load_dataset(
+        "deeponh/multilingual-tinystories",
+        split=assamese_code,
+        streaming=True
+    )
+    ds_deep_as = [ex["text"] for ex in ds_deep.take(limit)]
 
     ds_dxniz = load_dataset("Dxniz/TinyStories-Multilingual", streaming=True)["train"]
     ds_dxniz_viet = [
