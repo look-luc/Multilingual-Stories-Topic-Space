@@ -64,7 +64,7 @@ class LDA:
         plt.savefig(f"{output_name}.png", dpi=300, bbox_inches="tight")
 
         if torch.unique(label_list) > 1:
-            silhouette_score = silhouette_score(
+            silhouette_scores = silhouette_score(
                 embedding_matrix,
                 label_list,
                 metric='euclidean'
@@ -75,7 +75,7 @@ class LDA:
                 random_state=42
             )
             pseudo_labels = pseudo_cluster.fit_predict(embedding_matrix)
-            silhouette_score = silhouette_score(
+            silhouette_scores = silhouette_score(
                 embedding_matrix,
                 pseudo_labels,
                 metric='euclidean'
@@ -138,7 +138,7 @@ class XLM_RoBerta:
             plt.savefig(f"{output_name}.png", dpi=300, bbox_inches="tight")
 
             if torch.unique(label_list) > 1:
-                silhouette_score = silhouette_score(
+                silhouette_scores = silhouette_score(
                     embedding_matrix,
                     label_list,
                     metric='euclidean'
@@ -149,9 +149,9 @@ class XLM_RoBerta:
                     random_state=42
                 )
                 pseudo_labels = pseudo_cluster.fit_predict(embedding_matrix)
-                silhouette_score = silhouette_score(
+                silhouette_scores = silhouette_score(
                     embedding_matrix,
                     pseudo_labels,
                     metric='euclidean'
                 )
-            print(f"Silhouette Score: {silhouette_score:.4f}")
+            print(f"Silhouette Score: {silhouette_scores:.4f}")
