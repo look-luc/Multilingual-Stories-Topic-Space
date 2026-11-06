@@ -38,11 +38,11 @@ def get_some_data(limit: int = 100):
 def get_all_data():
     waxal_datasets = []
     print("getting languages from Google/Waxal")
-    for waxal_lang, waxal_code in WAXAL_LANG_CODE.values():
+    for waxal_lang, waxal_code in WAXAL_LANG_CODE.items():
         print(f"getting {waxal_lang} data...")
         ds_waxal = load_dataset(
             "google/WaxalNLP",
-            f"{WAXAL_LANG_CODE.get(waxal_code)}_asr",
+            f"{waxal_code}_asr",
             split="train",
             streaming=True
         )
@@ -73,6 +73,6 @@ def get_all_data():
         ).select_columns(["text"])
         deepon_datasets.append(ds_indic_tinystories)
 
-    all_langs = concatenate_datasets([waxal_datasets, dxniz_datasets, deepon_datasets])
+    all_langs = concatenate_datasets(waxal_datasets + dxniz_datasets + deepon_datasets)
 
     return all_langs
