@@ -16,6 +16,7 @@ def setup(data_amount: str = "some"):
     else:
         raise Exception("Either: 'some' or 'all'")
 
+
 def main():
     print("Initializing models...")
     deberta = DeBerta()
@@ -29,50 +30,41 @@ def main():
     }
 
     print("Fetching data...")
-    data_dict = setup("some") # Change to "all" if you want full data
+    data_dict = setup("some")
 
-    print("Running visualizations and evaluations...")
-    for lang, texts in data_dict.items():
-        if not texts:
-            print(f"Skipping {lang}: No text data retrieved.")
-            continue
-
-        print(f"Processing individual model visualizations for {lang}...")
-
-        # Run DeBERTa visualization
-        deberta.visualize_embeddings(
-            data=texts,
-            lang=lang,
-            output_name=f"deberta_{lang.lower()}_space"
-        )
-
-        # Run Qwen visualization
-        qwen.visualize_embeddings(
-            data=texts,
-            lang=lang,
-            output_name=f"qwen_{lang.lower()}_space"
-        )
-
-        # Run XLM-RoBERTa model visualization
-        roberta.visualize_embeddings(
-            data=texts,
-            lang=lang,
-            output_name=f"xlmr_{lang.lower()}_space"
-        )
-
-    print("Generating combined model comparative scatterplots...")
+    print("Running individual model visualizations...")
     for lang, texts in data_dict.items():
         if not texts:
             continue
+        deberta.visualize_embeddings(texts, lang, f"deberta_{lang.lower()}_space")
+        qwen.visualize_embeddings(texts, lang, f"qwen_{lang.lower()}_space")
+        roberta.visualize_embeddings(texts, lang, f"xlmr_{lang.lower()}_space")
 
-        visualize_all_models_single_plot(
-            data=texts,
-            lang=lang,
-            models_dict=models,
-            output_name=f"combined_{lang.lower()}_space"
-        )
+    print("\nEvaluating Cross-Lingual Similarities...")
+    langs = list(data_dict.keys())
+    if len(langs) >= 2:
+        lang1, lang2 = langs[0], langs[1]
+        texts1 = data_dict[lang1]
+        texts2 = data_dict[lang2]
 
-    print("Done! Check your directory for output PNG files.")
+        print(f"Comparing cross-lingual similarity between '{lang1}' and '{lang2}':")
+        for model_name, model_instance in models.items():
+            print(f"\n--- Model: {model_name} ---")
+            emb_lang1 = model_instance.get_embeddings(texts1)
+            emb_lang2 = model_instance.get_embeddings(texts2)
+
+            # Use evaluate_cross_lingual_similarity
+            similarity_matrix = evaluate_cross_lingual_similarity(emb_lang1, emb_lang2)
+            print(f"Similarity Matrix Shape: {similarity_matrix.shape}")
+
+    print("\nGenerating combined model comparative scatterplots...")
+    for lang, texts in data_dict.items():
+        if not texts:
+            continue
+        visualize_all_models_single_plot(texts, lang, models, f"combined_{lang.lower()}_space")
+
+    print("Done!")
+
 
 if __name__ == "__main__":
     main()
