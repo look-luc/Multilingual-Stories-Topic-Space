@@ -3,8 +3,8 @@ from src.model.model import (
     DeBerta,
     Qwen,
     XLM_RoBerta,
-    compute_topic_coherence,
     evaluate_cross_lingual_similarity,
+    visualize_all_models_single_plot,
 )
 
 
@@ -18,12 +18,18 @@ def setup(data_amount: str = "some"):
 
 def main():
     print("Initializing models...")
-    qwen_model = Qwen()
+    deberta = DeBerta()
+    qwen = Qwen()
     roberta = XLM_RoBerta()
-    de_berta = DeBerta()
+
+    models = {
+        "DeBERTa": deberta,
+        "Qwen": qwen,
+        "XLM-RoBERTa": roberta
+    }
 
     print("Fetching data...")
-    data_dict = setup("all")
+    data_dict = setup("some") # Change to "all" if you want full data
 
     print("Running visualizations and evaluations...")
     for lang, texts in data_dict.items():
@@ -31,13 +37,20 @@ def main():
             print(f"Skipping {lang}: No text data retrieved.")
             continue
 
-        print(f"Processing {lang}...")
+        print(f"Processing individual model visualizations for {lang}...")
 
-        # Run LDA model visualization
-        lda_model.visualize_embeddings(
+        # Run DeBERTa visualization
+        deberta.visualize_embeddings(
             data=texts,
             lang=lang,
-            output_name=f"lda_{lang.lower()}_space"
+            output_name=f"deberta_{lang.lower()}_space"
+        )
+
+        # Run Qwen visualization
+        qwen.visualize_embeddings(
+            data=texts,
+            lang=lang,
+            output_name=f"qwen_{lang.lower()}_space"
         )
 
         # Run XLM-RoBERTa model visualization
@@ -47,17 +60,11 @@ def main():
             output_name=f"xlmr_{lang.lower()}_space"
         )
 
-        models = {
-            "DeBERTa": deberta,
-            "Qwen": qwen,
-            "XLM-RoBERTa": roberta
-        }
-
+    print("Generating combined model comparative scatterplots...")
     for lang, texts in data_dict.items():
         if not texts:
             continue
 
-        print(f"Generating combined scatterplot for {lang}...")
         visualize_all_models_single_plot(
             data=texts,
             lang=lang,

@@ -22,6 +22,6 @@ export LOCAL_OUTPUT_DIR="$SLURM_TMPDIR/outputs"
 
 module load uv
 module load python
-pip install gensim
 uv sync
+uv pip install tiktoken
 uv run run.py
