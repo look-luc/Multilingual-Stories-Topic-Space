@@ -4,7 +4,7 @@ from src.model.model import (
     Qwen,
     XLM_RoBerta,
     evaluate_cross_lingual_similarity,
-    visualize_all_models_single_plot,
+    visualize_multilingual_models_single_plot,
 )
 
 
@@ -30,7 +30,7 @@ def main():
     }
 
     print("Fetching data...")
-    data_dict = setup("some")
+    data_dict = setup("all")
 
     print("Running individual model visualizations...")
     for lang, texts in data_dict.items():
@@ -58,10 +58,7 @@ def main():
             print(f"Similarity Matrix Shape: {similarity_matrix.shape}")
 
     print("\nGenerating combined model comparative scatterplots...")
-    for lang, texts in data_dict.items():
-        if not texts:
-            continue
-        visualize_all_models_single_plot(texts, lang, models, f"combined_{lang.lower()}_space")
+    visualize_multilingual_models_single_plot(data, models)
 
     print("Done!")
 

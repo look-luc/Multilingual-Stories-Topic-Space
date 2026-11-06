@@ -1,4 +1,4 @@
-from datasets import Audio, concatenate_datasets, load_dataset
+from datasets import load_dataset
 
 from src.data.lang_codes import DEEPON_LANG_CODE, DXNIZ_LANG_CODE, WAXAL_LANG_CODE
 
@@ -23,11 +23,7 @@ def get_some_data(limit: int = 100):
         f"{WAXAL_LANG_CODE.get('Acholi')}_asr",
         split="train",
         streaming=True
-    )
-    if "audio" in ds_waxal.features:
-        ds_waxal = ds_waxal.cast_column("audio", Audio(decode=False))
-
-    ds_waxal = ds_waxal.select_columns(["transcription"]).rename_column("transcription", "text")
+    ).select_columns(["transcription"]).rename_column("transcription", "text")
 
     return {
         "Assamese": [ex["text"] for ex in ds_indic_tinystories.take(limit)],
@@ -36,43 +32,43 @@ def get_some_data(limit: int = 100):
     }
 
 def get_all_data():
-    waxal_datasets = []
-    print("getting languages from Google/Waxal")
+    data_dict = {}
+
+    print("Getting languages from Google/Waxal...")
     for waxal_lang, waxal_code in WAXAL_LANG_CODE.items():
-        print(f"getting {waxal_lang} data...")
+        print(f"Getting {waxal_lang} data...")
         ds_waxal = load_dataset(
             "google/WaxalNLP",
             f"{waxal_code}_asr",
             split="train",
-            streaming=True
-        )
-        if "audio" in ds_waxal.features:
-            ds_waxal = ds_waxal.cast_column("audio", Audio(decode=False))
+            streaming=True,
+            columns=["transcription"]
+        ).rename_column("transcription", "text")
 
-        ds_waxal = ds_waxal.select_columns(["transcription"]).rename_column("transcription", "text")
-        waxal_datasets.append(ds_waxal)
+        data_dict[waxal_lang] = [ex["text"] for ex in ds_waxal]
 
-    dxniz_datasets = []
-    for dxniz_lang in DXNIZ_LANG_CODE.keys():
+    print("Getting languages from Dxniz/TinyStories-Multilingual...")
+    for dxniz_lang, dxniz_code in DXNIZ_LANG_CODE.items():
+        print(f"Getting {dxniz_lang} data...")
         ds_tinystories_multi = load_dataset(
             "Dxniz/TinyStories-Multilingual",
             split="train",
             streaming=True
-        ).filter(lambda x: x["language_code"] == DXNIZ_LANG_CODE.get(dxniz_lang))\
-        .select_columns(["output"])\
-        .rename_column("output", "text")
+        ).filter(lambda x: x["language_code"] == dxniz_code)\
+         .select_columns(["output"])\
+         .rename_column("output", "text")
 
-        dxniz_datasets.append(ds_tinystories_multi)
+        data_dict[dxniz_lang] = [ex["text"] for ex in ds_tinystories_multi]
 
-    deepon_datasets = []
-    for deepon_lang in DEEPON_LANG_CODE.keys():
+    print("Getting languages from deeponh/multilingual-tinystories...")
+    for deepon_lang, deepon_split in DEEPON_LANG_CODE.items():
+        print(f"Getting {deepon_lang} data...")
         ds_indic_tinystories = load_dataset(
             "deeponh/multilingual-tinystories",
-            split=DEEPON_LANG_CODE.get(deepon_lang),
+            split=deepon_split,
             streaming=True
         ).select_columns(["text"])
-        deepon_datasets.append(ds_indic_tinystories)
 
-    all_langs = concatenate_datasets(waxal_datasets + dxniz_datasets + deepon_datasets)
+        data_dict[deepon_lang] = [ex["text"] for ex in ds_indic_tinystories]
 
-    return all_langs
+    return data_dict
