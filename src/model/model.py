@@ -257,3 +257,67 @@ class XLM_RoBerta:
             score = silhouette_score(embedding_matrix, pseudo_labels, metric='euclidean')
 
         print(f"[{lang}] XLM-RoBERTa Silhouette Score: {score:.4f}")
+
+def visualize_all_models_single_plot(
+    data,
+    lang: str,
+    models_dict: dict,
+    output_name: str = "combined_models_embedding_space"
+):
+    """
+    Runs text data through multiple models and plots all their PCA-reduced
+    embeddings together on a single scatterplot.
+    """
+    plt.figure(figsize=(10, 6))
+
+    # Define distinct colors for each model
+    colors = {
+        "DeBERTa": "tab:blue",
+        "Qwen": "tab:orange",
+        "XLM-RoBERTa": "tab:green"
+    }
+
+    for model_name, model_instance in models_dict.items():
+        embeddings = []
+
+        for element in data:
+            tokens = model_instance.tokenizer(
+                element,
+                return_tensors="pt",
+                padding=True,
+                truncation=True,
+                max_length=512
+            )
+            tokens = {k: v.to(model_instance.device) for k, v in tokens.items()}
+
+            outputs = model_instance.model(**tokens, output_hidden_states=True)
+            pooled_embedding = torch.mean(outputs.hidden_states[-1], dim=1)
+
+            embeddings.append(pooled_embedding.detach().cpu().numpy())
+
+        embedding_matrix = np.concatenate(embeddings, axis=0)
+
+        # Scale and reduce dimensions for this model's space
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(embedding_matrix)
+        pca = PCA(n_components=2)
+        X_reduced = pca.fit_transform(X_scaled)
+
+        # Plot all points on the same graph
+        plt.scatter(
+            X_reduced[:, 0],
+            X_reduced[:, 1],
+            alpha=0.6,
+            label=model_name,
+            color=colors.get(model_name, "tab:purple")
+        )
+
+    plt.title(f'Combined Embedding Space Comparison ({lang})', fontsize=14)
+    plt.xlabel("PCA Component 1")
+    plt.ylabel("PCA Component 2")
+    plt.legend(title="Models")
+    plt.grid(True, linestyle="--", alpha=0.5)
+
+    plt.savefig(f"./{output_name}.png", dpi=300, bbox_inches="tight")
+    plt.close()
+    print(f"Saved combined scatterplot for {lang} to {output_name}.png")

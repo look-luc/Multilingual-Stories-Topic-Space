@@ -5,6 +5,7 @@ from src.model.model import (
     XLM_RoBerta,
     compute_topic_coherence,
     evaluate_cross_lingual_similarity,
+    visualize_all_models_single_plot,
 )
 
 
@@ -45,6 +46,24 @@ def main():
             data=texts,
             lang=lang,
             output_name=f"xlmr_{lang.lower()}_space"
+        )
+
+        models = {
+            "DeBERTa": deberta,
+            "Qwen": qwen,
+            "XLM-RoBERTa": roberta
+        }
+
+    for lang, texts in data_dict.items():
+        if not texts:
+            continue
+
+        print(f"Generating combined scatterplot for {lang}...")
+        visualize_all_models_single_plot(
+            data=texts,
+            lang=lang,
+            models_dict=models,
+            output_name=f"combined_{lang.lower()}_space"
         )
 
     print("Done! Check your directory for output PNG files.")
