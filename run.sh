@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --partition=aa100
-#SBATCH --qos=gpu-testing
-#SBATCH --gres=gpu:1
+#SBATCH --qos=gpu-normal
+#SBATCH --gres=gpu:a100_80gb:2
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --time=1:00:00
+#SBATCH --time=7:00:00
 #SBATCH --output=/projects/%u/Multilingual-Stories-Topic-Space/logs/%j.log
 #SBATCH --job-name=topic-space
 #SBATCH --account=ucb-general
@@ -22,6 +22,6 @@ export LOCAL_OUTPUT_DIR="$SLURM_TMPDIR/outputs"
 
 module load uv
 module load python
-
+pip install gensim
 uv sync
 uv run run.py
