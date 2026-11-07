@@ -33,6 +33,7 @@ def main():
     data_dict = setup("all")
 
     print("Running individual model visualizations...")
+    # Fixed: use .items() instead of .iter() for standard Python dictionaries
     for lang, texts in data_dict.items():
         if not texts:
             continue
@@ -58,7 +59,8 @@ def main():
             print(f"Similarity Matrix Shape: {similarity_matrix.shape}")
 
     print("\nGenerating combined model comparative scatterplots...")
-    visualize_multilingual_models_single_plot(data, models)
+    # Fixed: pass data_dict instead of the undefined 'data' variable
+    visualize_multilingual_models_single_plot(data_dict, models)
 
     print("Done!")
 

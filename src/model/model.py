@@ -1,4 +1,3 @@
-import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -153,7 +152,7 @@ def visualize_multilingual_models_single_plot(
     lang_names = list(langs_data.keys())
 
     # Use Matplotlib colormap for distinct model colors and a pool of clear markers for languages
-    model_colors = cm.get_cmap('tab10', max(len(model_names), 1))
+    model_colors = plt.get_cmap('tab10', max(len(model_names), 1))
     markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h', 'X', 'P']
 
     for model_idx, (model_name, model_instance) in enumerate(models_dict.items()):
