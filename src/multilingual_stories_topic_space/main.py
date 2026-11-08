@@ -1,3 +1,7 @@
+from itertools import combinations
+
+import numpy as np
+
 from src.data.get_data import get_all_data, get_some_data
 from src.model.model import (
     DeBerta,
@@ -33,7 +37,6 @@ def main():
     data_dict = setup("all")
 
     print("Running individual model visualizations...")
-    # Fixed: use .items() instead of .iter() for standard Python dictionaries
     for lang, texts in data_dict.items():
         if not texts:
             continue
@@ -41,25 +44,26 @@ def main():
         qwen.visualize_embeddings(texts, lang, f"qwen_{lang.lower()}_space")
         roberta.visualize_embeddings(texts, lang, f"xlmr_{lang.lower()}_space")
 
-    print("\nEvaluating Cross-Lingual Similarities...")
+    print("\nEvaluating Cross-Lingual Similarities for All Language Pairs...")
     langs = list(data_dict.keys())
-    if len(langs) >= 2:
-        lang1, lang2 = langs[0], langs[1]
-        texts1 = data_dict[lang1]
-        texts2 = data_dict[lang2]
 
-        print(f"Comparing cross-lingual similarity between '{lang1}' and '{lang2}':")
-        for model_name, model_instance in models.items():
-            print(f"\n--- Model: {model_name} ---")
-            emb_lang1 = model_instance.get_embeddings(texts1)
-            emb_lang2 = model_instance.get_embeddings(texts2)
+    for model_name, model_instance in models.items():
+        print(f"\n--- Model: {model_name} ---")
+        # Cache model embeddings per language to avoid redundant computations
+        lang_embeddings = {
+            lang: model_instance.get_embeddings(texts)
+            for lang, texts in data_dict.items() if texts
+        }
 
-            # Use evaluate_cross_lingual_similarity
-            similarity_matrix = evaluate_cross_lingual_similarity(emb_lang1, emb_lang2)
-            print(f"Similarity Matrix Shape: {similarity_matrix.shape}")
+        valid_langs = list(lang_embeddings.keys())
+        for lang1, lang2 in combinations(valid_langs, 2):
+            similarity_matrix = evaluate_cross_lingual_similarity(
+                lang_embeddings[lang1],
+                lang_embeddings[lang2]
+            )
+            print(f"  {lang1} vs {lang2} | Similarity Matrix Shape: {similarity_matrix.shape} | Mean Cosine Similarity: {np.mean(similarity_matrix):.4f}")
 
     print("\nGenerating combined model comparative scatterplots...")
-    # Fixed: pass data_dict instead of the undefined 'data' variable
     visualize_multilingual_models_single_plot(data_dict, models)
 
     print("Done!")

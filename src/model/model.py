@@ -17,8 +17,6 @@ def evaluate_cross_lingual_similarity(embeddings_lang1, embeddings_lang2):
     Computes the cosine similarity matrix between two language embedding spaces.
     """
     similarity_matrix = cosine_similarity(embeddings_lang1, embeddings_lang2)
-    mean_similarity = np.mean(similarity_matrix)
-    print(f"Mean Cross-Lingual Cosine Similarity: {mean_similarity:.4f}")
     return similarity_matrix
 
 
@@ -52,7 +50,7 @@ class DeBerta:
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(embedding_matrix)
         pca = PCA(n_components=2)
-        X_reduced = pca.fit_transform(X_scaled)
+        pca.fit_transform(X_scaled)
         pseudo_cluster = KMeans(n_clusters=min(3, len(data)), random_state=42)
         pseudo_labels = pseudo_cluster.fit_predict(embedding_matrix)
         score = silhouette_score(embedding_matrix, pseudo_labels, metric='euclidean')
@@ -62,7 +60,7 @@ class DeBerta:
 class Qwen:
     def __init__(self):
         self.device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
-        self.tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-7B-Instruct", trust_remote_code=True) # Updated to a valid text embedding/LLM base model if needed
+        self.tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-7B-Instruct", trust_remote_code=True)
         self.model = AutoModel.from_pretrained("Qwen/Qwen2.5-7B-Instruct", trust_remote_code=True)
         self.model.to(self.device)
 
@@ -89,7 +87,7 @@ class Qwen:
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(embedding_matrix)
         pca = PCA(n_components=2)
-        X_reduced = pca.fit_transform(X_scaled)
+        pca.fit_transform(X_scaled)
 
         pseudo_cluster = KMeans(n_clusters=min(3, len(data)), random_state=42)
         pseudo_labels = pseudo_cluster.fit_predict(embedding_matrix)
@@ -130,7 +128,7 @@ class XLM_RoBerta:
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(embedding_matrix)
         pca = PCA(n_components=2)
-        X_reduced = pca.fit_transform(X_scaled)
+        pca.fit_transform(X_scaled)
 
         pseudo_cluster = KMeans(n_clusters=min(3, len(data)), random_state=42)
         pseudo_labels = pseudo_cluster.fit_predict(embedding_matrix)
@@ -144,49 +142,63 @@ def visualize_multilingual_models_single_plot(
     output_name: str = "multilingual_models_embedding_space"
 ):
     """
-    Dynamically maps all models to unique colors and all languages to unique marker shapes.
+    Dynamically maps all models to unique colors and all languages to unique marker shapes
+    using a unified global projection space.
     """
     plt.figure(figsize=(12, 8))
 
     model_names = list(models_dict.keys())
     lang_names = list(langs_data.keys())
 
-    # Use Matplotlib colormap for distinct model colors and a pool of clear markers for languages
     model_colors = plt.get_cmap('tab10', max(len(model_names), 1))
     markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h', 'X', 'P']
 
-    for model_idx, (model_name, model_instance) in enumerate(models_dict.items()):
-        all_texts = []
-        lang_labels = []
+    # 1. Collect all model embeddings globally to fit a single shared PCA/StandardScaler space
+    global_embeddings = []
+    model_data_tracking = {}
+
+    for model_name, model_instance in models_dict.items():
+        model_embeddings = {}
         for lang_name, texts in langs_data.items():
-            all_texts.extend(texts)
-            lang_labels.extend([lang_name] * len(texts))
+            if not texts:
+                continue
+            emb = model_instance.get_embeddings(texts)
+            model_embeddings[lang_name] = emb
+            global_embeddings.append(emb)
+        model_data_tracking[model_name] = model_embeddings
 
-        embedding_matrix = model_instance.get_embeddings(all_texts)
-        scaler = StandardScaler()
-        X_scaled = scaler.fit_transform(embedding_matrix)
-        pca = PCA(n_components=2)
-        X_reduced = pca.fit_transform(X_scaled)
+    # Fit global scaler and PCA so all models share identical 2D projection bounds
+    global_matrix = np.concatenate(global_embeddings, axis=0)
+    scaler = StandardScaler()
+    scaler.fit(global_matrix)
+    pca = PCA(n_components=2)
+    pca.fit(scaler.transform(global_matrix))
 
+    # 2. Plot each model/language configuration onto the shared space
+    for model_idx, (model_name, model_embeddings) in enumerate(model_data_tracking.items()):
         model_color = model_colors(model_idx)
 
         for lang_idx, lang_name in enumerate(lang_names):
-            idx = [j for j, l in enumerate(lang_labels) if l == lang_name]
+            if lang_name not in model_embeddings:
+                continue
+
+            emb = model_embeddings[lang_name]
+            X_reduced = pca.transform(scaler.transform(emb))
             marker = markers[lang_idx % len(markers)]
 
             plt.scatter(
-                X_reduced[idx, 0],
-                X_reduced[idx, 1],
+                X_reduced[:, 0],
+                X_reduced[:, 1],
                 alpha=0.6,
                 color=model_color,
                 marker=marker,
                 label=f"{model_name} ({lang_name})"
             )
 
-    plt.title("Cross-Lingual & Cross-Model Embedding Space Comparison", fontsize=14)
-    plt.xlabel("PCA Component 1")
-    plt.ylabel("PCA Component 2")
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=9)
+    plt.title("Cross-Lingual & Cross-Model Global Embedding Space Comparison", fontsize=14)
+    plt.xlabel("Global PCA Component 1")
+    plt.ylabel("Global PCA Component 2")
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper center', fontsize=9)
     plt.grid(True, linestyle="--", alpha=0.5)
     plt.tight_layout()
     plt.savefig(f"./{output_name}.png", dpi=300, bbox_inches="tight")
