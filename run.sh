@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --time=8:00:00
+#SBATCH --time=13:00:00
 #SBATCH --output=/projects/%u/Multilingual-Stories-Topic-Space/logs/%j.log
 #SBATCH --job-name=topic-space
 #SBATCH --account=ucb-general

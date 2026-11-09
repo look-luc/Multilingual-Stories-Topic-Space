@@ -142,64 +142,58 @@ def visualize_multilingual_models_single_plot(
     output_name: str = "multilingual_models_embedding_space"
 ):
     """
-    Dynamically maps all models to unique colors and all languages to unique marker shapes
-    using a unified global projection space.
+    Visualizes multilingual embeddings for each model in separate subplots
+    to properly handle differing hidden dimensions across architectures[cite: 5].
     """
-    plt.figure(figsize=(12, 8))
+    fig, axes = plt.subplots(1, len(models_dict), figsize=(6 * len(models_dict), 6), squeeze=False)
+    axes = axes.flatten()
 
-    model_names = list(models_dict.keys())
-    lang_names = list(langs_data.keys())
-
-    model_colors = plt.get_cmap('tab10', max(len(model_names), 1))
     markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h', 'X', 'P']
 
-    # 1. Collect all model embeddings globally to fit a single shared PCA/StandardScaler space
-    global_embeddings = []
-    model_data_tracking = {}
+    for model_idx, (model_name, model_instance) in enumerate(models_dict.items()):
+        ax = axes[model_idx]
 
-    for model_name, model_instance in models_dict.items():
-        model_embeddings = {}
+        model_embeddings = []
+        lang_tracking = []
         for lang_name, texts in langs_data.items():
             if not texts:
                 continue
             emb = model_instance.get_embeddings(texts)
-            model_embeddings[lang_name] = emb
-            global_embeddings.append(emb)
-        model_data_tracking[model_name] = model_embeddings
+            model_embeddings.append(emb)
+            lang_tracking.append(lang_name)
 
-    # Fit global scaler and PCA so all models share identical 2D projection bounds
-    global_matrix = np.concatenate(global_embeddings, axis=0)
-    scaler = StandardScaler()
-    scaler.fit(global_matrix)
-    pca = PCA(n_components=2)
-    pca.fit(scaler.transform(global_matrix))
+        if not model_embeddings:
+            continue
 
-    # 2. Plot each model/language configuration onto the shared space
-    for model_idx, (model_name, model_embeddings) in enumerate(model_data_tracking.items()):
-        model_color = model_colors(model_idx)
+        model_matrix = np.concatenate(model_embeddings, axis=0)
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(model_matrix)
+        pca = PCA(n_components=2)
+        X_reduced = pca.fit_transform(X_scaled)
 
-        for lang_idx, lang_name in enumerate(lang_names):
-            if lang_name not in model_embeddings:
-                continue
+        start_idx = 0
+        for lang_idx, lang_name in enumerate(lang_tracking):
+            texts = langs_data[lang_name]
+            end_idx = start_idx + len(texts)
+            lang_coords = X_reduced[start_idx:end_idx]
+            start_idx = end_idx
 
-            emb = model_embeddings[lang_name]
-            X_reduced = pca.transform(scaler.transform(emb))
             marker = markers[lang_idx % len(markers)]
-
-            plt.scatter(
-                X_reduced[:, 0],
-                X_reduced[:, 1],
+            ax.scatter(
+                lang_coords[:, 0],
+                lang_coords[:, 1],
                 alpha=0.6,
-                color=model_color,
                 marker=marker,
-                label=f"{model_name} ({lang_name})"
+                label=lang_name
             )
 
-    plt.title("Cross-Lingual & Cross-Model Global Embedding Space Comparison", fontsize=14)
-    plt.xlabel("Global PCA Component 1")
-    plt.ylabel("Global PCA Component 2")
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper center', fontsize=9)
-    plt.grid(True, linestyle="--", alpha=0.5)
+        ax.set_title(f"{model_name}", fontsize=12)
+        ax.set_xlabel("PCA Component 1")
+        ax.set_ylabel("PCA Component 2")
+        ax.grid(True, linestyle="--", alpha=0.5)
+        ax.legend(fontsize=8, loc='best')
+
+    plt.suptitle("Cross-Lingual Embedding Space Comparison Across Models", fontsize=14)
     plt.tight_layout()
     plt.savefig(f"./{output_name}.png", dpi=300, bbox_inches="tight")
     plt.close()
