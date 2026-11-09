@@ -1,0 +1,999 @@
+Resolved 92 packages in 423ms
+Uninstalled 5 packages in 547ms
+ - certifi==2026.10.23
+ - charset-normalizer==3.5.2
+ - requests==2.34.2
+ - tiktoken==0.14.0
+ - urllib3==2.8.0
+Resolved 7 packages in 1.20s
+Installed 5 packages in 435ms
+ + certifi==2026.10.23
+ + charset-normalizer==3.5.2
+ + requests==2.34.2
+ + tiktoken==0.14.0
+ + urllib3==2.8.0
+/projects/lude4390/Multilingual-Stories-Topic-Space/.venv/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Initializing models...
+Loading weights:   0%|          | 0/198 [00:00<?, ?it/s]Loading weights: 100%|██████████| 198/198 [00:00<00:00, 33704.23it/s]
+[transformers] [1mDebertaV2Model LOAD REPORT[0m from: microsoft/mdeberta-v3-base
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+lm_predictions.lm_head.dense.weight        | UNEXPECTED |  | 
+mask_predictions.dense.bias                | UNEXPECTED |  | 
+lm_predictions.lm_head.bias                | UNEXPECTED |  | 
+lm_predictions.lm_head.LayerNorm.bias      | UNEXPECTED |  | 
+mask_predictions.classifier.weight         | UNEXPECTED |  | 
+mask_predictions.LayerNorm.weight          | UNEXPECTED |  | 
+deberta.embeddings.word_embeddings._weight | UNEXPECTED |  | 
+lm_predictions.lm_head.LayerNorm.weight    | UNEXPECTED |  | 
+mask_predictions.classifier.bias           | UNEXPECTED |  | 
+lm_predictions.lm_head.dense.bias          | UNEXPECTED |  | 
+mask_predictions.LayerNorm.bias            | UNEXPECTED |  | 
+mask_predictions.dense.weight              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   1%|▏         | 5/338 [00:00<00:21, 15.21it/s]Loading weights:   3%|▎         | 9/338 [00:00<00:18, 17.47it/s]Loading weights:   5%|▌         | 17/338 [00:00<00:15, 20.50it/s]Loading weights:   6%|▌         | 20/338 [00:01<00:32,  9.66it/s]Loading weights:   7%|▋         | 22/338 [00:01<00:30, 10.41it/s]Loading weights:   7%|▋         | 24/338 [00:02<00:30, 10.18it/s]Loading weights:   8%|▊         | 26/338 [00:02<00:29, 10.68it/s]Loading weights:   8%|▊         | 28/338 [00:02<00:34,  9.07it/s]Loading weights:   9%|▉         | 30/338 [00:02<00:42,  7.16it/s]Loading weights:  10%|▉         | 33/338 [00:03<00:33,  9.03it/s]Loading weights:  10%|█         | 35/338 [00:03<00:33,  9.12it/s]Loading weights:  11%|█         | 37/338 [00:03<00:35,  8.57it/s]Loading weights:  12%|█▏        | 39/338 [00:03<00:29, 10.08it/s]Loading weights:  22%|██▏       | 74/338 [00:03<00:04, 62.65it/s]Loading weights:  25%|██▍       | 83/338 [00:04<00:07, 33.40it/s]Loading weights:  27%|██▋       | 90/338 [00:05<00:10, 24.66it/s]Loading weights:  28%|██▊       | 95/338 [00:05<00:09, 24.65it/s]Loading weights:  32%|███▏      | 108/338 [00:05<00:07, 30.09it/s]Loading weights:  35%|███▌      | 119/338 [00:05<00:06, 32.36it/s]Loading weights:  37%|███▋      | 124/338 [00:06<00:13, 16.41it/s]Loading weights:  38%|███▊      | 128/338 [00:07<00:14, 14.57it/s]Loading weights:  40%|████      | 136/338 [00:07<00:11, 17.07it/s]Loading weights:  41%|████      | 139/338 [00:07<00:10, 18.21it/s]Loading weights:  42%|████▏     | 143/338 [00:07<00:10, 18.93it/s]Loading weights:  43%|████▎     | 146/338 [00:08<00:11, 17.43it/s]Loading weights:  44%|████▍     | 149/338 [00:08<00:10, 17.19it/s]Loading weights:  47%|████▋     | 160/338 [00:08<00:06, 28.34it/s]Loading weights:  49%|████▊     | 164/338 [00:08<00:06, 28.68it/s]Loading weights:  50%|█████     | 169/338 [00:08<00:05, 31.53it/s]Loading weights:  51%|█████     | 173/338 [00:08<00:06, 26.77it/s]Loading weights:  52%|█████▏    | 177/338 [00:09<00:08, 19.86it/s]Loading weights:  53%|█████▎    | 180/338 [00:09<00:08, 18.37it/s]Loading weights:  54%|█████▍    | 183/338 [00:09<00:09, 17.09it/s]Loading weights:  56%|█████▌    | 188/338 [00:09<00:06, 22.07it/s]Loading weights:  57%|█████▋    | 192/338 [00:10<00:06, 21.52it/s]Loading weights:  58%|█████▊    | 195/338 [00:10<00:06, 22.52it/s]Loading weights:  59%|█████▊    | 198/338 [00:10<00:09, 15.08it/s]Loading weights:  61%|██████    | 206/338 [00:10<00:05, 24.97it/s]Loading weights:  62%|██████▏   | 210/338 [00:10<00:06, 20.74it/s]Loading weights:  63%|██████▎   | 214/338 [00:11<00:06, 18.22it/s]Loading weights:  65%|██████▌   | 221/338 [00:11<00:05, 20.05it/s]Loading weights:  67%|██████▋   | 226/338 [00:11<00:05, 20.11it/s]Loading weights:  68%|██████▊   | 229/338 [00:11<00:05, 18.73it/s]Loading weights:  69%|██████▊   | 232/338 [00:12<00:05, 18.54it/s]Loading weights:  71%|███████▏  | 241/338 [00:12<00:04, 22.79it/s]Loading weights:  75%|███████▍  | 253/338 [00:12<00:02, 32.85it/s]Loading weights:  76%|███████▌  | 257/338 [00:13<00:04, 17.86it/s]Loading weights:  80%|███████▉  | 269/338 [00:13<00:02, 27.57it/s]Loading weights:  81%|████████  | 274/338 [00:13<00:02, 25.20it/s]Loading weights:  85%|████████▍ | 287/338 [00:13<00:01, 37.69it/s]Loading weights:  87%|████████▋ | 293/338 [00:14<00:01, 25.21it/s]Loading weights:  88%|████████▊ | 298/338 [00:14<00:02, 18.88it/s]Loading weights:  90%|█████████ | 305/338 [00:14<00:01, 22.70it/s]Loading weights:  92%|█████████▏| 312/338 [00:15<00:01, 18.39it/s]Loading weights:  93%|█████████▎| 315/338 [00:15<00:01, 18.12it/s]Loading weights:  94%|█████████▍| 318/338 [00:15<00:01, 17.08it/s]Loading weights:  95%|█████████▍| 321/338 [00:16<00:01, 12.43it/s]Loading weights: 100%|██████████| 338/338 [00:16<00:00, 20.56it/s]
+[transformers] [1mQwen2Model LOAD REPORT[0m from: Qwen/Qwen2.5-7B-Instruct
+Key            | Status     |  | 
+---------------+------------+--+-
+lm_head.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   2%|▏         | 4/199 [00:00<00:06, 31.46it/s]Loading weights:   8%|▊         | 15/199 [00:00<00:06, 29.46it/s]Loading weights:  12%|█▏        | 23/199 [00:00<00:06, 27.56it/s]Loading weights:  15%|█▍        | 29/199 [00:01<00:05, 28.35it/s]Loading weights:  21%|██        | 42/199 [00:01<00:04, 36.46it/s]Loading weights:  23%|██▎       | 46/199 [00:01<00:04, 33.51it/s]Loading weights:  25%|██▌       | 50/199 [00:01<00:04, 30.48it/s]Loading weights:  27%|██▋       | 53/199 [00:01<00:06, 24.06it/s]Loading weights:  39%|███▉      | 78/199 [00:02<00:02, 48.57it/s]Loading weights:  77%|███████▋  | 153/199 [00:02<00:00, 160.00it/s]Loading weights:  90%|█████████ | 180/199 [00:03<00:00, 79.69it/s] Loading weights: 100%|██████████| 199/199 [00:03<00:00, 66.04it/s]
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: FacebookAI/xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+lm_head.dense.bias        | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Fetching data...
+Getting languages from Google/Waxal...
+Getting Acholi data...
+Getting Luganda data...
+Getting Masaaba data...
+Getting Nyankole data...
+Getting Soga data...
+Getting Akan data...
+Getting Ewe data...
+Getting Dagbani data...
+Getting languages from Dxniz/TinyStories-Multilingual...
+Getting Norwegian data...
+Getting Slovak data...
+Getting Serbian data...
+Getting Bulgarian data...
+Getting Czech data...
+Getting Turkish data...
+Getting Persian data...
+Getting Vietnamese data...
+Getting Indonesian data...
+Getting languages from deeponh/multilingual-tinystories...
+Getting Assamese data...
+Getting Dogri data...
+Getting GOM data...
+Getting Kannada data...
+Getting Nepali data...
+Getting Tamil data...
+Getting Sindhi data...
+Running individual model visualizations...
+[Acholi] DeBERTa Silhouette Score: 0.1994
+[Acholi] Qwen Silhouette Score: 0.0989
+[Acholi] XLM-RoBERTa Silhouette Score: 0.0438
+[Luganda] DeBERTa Silhouette Score: 0.1933
+[Luganda] Qwen Silhouette Score: 0.1253
+[Luganda] XLM-RoBERTa Silhouette Score: 0.0853
+[Masaaba] DeBERTa Silhouette Score: 0.1800
+[Masaaba] Qwen Silhouette Score: 0.0817
+[Masaaba] XLM-RoBERTa Silhouette Score: 0.0814
+[Nyankole] DeBERTa Silhouette Score: 0.1924
+[Nyankole] Qwen Silhouette Score: 0.1210
+[Nyankole] XLM-RoBERTa Silhouette Score: 0.0865
+[Soga] DeBERTa Silhouette Score: 0.1911
+[Soga] Qwen Silhouette Score: 0.1170
+[Soga] XLM-RoBERTa Silhouette Score: 0.0946
+[Akan] DeBERTa Silhouette Score: 0.1891
+[Akan] Qwen Silhouette Score: 0.1277
+[Akan] XLM-RoBERTa Silhouette Score: 0.0651
+[Ewe] DeBERTa Silhouette Score: 0.1813
+[Ewe] Qwen Silhouette Score: 0.0633
+[Ewe] XLM-RoBERTa Silhouette Score: 0.0527
+[Dagbani] DeBERTa Silhouette Score: 0.2281
+[Dagbani] Qwen Silhouette Score: 0.0730
+[Dagbani] XLM-RoBERTa Silhouette Score: 0.0509
+[Norwegian] DeBERTa Silhouette Score: 0.1251
+[Norwegian] Qwen Silhouette Score: 0.0663
+[Norwegian] XLM-RoBERTa Silhouette Score: 0.0744
+[Slovak] DeBERTa Silhouette Score: 0.1232
+[Slovak] Qwen Silhouette Score: 0.0656
+[Slovak] XLM-RoBERTa Silhouette Score: 0.0751
+[Serbian] DeBERTa Silhouette Score: 0.1313
+[Serbian] Qwen Silhouette Score: 0.1568
+[Serbian] XLM-RoBERTa Silhouette Score: 0.1456
+[Bulgarian] DeBERTa Silhouette Score: 0.1145
+[Bulgarian] Qwen Silhouette Score: 0.0710
+[Bulgarian] XLM-RoBERTa Silhouette Score: 0.0636
+[Czech] DeBERTa Silhouette Score: 0.1216
+[Czech] Qwen Silhouette Score: 0.0634
+[Czech] XLM-RoBERTa Silhouette Score: 0.0741
+[Turkish] DeBERTa Silhouette Score: 0.1389
+[Turkish] Qwen Silhouette Score: 0.0700
+[Turkish] XLM-RoBERTa Silhouette Score: 0.0819
+[Persian] DeBERTa Silhouette Score: 0.1374
+[Persian] Qwen Silhouette Score: 0.0818
+[Persian] XLM-RoBERTa Silhouette Score: 0.0657
+[Vietnamese] DeBERTa Silhouette Score: 0.1361
+[Vietnamese] Qwen Silhouette Score: 0.0614
+[Vietnamese] XLM-RoBERTa Silhouette Score: 0.0720
+[Indonesian] DeBERTa Silhouette Score: 0.0958
+[Indonesian] Qwen Silhouette Score: 0.0566
+[Indonesian] XLM-RoBERTa Silhouette Score: 0.0727
+[Assamese] DeBERTa Silhouette Score: 0.1815
+[Assamese] Qwen Silhouette Score: 0.0419
+[Assamese] XLM-RoBERTa Silhouette Score: 0.0648
+[Dogri] DeBERTa Silhouette Score: 0.1576
+[Dogri] Qwen Silhouette Score: 0.0957
+[Dogri] XLM-RoBERTa Silhouette Score: 0.0506
+[GOM] DeBERTa Silhouette Score: 0.1757
+[GOM] Qwen Silhouette Score: 0.0730
+[GOM] XLM-RoBERTa Silhouette Score: 0.0554
+[Kannada] DeBERTa Silhouette Score: 0.1461
+[Kannada] Qwen Silhouette Score: 0.0429
+[Kannada] XLM-RoBERTa Silhouette Score: 0.1174
+[Nepali] DeBERTa Silhouette Score: 0.1900
+[Nepali] Qwen Silhouette Score: 0.0551
+[Nepali] XLM-RoBERTa Silhouette Score: 0.0296
+[Tamil] DeBERTa Silhouette Score: 0.1330
+[Tamil] Qwen Silhouette Score: 0.0468
+[Tamil] XLM-RoBERTa Silhouette Score: 0.0689
+[Sindhi] DeBERTa Silhouette Score: 0.1466
+[Sindhi] Qwen Silhouette Score: 0.0534
+[Sindhi] XLM-RoBERTa Silhouette Score: 0.0461
+
+Evaluating Cross-Lingual Similarities for All Language Pairs...
+
+--- Model: DeBERTa ---
+  Acholi vs Luganda | Similarity Matrix Shape: (4108, 5455) | Mean Cosine Similarity: 0.9508
+  Acholi vs Masaaba | Similarity Matrix Shape: (4108, 6867) | Mean Cosine Similarity: 0.9619
+  Acholi vs Nyankole | Similarity Matrix Shape: (4108, 6783) | Mean Cosine Similarity: 0.9583
+  Acholi vs Soga | Similarity Matrix Shape: (4108, 6219) | Mean Cosine Similarity: 0.9615
+  Acholi vs Akan | Similarity Matrix Shape: (4108, 10107) | Mean Cosine Similarity: 0.9490
+  Acholi vs Ewe | Similarity Matrix Shape: (4108, 15054) | Mean Cosine Similarity: 0.9513
+  Acholi vs Dagbani | Similarity Matrix Shape: (4108, 14231) | Mean Cosine Similarity: 0.9727
+  Acholi vs Norwegian | Similarity Matrix Shape: (4108, 534) | Mean Cosine Similarity: 0.6627
+  Acholi vs Slovak | Similarity Matrix Shape: (4108, 538) | Mean Cosine Similarity: 0.6109
+  Acholi vs Serbian | Similarity Matrix Shape: (4108, 546) | Mean Cosine Similarity: 0.6337
+  Acholi vs Bulgarian | Similarity Matrix Shape: (4108, 539) | Mean Cosine Similarity: 0.5994
+  Acholi vs Czech | Similarity Matrix Shape: (4108, 529) | Mean Cosine Similarity: 0.5950
+  Acholi vs Turkish | Similarity Matrix Shape: (4108, 535) | Mean Cosine Similarity: 0.6592
+  Acholi vs Persian | Similarity Matrix Shape: (4108, 535) | Mean Cosine Similarity: 0.7178
+  Acholi vs Vietnamese | Similarity Matrix Shape: (4108, 530) | Mean Cosine Similarity: 0.4640
+  Acholi vs Indonesian | Similarity Matrix Shape: (4108, 548) | Mean Cosine Similarity: 0.6435
+  Acholi vs Assamese | Similarity Matrix Shape: (4108, 4829) | Mean Cosine Similarity: 0.7712
+  Acholi vs Dogri | Similarity Matrix Shape: (4108, 4874) | Mean Cosine Similarity: 0.8890
+  Acholi vs GOM | Similarity Matrix Shape: (4108, 4831) | Mean Cosine Similarity: 0.9279
+  Acholi vs Kannada | Similarity Matrix Shape: (4108, 11643) | Mean Cosine Similarity: 0.7280
+  Acholi vs Nepali | Similarity Matrix Shape: (4108, 4814) | Mean Cosine Similarity: 0.7242
+  Acholi vs Tamil | Similarity Matrix Shape: (4108, 12841) | Mean Cosine Similarity: 0.7609
+  Acholi vs Sindhi | Similarity Matrix Shape: (4108, 4831) | Mean Cosine Similarity: 0.7811
+  Luganda vs Masaaba | Similarity Matrix Shape: (5455, 6867) | Mean Cosine Similarity: 0.9554
+  Luganda vs Nyankole | Similarity Matrix Shape: (5455, 6783) | Mean Cosine Similarity: 0.9677
+  Luganda vs Soga | Similarity Matrix Shape: (5455, 6219) | Mean Cosine Similarity: 0.9679
+  Luganda vs Akan | Similarity Matrix Shape: (5455, 10107) | Mean Cosine Similarity: 0.9683
+  Luganda vs Ewe | Similarity Matrix Shape: (5455, 15054) | Mean Cosine Similarity: 0.9659
+  Luganda vs Dagbani | Similarity Matrix Shape: (5455, 14231) | Mean Cosine Similarity: 0.9510
+  Luganda vs Norwegian | Similarity Matrix Shape: (5455, 534) | Mean Cosine Similarity: 0.7284
+  Luganda vs Slovak | Similarity Matrix Shape: (5455, 538) | Mean Cosine Similarity: 0.6816
+  Luganda vs Serbian | Similarity Matrix Shape: (5455, 546) | Mean Cosine Similarity: 0.7085
+  Luganda vs Bulgarian | Similarity Matrix Shape: (5455, 539) | Mean Cosine Similarity: 0.6687
+  Luganda vs Czech | Similarity Matrix Shape: (5455, 529) | Mean Cosine Similarity: 0.6648
+  Luganda vs Turkish | Similarity Matrix Shape: (5455, 535) | Mean Cosine Similarity: 0.7270
+  Luganda vs Persian | Similarity Matrix Shape: (5455, 535) | Mean Cosine Similarity: 0.7809
+  Luganda vs Vietnamese | Similarity Matrix Shape: (5455, 530) | Mean Cosine Similarity: 0.5304
+  Luganda vs Indonesian | Similarity Matrix Shape: (5455, 548) | Mean Cosine Similarity: 0.7063
+  Luganda vs Assamese | Similarity Matrix Shape: (5455, 4829) | Mean Cosine Similarity: 0.8445
+  Luganda vs Dogri | Similarity Matrix Shape: (5455, 4874) | Mean Cosine Similarity: 0.9301
+  Luganda vs GOM | Similarity Matrix Shape: (5455, 4831) | Mean Cosine Similarity: 0.9609
+  Luganda vs Kannada | Similarity Matrix Shape: (5455, 11643) | Mean Cosine Similarity: 0.7969
+  Luganda vs Nepali | Similarity Matrix Shape: (5455, 4814) | Mean Cosine Similarity: 0.7928
+  Luganda vs Tamil | Similarity Matrix Shape: (5455, 12841) | Mean Cosine Similarity: 0.8249
+  Luganda vs Sindhi | Similarity Matrix Shape: (5455, 4831) | Mean Cosine Similarity: 0.8465
+  Masaaba vs Nyankole | Similarity Matrix Shape: (6867, 6783) | Mean Cosine Similarity: 0.9628
+  Masaaba vs Soga | Similarity Matrix Shape: (6867, 6219) | Mean Cosine Similarity: 0.9656
+  Masaaba vs Akan | Similarity Matrix Shape: (6867, 10107) | Mean Cosine Similarity: 0.9428
+  Masaaba vs Ewe | Similarity Matrix Shape: (6867, 15054) | Mean Cosine Similarity: 0.9427
+  Masaaba vs Dagbani | Similarity Matrix Shape: (6867, 14231) | Mean Cosine Similarity: 0.9581
+  Masaaba vs Norwegian | Similarity Matrix Shape: (6867, 534) | Mean Cosine Similarity: 0.6446
+  Masaaba vs Slovak | Similarity Matrix Shape: (6867, 538) | Mean Cosine Similarity: 0.5910
+  Masaaba vs Serbian | Similarity Matrix Shape: (6867, 546) | Mean Cosine Similarity: 0.6172
+  Masaaba vs Bulgarian | Similarity Matrix Shape: (6867, 539) | Mean Cosine Similarity: 0.5778
+  Masaaba vs Czech | Similarity Matrix Shape: (6867, 529) | Mean Cosine Similarity: 0.5730
+  Masaaba vs Turkish | Similarity Matrix Shape: (6867, 535) | Mean Cosine Similarity: 0.6384
+  Masaaba vs Persian | Similarity Matrix Shape: (6867, 535) | Mean Cosine Similarity: 0.7014
+  Masaaba vs Vietnamese | Similarity Matrix Shape: (6867, 530) | Mean Cosine Similarity: 0.4280
+  Masaaba vs Indonesian | Similarity Matrix Shape: (6867, 548) | Mean Cosine Similarity: 0.6203
+  Masaaba vs Assamese | Similarity Matrix Shape: (6867, 4829) | Mean Cosine Similarity: 0.7609
+  Masaaba vs Dogri | Similarity Matrix Shape: (6867, 4874) | Mean Cosine Similarity: 0.8825
+  Masaaba vs GOM | Similarity Matrix Shape: (6867, 4831) | Mean Cosine Similarity: 0.9270
+  Masaaba vs Kannada | Similarity Matrix Shape: (6867, 11643) | Mean Cosine Similarity: 0.7151
+  Masaaba vs Nepali | Similarity Matrix Shape: (6867, 4814) | Mean Cosine Similarity: 0.7091
+  Masaaba vs Tamil | Similarity Matrix Shape: (6867, 12841) | Mean Cosine Similarity: 0.7509
+  Masaaba vs Sindhi | Similarity Matrix Shape: (6867, 4831) | Mean Cosine Similarity: 0.7662
+  Nyankole vs Soga | Similarity Matrix Shape: (6783, 6219) | Mean Cosine Similarity: 0.9691
+  Nyankole vs Akan | Similarity Matrix Shape: (6783, 10107) | Mean Cosine Similarity: 0.9576
+  Nyankole vs Ewe | Similarity Matrix Shape: (6783, 15054) | Mean Cosine Similarity: 0.9562
+  Nyankole vs Dagbani | Similarity Matrix Shape: (6783, 14231) | Mean Cosine Similarity: 0.9566
+  Nyankole vs Norwegian | Similarity Matrix Shape: (6783, 534) | Mean Cosine Similarity: 0.6940
+  Nyankole vs Slovak | Similarity Matrix Shape: (6783, 538) | Mean Cosine Similarity: 0.6453
+  Nyankole vs Serbian | Similarity Matrix Shape: (6783, 546) | Mean Cosine Similarity: 0.6713
+  Nyankole vs Bulgarian | Similarity Matrix Shape: (6783, 539) | Mean Cosine Similarity: 0.6327
+  Nyankole vs Czech | Similarity Matrix Shape: (6783, 529) | Mean Cosine Similarity: 0.6283
+  Nyankole vs Turkish | Similarity Matrix Shape: (6783, 535) | Mean Cosine Similarity: 0.6912
+  Nyankole vs Persian | Similarity Matrix Shape: (6783, 535) | Mean Cosine Similarity: 0.7491
+  Nyankole vs Vietnamese | Similarity Matrix Shape: (6783, 530) | Mean Cosine Similarity: 0.4923
+  Nyankole vs Indonesian | Similarity Matrix Shape: (6783, 548) | Mean Cosine Similarity: 0.6720
+  Nyankole vs Assamese | Similarity Matrix Shape: (6783, 4829) | Mean Cosine Similarity: 0.8101
+  Nyankole vs Dogri | Similarity Matrix Shape: (6783, 4874) | Mean Cosine Similarity: 0.9141
+  Nyankole vs GOM | Similarity Matrix Shape: (6783, 4831) | Mean Cosine Similarity: 0.9492
+  Nyankole vs Kannada | Similarity Matrix Shape: (6783, 11643) | Mean Cosine Similarity: 0.7639
+  Nyankole vs Nepali | Similarity Matrix Shape: (6783, 4814) | Mean Cosine Similarity: 0.7592
+  Nyankole vs Tamil | Similarity Matrix Shape: (6783, 12841) | Mean Cosine Similarity: 0.7945
+  Nyankole vs Sindhi | Similarity Matrix Shape: (6783, 4831) | Mean Cosine Similarity: 0.8136
+  Soga vs Akan | Similarity Matrix Shape: (6219, 10107) | Mean Cosine Similarity: 0.9584
+  Soga vs Ewe | Similarity Matrix Shape: (6219, 15054) | Mean Cosine Similarity: 0.9572
+  Soga vs Dagbani | Similarity Matrix Shape: (6219, 14231) | Mean Cosine Similarity: 0.9599
+  Soga vs Norwegian | Similarity Matrix Shape: (6219, 534) | Mean Cosine Similarity: 0.6857
+  Soga vs Slovak | Similarity Matrix Shape: (6219, 538) | Mean Cosine Similarity: 0.6351
+  Soga vs Serbian | Similarity Matrix Shape: (6219, 546) | Mean Cosine Similarity: 0.6609
+  Soga vs Bulgarian | Similarity Matrix Shape: (6219, 539) | Mean Cosine Similarity: 0.6220
+  Soga vs Czech | Similarity Matrix Shape: (6219, 529) | Mean Cosine Similarity: 0.6176
+  Soga vs Turkish | Similarity Matrix Shape: (6219, 535) | Mean Cosine Similarity: 0.6820
+  Soga vs Persian | Similarity Matrix Shape: (6219, 535) | Mean Cosine Similarity: 0.7411
+  Soga vs Vietnamese | Similarity Matrix Shape: (6219, 530) | Mean Cosine Similarity: 0.4770
+  Soga vs Indonesian | Similarity Matrix Shape: (6219, 548) | Mean Cosine Similarity: 0.6624
+  Soga vs Assamese | Similarity Matrix Shape: (6219, 4829) | Mean Cosine Similarity: 0.8014
+  Soga vs Dogri | Similarity Matrix Shape: (6219, 4874) | Mean Cosine Similarity: 0.9084
+  Soga vs GOM | Similarity Matrix Shape: (6219, 4831) | Mean Cosine Similarity: 0.9464
+  Soga vs Kannada | Similarity Matrix Shape: (6219, 11643) | Mean Cosine Similarity: 0.7550
+  Soga vs Nepali | Similarity Matrix Shape: (6219, 4814) | Mean Cosine Similarity: 0.7496
+  Soga vs Tamil | Similarity Matrix Shape: (6219, 12841) | Mean Cosine Similarity: 0.7873
+  Soga vs Sindhi | Similarity Matrix Shape: (6219, 4831) | Mean Cosine Similarity: 0.8052
+  Akan vs Ewe | Similarity Matrix Shape: (10107, 15054) | Mean Cosine Similarity: 0.9750
+  Akan vs Dagbani | Similarity Matrix Shape: (10107, 14231) | Mean Cosine Similarity: 0.9518
+  Akan vs Norwegian | Similarity Matrix Shape: (10107, 534) | Mean Cosine Similarity: 0.7501
+  Akan vs Slovak | Similarity Matrix Shape: (10107, 538) | Mean Cosine Similarity: 0.7021
+  Akan vs Serbian | Similarity Matrix Shape: (10107, 546) | Mean Cosine Similarity: 0.7260
+  Akan vs Bulgarian | Similarity Matrix Shape: (10107, 539) | Mean Cosine Similarity: 0.6911
+  Akan vs Czech | Similarity Matrix Shape: (10107, 529) | Mean Cosine Similarity: 0.6869
+  Akan vs Turkish | Similarity Matrix Shape: (10107, 535) | Mean Cosine Similarity: 0.7489
+  Akan vs Persian | Similarity Matrix Shape: (10107, 535) | Mean Cosine Similarity: 0.7993
+  Akan vs Vietnamese | Similarity Matrix Shape: (10107, 530) | Mean Cosine Similarity: 0.5632
+  Akan vs Indonesian | Similarity Matrix Shape: (10107, 548) | Mean Cosine Similarity: 0.7315
+  Akan vs Assamese | Similarity Matrix Shape: (10107, 4829) | Mean Cosine Similarity: 0.8564
+  Akan vs Dogri | Similarity Matrix Shape: (10107, 4874) | Mean Cosine Similarity: 0.9309
+  Akan vs GOM | Similarity Matrix Shape: (10107, 4831) | Mean Cosine Similarity: 0.9581
+  Akan vs Kannada | Similarity Matrix Shape: (10107, 11643) | Mean Cosine Similarity: 0.8092
+  Akan vs Nepali | Similarity Matrix Shape: (10107, 4814) | Mean Cosine Similarity: 0.8058
+  Akan vs Tamil | Similarity Matrix Shape: (10107, 12841) | Mean Cosine Similarity: 0.8366
+  Akan vs Sindhi | Similarity Matrix Shape: (10107, 4831) | Mean Cosine Similarity: 0.8603
+  Ewe vs Dagbani | Similarity Matrix Shape: (15054, 14231) | Mean Cosine Similarity: 0.9554
+  Ewe vs Norwegian | Similarity Matrix Shape: (15054, 534) | Mean Cosine Similarity: 0.7366
+  Ewe vs Slovak | Similarity Matrix Shape: (15054, 538) | Mean Cosine Similarity: 0.6882
+  Ewe vs Serbian | Similarity Matrix Shape: (15054, 546) | Mean Cosine Similarity: 0.7116
+  Ewe vs Bulgarian | Similarity Matrix Shape: (15054, 539) | Mean Cosine Similarity: 0.6776
+  Ewe vs Czech | Similarity Matrix Shape: (15054, 529) | Mean Cosine Similarity: 0.6733
+  Ewe vs Turkish | Similarity Matrix Shape: (15054, 535) | Mean Cosine Similarity: 0.7369
+  Ewe vs Persian | Similarity Matrix Shape: (15054, 535) | Mean Cosine Similarity: 0.7866
+  Ewe vs Vietnamese | Similarity Matrix Shape: (15054, 530) | Mean Cosine Similarity: 0.5542
+  Ewe vs Indonesian | Similarity Matrix Shape: (15054, 548) | Mean Cosine Similarity: 0.7197
+  Ewe vs Assamese | Similarity Matrix Shape: (15054, 4829) | Mean Cosine Similarity: 0.8485
+  Ewe vs Dogri | Similarity Matrix Shape: (15054, 4874) | Mean Cosine Similarity: 0.9235
+  Ewe vs GOM | Similarity Matrix Shape: (15054, 4831) | Mean Cosine Similarity: 0.9526
+  Ewe vs Kannada | Similarity Matrix Shape: (15054, 11643) | Mean Cosine Similarity: 0.7987
+  Ewe vs Nepali | Similarity Matrix Shape: (15054, 4814) | Mean Cosine Similarity: 0.7949
+  Ewe vs Tamil | Similarity Matrix Shape: (15054, 12841) | Mean Cosine Similarity: 0.8262
+  Ewe vs Sindhi | Similarity Matrix Shape: (15054, 4831) | Mean Cosine Similarity: 0.8511
+  Dagbani vs Norwegian | Similarity Matrix Shape: (14231, 534) | Mean Cosine Similarity: 0.6723
+  Dagbani vs Slovak | Similarity Matrix Shape: (14231, 538) | Mean Cosine Similarity: 0.6238
+  Dagbani vs Serbian | Similarity Matrix Shape: (14231, 546) | Mean Cosine Similarity: 0.6444
+  Dagbani vs Bulgarian | Similarity Matrix Shape: (14231, 539) | Mean Cosine Similarity: 0.6118
+  Dagbani vs Czech | Similarity Matrix Shape: (14231, 529) | Mean Cosine Similarity: 0.6076
+  Dagbani vs Turkish | Similarity Matrix Shape: (14231, 535) | Mean Cosine Similarity: 0.6703
+  Dagbani vs Persian | Similarity Matrix Shape: (14231, 535) | Mean Cosine Similarity: 0.7292
+  Dagbani vs Vietnamese | Similarity Matrix Shape: (14231, 530) | Mean Cosine Similarity: 0.4770
+  Dagbani vs Indonesian | Similarity Matrix Shape: (14231, 548) | Mean Cosine Similarity: 0.6527
+  Dagbani vs Assamese | Similarity Matrix Shape: (14231, 4829) | Mean Cosine Similarity: 0.7808
+  Dagbani vs Dogri | Similarity Matrix Shape: (14231, 4874) | Mean Cosine Similarity: 0.8914
+  Dagbani vs GOM | Similarity Matrix Shape: (14231, 4831) | Mean Cosine Similarity: 0.9286
+  Dagbani vs Kannada | Similarity Matrix Shape: (14231, 11643) | Mean Cosine Similarity: 0.7357
+  Dagbani vs Nepali | Similarity Matrix Shape: (14231, 4814) | Mean Cosine Similarity: 0.7317
+  Dagbani vs Tamil | Similarity Matrix Shape: (14231, 12841) | Mean Cosine Similarity: 0.7669
+  Dagbani vs Sindhi | Similarity Matrix Shape: (14231, 4831) | Mean Cosine Similarity: 0.7889
+  Norwegian vs Slovak | Similarity Matrix Shape: (534, 538) | Mean Cosine Similarity: 0.9842
+  Norwegian vs Serbian | Similarity Matrix Shape: (534, 546) | Mean Cosine Similarity: 0.9835
+  Norwegian vs Bulgarian | Similarity Matrix Shape: (534, 539) | Mean Cosine Similarity: 0.9839
+  Norwegian vs Czech | Similarity Matrix Shape: (534, 529) | Mean Cosine Similarity: 0.9815
+  Norwegian vs Turkish | Similarity Matrix Shape: (534, 535) | Mean Cosine Similarity: 0.9857
+  Norwegian vs Persian | Similarity Matrix Shape: (534, 535) | Mean Cosine Similarity: 0.9727
+  Norwegian vs Vietnamese | Similarity Matrix Shape: (534, 530) | Mean Cosine Similarity: 0.9028
+  Norwegian vs Indonesian | Similarity Matrix Shape: (534, 548) | Mean Cosine Similarity: 0.9828
+  Norwegian vs Assamese | Similarity Matrix Shape: (534, 4829) | Mean Cosine Similarity: 0.9299
+  Norwegian vs Dogri | Similarity Matrix Shape: (534, 4874) | Mean Cosine Similarity: 0.8587
+  Norwegian vs GOM | Similarity Matrix Shape: (534, 4831) | Mean Cosine Similarity: 0.8195
+  Norwegian vs Kannada | Similarity Matrix Shape: (534, 11643) | Mean Cosine Similarity: 0.9522
+  Norwegian vs Nepali | Similarity Matrix Shape: (534, 4814) | Mean Cosine Similarity: 0.9484
+  Norwegian vs Tamil | Similarity Matrix Shape: (534, 12841) | Mean Cosine Similarity: 0.9494
+  Norwegian vs Sindhi | Similarity Matrix Shape: (534, 4831) | Mean Cosine Similarity: 0.9295
+  Slovak vs Serbian | Similarity Matrix Shape: (538, 546) | Mean Cosine Similarity: 0.9902
+  Slovak vs Bulgarian | Similarity Matrix Shape: (538, 539) | Mean Cosine Similarity: 0.9923
+  Slovak vs Czech | Similarity Matrix Shape: (538, 529) | Mean Cosine Similarity: 0.9935
+  Slovak vs Turkish | Similarity Matrix Shape: (538, 535) | Mean Cosine Similarity: 0.9852
+  Slovak vs Persian | Similarity Matrix Shape: (538, 535) | Mean Cosine Similarity: 0.9613
+  Slovak vs Vietnamese | Similarity Matrix Shape: (538, 530) | Mean Cosine Similarity: 0.9244
+  Slovak vs Indonesian | Similarity Matrix Shape: (538, 548) | Mean Cosine Similarity: 0.9783
+  Slovak vs Assamese | Similarity Matrix Shape: (538, 4829) | Mean Cosine Similarity: 0.9192
+  Slovak vs Dogri | Similarity Matrix Shape: (538, 4874) | Mean Cosine Similarity: 0.8274
+  Slovak vs GOM | Similarity Matrix Shape: (538, 4831) | Mean Cosine Similarity: 0.7785
+  Slovak vs Kannada | Similarity Matrix Shape: (538, 11643) | Mean Cosine Similarity: 0.9449
+  Slovak vs Nepali | Similarity Matrix Shape: (538, 4814) | Mean Cosine Similarity: 0.9439
+  Slovak vs Tamil | Similarity Matrix Shape: (538, 12841) | Mean Cosine Similarity: 0.9325
+  Slovak vs Sindhi | Similarity Matrix Shape: (538, 4831) | Mean Cosine Similarity: 0.9166
+  Serbian vs Bulgarian | Similarity Matrix Shape: (546, 539) | Mean Cosine Similarity: 0.9886
+  Serbian vs Czech | Similarity Matrix Shape: (546, 529) | Mean Cosine Similarity: 0.9887
+  Serbian vs Turkish | Similarity Matrix Shape: (546, 535) | Mean Cosine Similarity: 0.9840
+  Serbian vs Persian | Similarity Matrix Shape: (546, 535) | Mean Cosine Similarity: 0.9650
+  Serbian vs Vietnamese | Similarity Matrix Shape: (546, 530) | Mean Cosine Similarity: 0.9192
+  Serbian vs Indonesian | Similarity Matrix Shape: (546, 548) | Mean Cosine Similarity: 0.9763
+  Serbian vs Assamese | Similarity Matrix Shape: (546, 4829) | Mean Cosine Similarity: 0.9360
+  Serbian vs Dogri | Similarity Matrix Shape: (546, 4874) | Mean Cosine Similarity: 0.8486
+  Serbian vs GOM | Similarity Matrix Shape: (546, 4831) | Mean Cosine Similarity: 0.8028
+  Serbian vs Kannada | Similarity Matrix Shape: (546, 11643) | Mean Cosine Similarity: 0.9529
+  Serbian vs Nepali | Similarity Matrix Shape: (546, 4814) | Mean Cosine Similarity: 0.9532
+  Serbian vs Tamil | Similarity Matrix Shape: (546, 12841) | Mean Cosine Similarity: 0.9408
+  Serbian vs Sindhi | Similarity Matrix Shape: (546, 4831) | Mean Cosine Similarity: 0.9326
+  Bulgarian vs Czech | Similarity Matrix Shape: (539, 529) | Mean Cosine Similarity: 0.9928
+  Bulgarian vs Turkish | Similarity Matrix Shape: (539, 535) | Mean Cosine Similarity: 0.9846
+  Bulgarian vs Persian | Similarity Matrix Shape: (539, 535) | Mean Cosine Similarity: 0.9590
+  Bulgarian vs Vietnamese | Similarity Matrix Shape: (539, 530) | Mean Cosine Similarity: 0.9357
+  Bulgarian vs Indonesian | Similarity Matrix Shape: (539, 548) | Mean Cosine Similarity: 0.9818
+  Bulgarian vs Assamese | Similarity Matrix Shape: (539, 4829) | Mean Cosine Similarity: 0.9154
+  Bulgarian vs Dogri | Similarity Matrix Shape: (539, 4874) | Mean Cosine Similarity: 0.8196
+  Bulgarian vs GOM | Similarity Matrix Shape: (539, 4831) | Mean Cosine Similarity: 0.7690
+  Bulgarian vs Kannada | Similarity Matrix Shape: (539, 11643) | Mean Cosine Similarity: 0.9423
+  Bulgarian vs Nepali | Similarity Matrix Shape: (539, 4814) | Mean Cosine Similarity: 0.9415
+  Bulgarian vs Tamil | Similarity Matrix Shape: (539, 12841) | Mean Cosine Similarity: 0.9287
+  Bulgarian vs Sindhi | Similarity Matrix Shape: (539, 4831) | Mean Cosine Similarity: 0.9128
+  Czech vs Turkish | Similarity Matrix Shape: (529, 535) | Mean Cosine Similarity: 0.9834
+  Czech vs Persian | Similarity Matrix Shape: (529, 535) | Mean Cosine Similarity: 0.9558
+  Czech vs Vietnamese | Similarity Matrix Shape: (529, 530) | Mean Cosine Similarity: 0.9336
+  Czech vs Indonesian | Similarity Matrix Shape: (529, 548) | Mean Cosine Similarity: 0.9782
+  Czech vs Assamese | Similarity Matrix Shape: (529, 4829) | Mean Cosine Similarity: 0.9125
+  Czech vs Dogri | Similarity Matrix Shape: (529, 4874) | Mean Cosine Similarity: 0.8153
+  Czech vs GOM | Similarity Matrix Shape: (529, 4831) | Mean Cosine Similarity: 0.7641
+  Czech vs Kannada | Similarity Matrix Shape: (529, 11643) | Mean Cosine Similarity: 0.9395
+  Czech vs Nepali | Similarity Matrix Shape: (529, 4814) | Mean Cosine Similarity: 0.9393
+  Czech vs Tamil | Similarity Matrix Shape: (529, 12841) | Mean Cosine Similarity: 0.9251
+  Czech vs Sindhi | Similarity Matrix Shape: (529, 4831) | Mean Cosine Similarity: 0.9101
+  Turkish vs Persian | Similarity Matrix Shape: (535, 535) | Mean Cosine Similarity: 0.9756
+  Turkish vs Vietnamese | Similarity Matrix Shape: (535, 530) | Mean Cosine Similarity: 0.9129
+  Turkish vs Indonesian | Similarity Matrix Shape: (535, 548) | Mean Cosine Similarity: 0.9810
+  Turkish vs Assamese | Similarity Matrix Shape: (535, 4829) | Mean Cosine Similarity: 0.9417
+  Turkish vs Dogri | Similarity Matrix Shape: (535, 4874) | Mean Cosine Similarity: 0.8627
+  Turkish vs GOM | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.8188
+  Turkish vs Kannada | Similarity Matrix Shape: (535, 11643) | Mean Cosine Similarity: 0.9623
+  Turkish vs Nepali | Similarity Matrix Shape: (535, 4814) | Mean Cosine Similarity: 0.9583
+  Turkish vs Tamil | Similarity Matrix Shape: (535, 12841) | Mean Cosine Similarity: 0.9551
+  Turkish vs Sindhi | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.9380
+  Persian vs Vietnamese | Similarity Matrix Shape: (535, 530) | Mean Cosine Similarity: 0.8597
+  Persian vs Indonesian | Similarity Matrix Shape: (535, 548) | Mean Cosine Similarity: 0.9615
+  Persian vs Assamese | Similarity Matrix Shape: (535, 4829) | Mean Cosine Similarity: 0.9519
+  Persian vs Dogri | Similarity Matrix Shape: (535, 4874) | Mean Cosine Similarity: 0.9070
+  Persian vs GOM | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.8663
+  Persian vs Kannada | Similarity Matrix Shape: (535, 11643) | Mean Cosine Similarity: 0.9654
+  Persian vs Nepali | Similarity Matrix Shape: (535, 4814) | Mean Cosine Similarity: 0.9603
+  Persian vs Tamil | Similarity Matrix Shape: (535, 12841) | Mean Cosine Similarity: 0.9667
+  Persian vs Sindhi | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.9498
+  Vietnamese vs Indonesian | Similarity Matrix Shape: (530, 548) | Mean Cosine Similarity: 0.9310
+  Vietnamese vs Assamese | Similarity Matrix Shape: (530, 4829) | Mean Cosine Similarity: 0.8412
+  Vietnamese vs Dogri | Similarity Matrix Shape: (530, 4874) | Mean Cosine Similarity: 0.7073
+  Vietnamese vs GOM | Similarity Matrix Shape: (530, 4831) | Mean Cosine Similarity: 0.6423
+  Vietnamese vs Kannada | Similarity Matrix Shape: (530, 11643) | Mean Cosine Similarity: 0.8575
+  Vietnamese vs Nepali | Similarity Matrix Shape: (530, 4814) | Mean Cosine Similarity: 0.8701
+  Vietnamese vs Tamil | Similarity Matrix Shape: (530, 12841) | Mean Cosine Similarity: 0.8222
+  Vietnamese vs Sindhi | Similarity Matrix Shape: (530, 4831) | Mean Cosine Similarity: 0.8430
+  Indonesian vs Assamese | Similarity Matrix Shape: (548, 4829) | Mean Cosine Similarity: 0.9248
+  Indonesian vs Dogri | Similarity Matrix Shape: (548, 4874) | Mean Cosine Similarity: 0.8452
+  Indonesian vs GOM | Similarity Matrix Shape: (548, 4831) | Mean Cosine Similarity: 0.8016
+  Indonesian vs Kannada | Similarity Matrix Shape: (548, 11643) | Mean Cosine Similarity: 0.9485
+  Indonesian vs Nepali | Similarity Matrix Shape: (548, 4814) | Mean Cosine Similarity: 0.9484
+  Indonesian vs Tamil | Similarity Matrix Shape: (548, 12841) | Mean Cosine Similarity: 0.9407
+  Indonesian vs Sindhi | Similarity Matrix Shape: (548, 4831) | Mean Cosine Similarity: 0.9254
+  Assamese vs Dogri | Similarity Matrix Shape: (4829, 4874) | Mean Cosine Similarity: 0.9379
+  Assamese vs GOM | Similarity Matrix Shape: (4829, 4831) | Mean Cosine Similarity: 0.9127
+  Assamese vs Kannada | Similarity Matrix Shape: (4829, 11643) | Mean Cosine Similarity: 0.9657
+  Assamese vs Nepali | Similarity Matrix Shape: (4829, 4814) | Mean Cosine Similarity: 0.9654
+  Assamese vs Tamil | Similarity Matrix Shape: (4829, 12841) | Mean Cosine Similarity: 0.9615
+  Assamese vs Sindhi | Similarity Matrix Shape: (4829, 4831) | Mean Cosine Similarity: 0.9741
+  Dogri vs GOM | Similarity Matrix Shape: (4874, 4831) | Mean Cosine Similarity: 0.9753
+  Dogri vs Kannada | Similarity Matrix Shape: (4874, 11643) | Mean Cosine Similarity: 0.9124
+  Dogri vs Nepali | Similarity Matrix Shape: (4874, 4814) | Mean Cosine Similarity: 0.9123
+  Dogri vs Tamil | Similarity Matrix Shape: (4874, 12841) | Mean Cosine Similarity: 0.9264
+  Dogri vs Sindhi | Similarity Matrix Shape: (4874, 4831) | Mean Cosine Similarity: 0.9405
+  GOM vs Kannada | Similarity Matrix Shape: (4831, 11643) | Mean Cosine Similarity: 0.8765
+  GOM vs Nepali | Similarity Matrix Shape: (4831, 4814) | Mean Cosine Similarity: 0.8733
+  GOM vs Tamil | Similarity Matrix Shape: (4831, 12841) | Mean Cosine Similarity: 0.8974
+  GOM vs Sindhi | Similarity Matrix Shape: (4831, 4831) | Mean Cosine Similarity: 0.9129
+  Kannada vs Nepali | Similarity Matrix Shape: (11643, 4814) | Mean Cosine Similarity: 0.9748
+  Kannada vs Tamil | Similarity Matrix Shape: (11643, 12841) | Mean Cosine Similarity: 0.9743
+  Kannada vs Sindhi | Similarity Matrix Shape: (11643, 4831) | Mean Cosine Similarity: 0.9615
+  Nepali vs Tamil | Similarity Matrix Shape: (4814, 12841) | Mean Cosine Similarity: 0.9673
+  Nepali vs Sindhi | Similarity Matrix Shape: (4814, 4831) | Mean Cosine Similarity: 0.9694
+  Tamil vs Sindhi | Similarity Matrix Shape: (12841, 4831) | Mean Cosine Similarity: 0.9570
+
+--- Model: Qwen ---
+  Acholi vs Luganda | Similarity Matrix Shape: (4108, 5455) | Mean Cosine Similarity: 0.9033
+  Acholi vs Masaaba | Similarity Matrix Shape: (4108, 6867) | Mean Cosine Similarity: 0.8999
+  Acholi vs Nyankole | Similarity Matrix Shape: (4108, 6783) | Mean Cosine Similarity: 0.9018
+  Acholi vs Soga | Similarity Matrix Shape: (4108, 6219) | Mean Cosine Similarity: 0.9156
+  Acholi vs Akan | Similarity Matrix Shape: (4108, 10107) | Mean Cosine Similarity: 0.8560
+  Acholi vs Ewe | Similarity Matrix Shape: (4108, 15054) | Mean Cosine Similarity: 0.8223
+  Acholi vs Dagbani | Similarity Matrix Shape: (4108, 14231) | Mean Cosine Similarity: 0.8662
+  Acholi vs Norwegian | Similarity Matrix Shape: (4108, 534) | Mean Cosine Similarity: 0.5413
+  Acholi vs Slovak | Similarity Matrix Shape: (4108, 538) | Mean Cosine Similarity: 0.6836
+  Acholi vs Serbian | Similarity Matrix Shape: (4108, 546) | Mean Cosine Similarity: 0.6754
+  Acholi vs Bulgarian | Similarity Matrix Shape: (4108, 539) | Mean Cosine Similarity: -0.1191
+  Acholi vs Czech | Similarity Matrix Shape: (4108, 529) | Mean Cosine Similarity: 0.6592
+  Acholi vs Turkish | Similarity Matrix Shape: (4108, 535) | Mean Cosine Similarity: 0.5689
+  Acholi vs Persian | Similarity Matrix Shape: (4108, 535) | Mean Cosine Similarity: -0.1207
+  Acholi vs Vietnamese | Similarity Matrix Shape: (4108, 530) | Mean Cosine Similarity: 0.4115
+  Acholi vs Indonesian | Similarity Matrix Shape: (4108, 548) | Mean Cosine Similarity: 0.7315
+  Acholi vs Assamese | Similarity Matrix Shape: (4108, 4829) | Mean Cosine Similarity: 0.0140
+  Acholi vs Dogri | Similarity Matrix Shape: (4108, 4874) | Mean Cosine Similarity: 0.0241
+  Acholi vs GOM | Similarity Matrix Shape: (4108, 4831) | Mean Cosine Similarity: 0.0300
+  Acholi vs Kannada | Similarity Matrix Shape: (4108, 11643) | Mean Cosine Similarity: -0.0689
+  Acholi vs Nepali | Similarity Matrix Shape: (4108, 4814) | Mean Cosine Similarity: 0.0194
+  Acholi vs Tamil | Similarity Matrix Shape: (4108, 12841) | Mean Cosine Similarity: -0.0099
+  Acholi vs Sindhi | Similarity Matrix Shape: (4108, 4831) | Mean Cosine Similarity: -0.1770
+  Luganda vs Masaaba | Similarity Matrix Shape: (5455, 6867) | Mean Cosine Similarity: 0.9396
+  Luganda vs Nyankole | Similarity Matrix Shape: (5455, 6783) | Mean Cosine Similarity: 0.9606
+  Luganda vs Soga | Similarity Matrix Shape: (5455, 6219) | Mean Cosine Similarity: 0.9566
+  Luganda vs Akan | Similarity Matrix Shape: (5455, 10107) | Mean Cosine Similarity: 0.7955
+  Luganda vs Ewe | Similarity Matrix Shape: (5455, 15054) | Mean Cosine Similarity: 0.7623
+  Luganda vs Dagbani | Similarity Matrix Shape: (5455, 14231) | Mean Cosine Similarity: 0.7927
+  Luganda vs Norwegian | Similarity Matrix Shape: (5455, 534) | Mean Cosine Similarity: 0.4108
+  Luganda vs Slovak | Similarity Matrix Shape: (5455, 538) | Mean Cosine Similarity: 0.5890
+  Luganda vs Serbian | Similarity Matrix Shape: (5455, 546) | Mean Cosine Similarity: 0.5881
+  Luganda vs Bulgarian | Similarity Matrix Shape: (5455, 539) | Mean Cosine Similarity: -0.1367
+  Luganda vs Czech | Similarity Matrix Shape: (5455, 529) | Mean Cosine Similarity: 0.5594
+  Luganda vs Turkish | Similarity Matrix Shape: (5455, 535) | Mean Cosine Similarity: 0.5179
+  Luganda vs Persian | Similarity Matrix Shape: (5455, 535) | Mean Cosine Similarity: -0.1686
+  Luganda vs Vietnamese | Similarity Matrix Shape: (5455, 530) | Mean Cosine Similarity: 0.3291
+  Luganda vs Indonesian | Similarity Matrix Shape: (5455, 548) | Mean Cosine Similarity: 0.6616
+  Luganda vs Assamese | Similarity Matrix Shape: (5455, 4829) | Mean Cosine Similarity: -0.0244
+  Luganda vs Dogri | Similarity Matrix Shape: (5455, 4874) | Mean Cosine Similarity: -0.0204
+  Luganda vs GOM | Similarity Matrix Shape: (5455, 4831) | Mean Cosine Similarity: -0.0151
+  Luganda vs Kannada | Similarity Matrix Shape: (5455, 11643) | Mean Cosine Similarity: -0.1018
+  Luganda vs Nepali | Similarity Matrix Shape: (5455, 4814) | Mean Cosine Similarity: -0.0251
+  Luganda vs Tamil | Similarity Matrix Shape: (5455, 12841) | Mean Cosine Similarity: -0.0442
+  Luganda vs Sindhi | Similarity Matrix Shape: (5455, 4831) | Mean Cosine Similarity: -0.1888
+  Masaaba vs Nyankole | Similarity Matrix Shape: (6867, 6783) | Mean Cosine Similarity: 0.9435
+  Masaaba vs Soga | Similarity Matrix Shape: (6867, 6219) | Mean Cosine Similarity: 0.9501
+  Masaaba vs Akan | Similarity Matrix Shape: (6867, 10107) | Mean Cosine Similarity: 0.7791
+  Masaaba vs Ewe | Similarity Matrix Shape: (6867, 15054) | Mean Cosine Similarity: 0.7455
+  Masaaba vs Dagbani | Similarity Matrix Shape: (6867, 14231) | Mean Cosine Similarity: 0.7758
+  Masaaba vs Norwegian | Similarity Matrix Shape: (6867, 534) | Mean Cosine Similarity: 0.4074
+  Masaaba vs Slovak | Similarity Matrix Shape: (6867, 538) | Mean Cosine Similarity: 0.5974
+  Masaaba vs Serbian | Similarity Matrix Shape: (6867, 546) | Mean Cosine Similarity: 0.5927
+  Masaaba vs Bulgarian | Similarity Matrix Shape: (6867, 539) | Mean Cosine Similarity: -0.1366
+  Masaaba vs Czech | Similarity Matrix Shape: (6867, 529) | Mean Cosine Similarity: 0.5690
+  Masaaba vs Turkish | Similarity Matrix Shape: (6867, 535) | Mean Cosine Similarity: 0.5040
+  Masaaba vs Persian | Similarity Matrix Shape: (6867, 535) | Mean Cosine Similarity: -0.1837
+  Masaaba vs Vietnamese | Similarity Matrix Shape: (6867, 530) | Mean Cosine Similarity: 0.3439
+  Masaaba vs Indonesian | Similarity Matrix Shape: (6867, 548) | Mean Cosine Similarity: 0.6604
+  Masaaba vs Assamese | Similarity Matrix Shape: (6867, 4829) | Mean Cosine Similarity: -0.0359
+  Masaaba vs Dogri | Similarity Matrix Shape: (6867, 4874) | Mean Cosine Similarity: -0.0272
+  Masaaba vs GOM | Similarity Matrix Shape: (6867, 4831) | Mean Cosine Similarity: -0.0211
+  Masaaba vs Kannada | Similarity Matrix Shape: (6867, 11643) | Mean Cosine Similarity: -0.1169
+  Masaaba vs Nepali | Similarity Matrix Shape: (6867, 4814) | Mean Cosine Similarity: -0.0256
+  Masaaba vs Tamil | Similarity Matrix Shape: (6867, 12841) | Mean Cosine Similarity: -0.0501
+  Masaaba vs Sindhi | Similarity Matrix Shape: (6867, 4831) | Mean Cosine Similarity: -0.2123
+  Nyankole vs Soga | Similarity Matrix Shape: (6783, 6219) | Mean Cosine Similarity: 0.9572
+  Nyankole vs Akan | Similarity Matrix Shape: (6783, 10107) | Mean Cosine Similarity: 0.7923
+  Nyankole vs Ewe | Similarity Matrix Shape: (6783, 15054) | Mean Cosine Similarity: 0.7559
+  Nyankole vs Dagbani | Similarity Matrix Shape: (6783, 14231) | Mean Cosine Similarity: 0.7826
+  Nyankole vs Norwegian | Similarity Matrix Shape: (6783, 534) | Mean Cosine Similarity: 0.4082
+  Nyankole vs Slovak | Similarity Matrix Shape: (6783, 538) | Mean Cosine Similarity: 0.5920
+  Nyankole vs Serbian | Similarity Matrix Shape: (6783, 546) | Mean Cosine Similarity: 0.5908
+  Nyankole vs Bulgarian | Similarity Matrix Shape: (6783, 539) | Mean Cosine Similarity: -0.1383
+  Nyankole vs Czech | Similarity Matrix Shape: (6783, 529) | Mean Cosine Similarity: 0.5627
+  Nyankole vs Turkish | Similarity Matrix Shape: (6783, 535) | Mean Cosine Similarity: 0.5121
+  Nyankole vs Persian | Similarity Matrix Shape: (6783, 535) | Mean Cosine Similarity: -0.1776
+  Nyankole vs Vietnamese | Similarity Matrix Shape: (6783, 530) | Mean Cosine Similarity: 0.3303
+  Nyankole vs Indonesian | Similarity Matrix Shape: (6783, 548) | Mean Cosine Similarity: 0.6598
+  Nyankole vs Assamese | Similarity Matrix Shape: (6783, 4829) | Mean Cosine Similarity: -0.0282
+  Nyankole vs Dogri | Similarity Matrix Shape: (6783, 4874) | Mean Cosine Similarity: -0.0231
+  Nyankole vs GOM | Similarity Matrix Shape: (6783, 4831) | Mean Cosine Similarity: -0.0187
+  Nyankole vs Kannada | Similarity Matrix Shape: (6783, 11643) | Mean Cosine Similarity: -0.1070
+  Nyankole vs Nepali | Similarity Matrix Shape: (6783, 4814) | Mean Cosine Similarity: -0.0262
+  Nyankole vs Tamil | Similarity Matrix Shape: (6783, 12841) | Mean Cosine Similarity: -0.0477
+  Nyankole vs Sindhi | Similarity Matrix Shape: (6783, 4831) | Mean Cosine Similarity: -0.1995
+  Soga vs Akan | Similarity Matrix Shape: (6219, 10107) | Mean Cosine Similarity: 0.8013
+  Soga vs Ewe | Similarity Matrix Shape: (6219, 15054) | Mean Cosine Similarity: 0.7678
+  Soga vs Dagbani | Similarity Matrix Shape: (6219, 14231) | Mean Cosine Similarity: 0.7984
+  Soga vs Norwegian | Similarity Matrix Shape: (6219, 534) | Mean Cosine Similarity: 0.4244
+  Soga vs Slovak | Similarity Matrix Shape: (6219, 538) | Mean Cosine Similarity: 0.6069
+  Soga vs Serbian | Similarity Matrix Shape: (6219, 546) | Mean Cosine Similarity: 0.6037
+  Soga vs Bulgarian | Similarity Matrix Shape: (6219, 539) | Mean Cosine Similarity: -0.1385
+  Soga vs Czech | Similarity Matrix Shape: (6219, 529) | Mean Cosine Similarity: 0.5782
+  Soga vs Turkish | Similarity Matrix Shape: (6219, 535) | Mean Cosine Similarity: 0.5183
+  Soga vs Persian | Similarity Matrix Shape: (6219, 535) | Mean Cosine Similarity: -0.1706
+  Soga vs Vietnamese | Similarity Matrix Shape: (6219, 530) | Mean Cosine Similarity: 0.3392
+  Soga vs Indonesian | Similarity Matrix Shape: (6219, 548) | Mean Cosine Similarity: 0.6733
+  Soga vs Assamese | Similarity Matrix Shape: (6219, 4829) | Mean Cosine Similarity: -0.0245
+  Soga vs Dogri | Similarity Matrix Shape: (6219, 4874) | Mean Cosine Similarity: -0.0188
+  Soga vs GOM | Similarity Matrix Shape: (6219, 4831) | Mean Cosine Similarity: -0.0130
+  Soga vs Kannada | Similarity Matrix Shape: (6219, 11643) | Mean Cosine Similarity: -0.1039
+  Soga vs Nepali | Similarity Matrix Shape: (6219, 4814) | Mean Cosine Similarity: -0.0209
+  Soga vs Tamil | Similarity Matrix Shape: (6219, 12841) | Mean Cosine Similarity: -0.0428
+  Soga vs Sindhi | Similarity Matrix Shape: (6219, 4831) | Mean Cosine Similarity: -0.1974
+  Akan vs Ewe | Similarity Matrix Shape: (10107, 15054) | Mean Cosine Similarity: 0.9228
+  Akan vs Dagbani | Similarity Matrix Shape: (10107, 14231) | Mean Cosine Similarity: 0.9145
+  Akan vs Norwegian | Similarity Matrix Shape: (10107, 534) | Mean Cosine Similarity: 0.4741
+  Akan vs Slovak | Similarity Matrix Shape: (10107, 538) | Mean Cosine Similarity: 0.6072
+  Akan vs Serbian | Similarity Matrix Shape: (10107, 546) | Mean Cosine Similarity: 0.5800
+  Akan vs Bulgarian | Similarity Matrix Shape: (10107, 539) | Mean Cosine Similarity: -0.1177
+  Akan vs Czech | Similarity Matrix Shape: (10107, 529) | Mean Cosine Similarity: 0.5705
+  Akan vs Turkish | Similarity Matrix Shape: (10107, 535) | Mean Cosine Similarity: 0.5256
+  Akan vs Persian | Similarity Matrix Shape: (10107, 535) | Mean Cosine Similarity: -0.0522
+  Akan vs Vietnamese | Similarity Matrix Shape: (10107, 530) | Mean Cosine Similarity: 0.3808
+  Akan vs Indonesian | Similarity Matrix Shape: (10107, 548) | Mean Cosine Similarity: 0.6051
+  Akan vs Assamese | Similarity Matrix Shape: (10107, 4829) | Mean Cosine Similarity: 0.0645
+  Akan vs Dogri | Similarity Matrix Shape: (10107, 4874) | Mean Cosine Similarity: 0.0635
+  Akan vs GOM | Similarity Matrix Shape: (10107, 4831) | Mean Cosine Similarity: 0.0663
+  Akan vs Kannada | Similarity Matrix Shape: (10107, 11643) | Mean Cosine Similarity: -0.0153
+  Akan vs Nepali | Similarity Matrix Shape: (10107, 4814) | Mean Cosine Similarity: 0.0547
+  Akan vs Tamil | Similarity Matrix Shape: (10107, 12841) | Mean Cosine Similarity: 0.0461
+  Akan vs Sindhi | Similarity Matrix Shape: (10107, 4831) | Mean Cosine Similarity: -0.0858
+  Ewe vs Dagbani | Similarity Matrix Shape: (15054, 14231) | Mean Cosine Similarity: 0.9394
+  Ewe vs Norwegian | Similarity Matrix Shape: (15054, 534) | Mean Cosine Similarity: 0.4383
+  Ewe vs Slovak | Similarity Matrix Shape: (15054, 538) | Mean Cosine Similarity: 0.5981
+  Ewe vs Serbian | Similarity Matrix Shape: (15054, 546) | Mean Cosine Similarity: 0.5574
+  Ewe vs Bulgarian | Similarity Matrix Shape: (15054, 539) | Mean Cosine Similarity: -0.1164
+  Ewe vs Czech | Similarity Matrix Shape: (15054, 529) | Mean Cosine Similarity: 0.5549
+  Ewe vs Turkish | Similarity Matrix Shape: (15054, 535) | Mean Cosine Similarity: 0.5143
+  Ewe vs Persian | Similarity Matrix Shape: (15054, 535) | Mean Cosine Similarity: -0.0258
+  Ewe vs Vietnamese | Similarity Matrix Shape: (15054, 530) | Mean Cosine Similarity: 0.4023
+  Ewe vs Indonesian | Similarity Matrix Shape: (15054, 548) | Mean Cosine Similarity: 0.5570
+  Ewe vs Assamese | Similarity Matrix Shape: (15054, 4829) | Mean Cosine Similarity: 0.0729
+  Ewe vs Dogri | Similarity Matrix Shape: (15054, 4874) | Mean Cosine Similarity: 0.0713
+  Ewe vs GOM | Similarity Matrix Shape: (15054, 4831) | Mean Cosine Similarity: 0.0766
+  Ewe vs Kannada | Similarity Matrix Shape: (15054, 11643) | Mean Cosine Similarity: 0.0157
+  Ewe vs Nepali | Similarity Matrix Shape: (15054, 4814) | Mean Cosine Similarity: 0.0510
+  Ewe vs Tamil | Similarity Matrix Shape: (15054, 12841) | Mean Cosine Similarity: 0.0486
+  Ewe vs Sindhi | Similarity Matrix Shape: (15054, 4831) | Mean Cosine Similarity: -0.0362
+  Dagbani vs Norwegian | Similarity Matrix Shape: (14231, 534) | Mean Cosine Similarity: 0.4866
+  Dagbani vs Slovak | Similarity Matrix Shape: (14231, 538) | Mean Cosine Similarity: 0.6248
+  Dagbani vs Serbian | Similarity Matrix Shape: (14231, 546) | Mean Cosine Similarity: 0.6000
+  Dagbani vs Bulgarian | Similarity Matrix Shape: (14231, 539) | Mean Cosine Similarity: -0.0953
+  Dagbani vs Czech | Similarity Matrix Shape: (14231, 529) | Mean Cosine Similarity: 0.5881
+  Dagbani vs Turkish | Similarity Matrix Shape: (14231, 535) | Mean Cosine Similarity: 0.5446
+  Dagbani vs Persian | Similarity Matrix Shape: (14231, 535) | Mean Cosine Similarity: -0.0205
+  Dagbani vs Vietnamese | Similarity Matrix Shape: (14231, 530) | Mean Cosine Similarity: 0.4059
+  Dagbani vs Indonesian | Similarity Matrix Shape: (14231, 548) | Mean Cosine Similarity: 0.6194
+  Dagbani vs Assamese | Similarity Matrix Shape: (14231, 4829) | Mean Cosine Similarity: 0.0651
+  Dagbani vs Dogri | Similarity Matrix Shape: (14231, 4874) | Mean Cosine Similarity: 0.0712
+  Dagbani vs GOM | Similarity Matrix Shape: (14231, 4831) | Mean Cosine Similarity: 0.0763
+  Dagbani vs Kannada | Similarity Matrix Shape: (14231, 11643) | Mean Cosine Similarity: 0.0034
+  Dagbani vs Nepali | Similarity Matrix Shape: (14231, 4814) | Mean Cosine Similarity: 0.0589
+  Dagbani vs Tamil | Similarity Matrix Shape: (14231, 12841) | Mean Cosine Similarity: 0.0384
+  Dagbani vs Sindhi | Similarity Matrix Shape: (14231, 4831) | Mean Cosine Similarity: -0.0440
+  Norwegian vs Slovak | Similarity Matrix Shape: (534, 538) | Mean Cosine Similarity: 0.4964
+  Norwegian vs Serbian | Similarity Matrix Shape: (534, 546) | Mean Cosine Similarity: 0.5331
+  Norwegian vs Bulgarian | Similarity Matrix Shape: (534, 539) | Mean Cosine Similarity: 0.0205
+  Norwegian vs Czech | Similarity Matrix Shape: (534, 529) | Mean Cosine Similarity: 0.5021
+  Norwegian vs Turkish | Similarity Matrix Shape: (534, 535) | Mean Cosine Similarity: 0.4592
+  Norwegian vs Persian | Similarity Matrix Shape: (534, 535) | Mean Cosine Similarity: -0.0657
+  Norwegian vs Vietnamese | Similarity Matrix Shape: (534, 530) | Mean Cosine Similarity: 0.2904
+  Norwegian vs Indonesian | Similarity Matrix Shape: (534, 548) | Mean Cosine Similarity: 0.5252
+  Norwegian vs Assamese | Similarity Matrix Shape: (534, 4829) | Mean Cosine Similarity: 0.0800
+  Norwegian vs Dogri | Similarity Matrix Shape: (534, 4874) | Mean Cosine Similarity: 0.0940
+  Norwegian vs GOM | Similarity Matrix Shape: (534, 4831) | Mean Cosine Similarity: 0.0986
+  Norwegian vs Kannada | Similarity Matrix Shape: (534, 11643) | Mean Cosine Similarity: 0.0696
+  Norwegian vs Nepali | Similarity Matrix Shape: (534, 4814) | Mean Cosine Similarity: 0.0901
+  Norwegian vs Tamil | Similarity Matrix Shape: (534, 12841) | Mean Cosine Similarity: 0.0639
+  Norwegian vs Sindhi | Similarity Matrix Shape: (534, 4831) | Mean Cosine Similarity: -0.1435
+  Slovak vs Serbian | Similarity Matrix Shape: (538, 546) | Mean Cosine Similarity: 0.7814
+  Slovak vs Bulgarian | Similarity Matrix Shape: (538, 539) | Mean Cosine Similarity: -0.0557
+  Slovak vs Czech | Similarity Matrix Shape: (538, 529) | Mean Cosine Similarity: 0.8998
+  Slovak vs Turkish | Similarity Matrix Shape: (538, 535) | Mean Cosine Similarity: 0.4565
+  Slovak vs Persian | Similarity Matrix Shape: (538, 535) | Mean Cosine Similarity: 0.0109
+  Slovak vs Vietnamese | Similarity Matrix Shape: (538, 530) | Mean Cosine Similarity: 0.4327
+  Slovak vs Indonesian | Similarity Matrix Shape: (538, 548) | Mean Cosine Similarity: 0.5967
+  Slovak vs Assamese | Similarity Matrix Shape: (538, 4829) | Mean Cosine Similarity: 0.0198
+  Slovak vs Dogri | Similarity Matrix Shape: (538, 4874) | Mean Cosine Similarity: 0.0094
+  Slovak vs GOM | Similarity Matrix Shape: (538, 4831) | Mean Cosine Similarity: 0.0155
+  Slovak vs Kannada | Similarity Matrix Shape: (538, 11643) | Mean Cosine Similarity: -0.0577
+  Slovak vs Nepali | Similarity Matrix Shape: (538, 4814) | Mean Cosine Similarity: 0.0010
+  Slovak vs Tamil | Similarity Matrix Shape: (538, 12841) | Mean Cosine Similarity: -0.0167
+  Slovak vs Sindhi | Similarity Matrix Shape: (538, 4831) | Mean Cosine Similarity: -0.1311
+  Serbian vs Bulgarian | Similarity Matrix Shape: (546, 539) | Mean Cosine Similarity: 0.0534
+  Serbian vs Czech | Similarity Matrix Shape: (546, 529) | Mean Cosine Similarity: 0.7835
+  Serbian vs Turkish | Similarity Matrix Shape: (546, 535) | Mean Cosine Similarity: 0.5159
+  Serbian vs Persian | Similarity Matrix Shape: (546, 535) | Mean Cosine Similarity: 0.0061
+  Serbian vs Vietnamese | Similarity Matrix Shape: (546, 530) | Mean Cosine Similarity: 0.3730
+  Serbian vs Indonesian | Similarity Matrix Shape: (546, 548) | Mean Cosine Similarity: 0.6370
+  Serbian vs Assamese | Similarity Matrix Shape: (546, 4829) | Mean Cosine Similarity: 0.0327
+  Serbian vs Dogri | Similarity Matrix Shape: (546, 4874) | Mean Cosine Similarity: 0.0391
+  Serbian vs GOM | Similarity Matrix Shape: (546, 4831) | Mean Cosine Similarity: 0.0421
+  Serbian vs Kannada | Similarity Matrix Shape: (546, 11643) | Mean Cosine Similarity: -0.0238
+  Serbian vs Nepali | Similarity Matrix Shape: (546, 4814) | Mean Cosine Similarity: 0.0342
+  Serbian vs Tamil | Similarity Matrix Shape: (546, 12841) | Mean Cosine Similarity: 0.0106
+  Serbian vs Sindhi | Similarity Matrix Shape: (546, 4831) | Mean Cosine Similarity: -0.1269
+  Bulgarian vs Czech | Similarity Matrix Shape: (539, 529) | Mean Cosine Similarity: -0.0470
+  Bulgarian vs Turkish | Similarity Matrix Shape: (539, 535) | Mean Cosine Similarity: 0.3237
+  Bulgarian vs Persian | Similarity Matrix Shape: (539, 535) | Mean Cosine Similarity: 0.2282
+  Bulgarian vs Vietnamese | Similarity Matrix Shape: (539, 530) | Mean Cosine Similarity: 0.0846
+  Bulgarian vs Indonesian | Similarity Matrix Shape: (539, 548) | Mean Cosine Similarity: -0.0131
+  Bulgarian vs Assamese | Similarity Matrix Shape: (539, 4829) | Mean Cosine Similarity: 0.1324
+  Bulgarian vs Dogri | Similarity Matrix Shape: (539, 4874) | Mean Cosine Similarity: 0.1565
+  Bulgarian vs GOM | Similarity Matrix Shape: (539, 4831) | Mean Cosine Similarity: 0.1728
+  Bulgarian vs Kannada | Similarity Matrix Shape: (539, 11643) | Mean Cosine Similarity: 0.1218
+  Bulgarian vs Nepali | Similarity Matrix Shape: (539, 4814) | Mean Cosine Similarity: 0.1091
+  Bulgarian vs Tamil | Similarity Matrix Shape: (539, 12841) | Mean Cosine Similarity: 0.1229
+  Bulgarian vs Sindhi | Similarity Matrix Shape: (539, 4831) | Mean Cosine Similarity: 0.2187
+  Czech vs Turkish | Similarity Matrix Shape: (529, 535) | Mean Cosine Similarity: 0.4440
+  Czech vs Persian | Similarity Matrix Shape: (529, 535) | Mean Cosine Similarity: 0.0175
+  Czech vs Vietnamese | Similarity Matrix Shape: (529, 530) | Mean Cosine Similarity: 0.4146
+  Czech vs Indonesian | Similarity Matrix Shape: (529, 548) | Mean Cosine Similarity: 0.6197
+  Czech vs Assamese | Similarity Matrix Shape: (529, 4829) | Mean Cosine Similarity: 0.0123
+  Czech vs Dogri | Similarity Matrix Shape: (529, 4874) | Mean Cosine Similarity: 0.0137
+  Czech vs GOM | Similarity Matrix Shape: (529, 4831) | Mean Cosine Similarity: 0.0195
+  Czech vs Kannada | Similarity Matrix Shape: (529, 11643) | Mean Cosine Similarity: -0.0500
+  Czech vs Nepali | Similarity Matrix Shape: (529, 4814) | Mean Cosine Similarity: 0.0066
+  Czech vs Tamil | Similarity Matrix Shape: (529, 12841) | Mean Cosine Similarity: -0.0147
+  Czech vs Sindhi | Similarity Matrix Shape: (529, 4831) | Mean Cosine Similarity: -0.1421
+  Turkish vs Persian | Similarity Matrix Shape: (535, 535) | Mean Cosine Similarity: 0.1251
+  Turkish vs Vietnamese | Similarity Matrix Shape: (535, 530) | Mean Cosine Similarity: 0.2355
+  Turkish vs Indonesian | Similarity Matrix Shape: (535, 548) | Mean Cosine Similarity: 0.5355
+  Turkish vs Assamese | Similarity Matrix Shape: (535, 4829) | Mean Cosine Similarity: 0.0888
+  Turkish vs Dogri | Similarity Matrix Shape: (535, 4874) | Mean Cosine Similarity: 0.1027
+  Turkish vs GOM | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.0929
+  Turkish vs Kannada | Similarity Matrix Shape: (535, 11643) | Mean Cosine Similarity: 0.0907
+  Turkish vs Nepali | Similarity Matrix Shape: (535, 4814) | Mean Cosine Similarity: 0.0885
+  Turkish vs Tamil | Similarity Matrix Shape: (535, 12841) | Mean Cosine Similarity: 0.1201
+  Turkish vs Sindhi | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.0718
+  Persian vs Vietnamese | Similarity Matrix Shape: (535, 530) | Mean Cosine Similarity: 0.1547
+  Persian vs Indonesian | Similarity Matrix Shape: (535, 548) | Mean Cosine Similarity: -0.0365
+  Persian vs Assamese | Similarity Matrix Shape: (535, 4829) | Mean Cosine Similarity: 0.1279
+  Persian vs Dogri | Similarity Matrix Shape: (535, 4874) | Mean Cosine Similarity: 0.1062
+  Persian vs GOM | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.0957
+  Persian vs Kannada | Similarity Matrix Shape: (535, 11643) | Mean Cosine Similarity: 0.1032
+  Persian vs Nepali | Similarity Matrix Shape: (535, 4814) | Mean Cosine Similarity: 0.0871
+  Persian vs Tamil | Similarity Matrix Shape: (535, 12841) | Mean Cosine Similarity: 0.0936
+  Persian vs Sindhi | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.8332
+  Vietnamese vs Indonesian | Similarity Matrix Shape: (530, 548) | Mean Cosine Similarity: 0.4024
+  Vietnamese vs Assamese | Similarity Matrix Shape: (530, 4829) | Mean Cosine Similarity: 0.1508
+  Vietnamese vs Dogri | Similarity Matrix Shape: (530, 4874) | Mean Cosine Similarity: 0.1938
+  Vietnamese vs GOM | Similarity Matrix Shape: (530, 4831) | Mean Cosine Similarity: 0.1839
+  Vietnamese vs Kannada | Similarity Matrix Shape: (530, 11643) | Mean Cosine Similarity: 0.0383
+  Vietnamese vs Nepali | Similarity Matrix Shape: (530, 4814) | Mean Cosine Similarity: 0.1439
+  Vietnamese vs Tamil | Similarity Matrix Shape: (530, 12841) | Mean Cosine Similarity: 0.0942
+  Vietnamese vs Sindhi | Similarity Matrix Shape: (530, 4831) | Mean Cosine Similarity: 0.0603
+  Indonesian vs Assamese | Similarity Matrix Shape: (548, 4829) | Mean Cosine Similarity: 0.0456
+  Indonesian vs Dogri | Similarity Matrix Shape: (548, 4874) | Mean Cosine Similarity: 0.1018
+  Indonesian vs GOM | Similarity Matrix Shape: (548, 4831) | Mean Cosine Similarity: 0.0885
+  Indonesian vs Kannada | Similarity Matrix Shape: (548, 11643) | Mean Cosine Similarity: -0.0054
+  Indonesian vs Nepali | Similarity Matrix Shape: (548, 4814) | Mean Cosine Similarity: 0.1035
+  Indonesian vs Tamil | Similarity Matrix Shape: (548, 12841) | Mean Cosine Similarity: 0.0497
+  Indonesian vs Sindhi | Similarity Matrix Shape: (548, 4831) | Mean Cosine Similarity: -0.1349
+  Assamese vs Dogri | Similarity Matrix Shape: (4829, 4874) | Mean Cosine Similarity: 0.5612
+  Assamese vs GOM | Similarity Matrix Shape: (4829, 4831) | Mean Cosine Similarity: 0.5569
+  Assamese vs Kannada | Similarity Matrix Shape: (4829, 11643) | Mean Cosine Similarity: 0.4611
+  Assamese vs Nepali | Similarity Matrix Shape: (4829, 4814) | Mean Cosine Similarity: 0.5364
+  Assamese vs Tamil | Similarity Matrix Shape: (4829, 12841) | Mean Cosine Similarity: 0.4475
+  Assamese vs Sindhi | Similarity Matrix Shape: (4829, 4831) | Mean Cosine Similarity: 0.1732
+  Dogri vs GOM | Similarity Matrix Shape: (4874, 4831) | Mean Cosine Similarity: 0.9543
+  Dogri vs Kannada | Similarity Matrix Shape: (4874, 11643) | Mean Cosine Similarity: 0.4957
+  Dogri vs Nepali | Similarity Matrix Shape: (4874, 4814) | Mean Cosine Similarity: 0.9206
+  Dogri vs Tamil | Similarity Matrix Shape: (4874, 12841) | Mean Cosine Similarity: 0.5199
+  Dogri vs Sindhi | Similarity Matrix Shape: (4874, 4831) | Mean Cosine Similarity: 0.1253
+  GOM vs Kannada | Similarity Matrix Shape: (4831, 11643) | Mean Cosine Similarity: 0.5448
+  GOM vs Nepali | Similarity Matrix Shape: (4831, 4814) | Mean Cosine Similarity: 0.8826
+  GOM vs Tamil | Similarity Matrix Shape: (4831, 12841) | Mean Cosine Similarity: 0.5213
+  GOM vs Sindhi | Similarity Matrix Shape: (4831, 4831) | Mean Cosine Similarity: 0.1178
+  Kannada vs Nepali | Similarity Matrix Shape: (11643, 4814) | Mean Cosine Similarity: 0.4447
+  Kannada vs Tamil | Similarity Matrix Shape: (11643, 12841) | Mean Cosine Similarity: 0.5917
+  Kannada vs Sindhi | Similarity Matrix Shape: (11643, 4831) | Mean Cosine Similarity: 0.1717
+  Nepali vs Tamil | Similarity Matrix Shape: (4814, 12841) | Mean Cosine Similarity: 0.4909
+  Nepali vs Sindhi | Similarity Matrix Shape: (4814, 4831) | Mean Cosine Similarity: 0.1075
+  Tamil vs Sindhi | Similarity Matrix Shape: (12841, 4831) | Mean Cosine Similarity: 0.1404
+
+--- Model: XLM-RoBERTa ---
+  Acholi vs Luganda | Similarity Matrix Shape: (4108, 5455) | Mean Cosine Similarity: 0.9965
+  Acholi vs Masaaba | Similarity Matrix Shape: (4108, 6867) | Mean Cosine Similarity: 0.9962
+  Acholi vs Nyankole | Similarity Matrix Shape: (4108, 6783) | Mean Cosine Similarity: 0.9967
+  Acholi vs Soga | Similarity Matrix Shape: (4108, 6219) | Mean Cosine Similarity: 0.9966
+  Acholi vs Akan | Similarity Matrix Shape: (4108, 10107) | Mean Cosine Similarity: 0.9940
+  Acholi vs Ewe | Similarity Matrix Shape: (4108, 15054) | Mean Cosine Similarity: 0.9939
+  Acholi vs Dagbani | Similarity Matrix Shape: (4108, 14231) | Mean Cosine Similarity: 0.9953
+  Acholi vs Norwegian | Similarity Matrix Shape: (4108, 534) | Mean Cosine Similarity: 0.9894
+  Acholi vs Slovak | Similarity Matrix Shape: (4108, 538) | Mean Cosine Similarity: 0.9882
+  Acholi vs Serbian | Similarity Matrix Shape: (4108, 546) | Mean Cosine Similarity: 0.9895
+  Acholi vs Bulgarian | Similarity Matrix Shape: (4108, 539) | Mean Cosine Similarity: 0.9883
+  Acholi vs Czech | Similarity Matrix Shape: (4108, 529) | Mean Cosine Similarity: 0.9877
+  Acholi vs Turkish | Similarity Matrix Shape: (4108, 535) | Mean Cosine Similarity: 0.9881
+  Acholi vs Persian | Similarity Matrix Shape: (4108, 535) | Mean Cosine Similarity: 0.9870
+  Acholi vs Vietnamese | Similarity Matrix Shape: (4108, 530) | Mean Cosine Similarity: 0.9886
+  Acholi vs Indonesian | Similarity Matrix Shape: (4108, 548) | Mean Cosine Similarity: 0.9889
+  Acholi vs Assamese | Similarity Matrix Shape: (4108, 4829) | Mean Cosine Similarity: 0.9892
+  Acholi vs Dogri | Similarity Matrix Shape: (4108, 4874) | Mean Cosine Similarity: 0.9927
+  Acholi vs GOM | Similarity Matrix Shape: (4108, 4831) | Mean Cosine Similarity: 0.9923
+  Acholi vs Kannada | Similarity Matrix Shape: (4108, 11643) | Mean Cosine Similarity: 0.9882
+  Acholi vs Nepali | Similarity Matrix Shape: (4108, 4814) | Mean Cosine Similarity: 0.9896
+  Acholi vs Tamil | Similarity Matrix Shape: (4108, 12841) | Mean Cosine Similarity: 0.9883
+  Acholi vs Sindhi | Similarity Matrix Shape: (4108, 4831) | Mean Cosine Similarity: 0.9891
+  Luganda vs Masaaba | Similarity Matrix Shape: (5455, 6867) | Mean Cosine Similarity: 0.9968
+  Luganda vs Nyankole | Similarity Matrix Shape: (5455, 6783) | Mean Cosine Similarity: 0.9971
+  Luganda vs Soga | Similarity Matrix Shape: (5455, 6219) | Mean Cosine Similarity: 0.9973
+  Luganda vs Akan | Similarity Matrix Shape: (5455, 10107) | Mean Cosine Similarity: 0.9950
+  Luganda vs Ewe | Similarity Matrix Shape: (5455, 15054) | Mean Cosine Similarity: 0.9946
+  Luganda vs Dagbani | Similarity Matrix Shape: (5455, 14231) | Mean Cosine Similarity: 0.9957
+  Luganda vs Norwegian | Similarity Matrix Shape: (5455, 534) | Mean Cosine Similarity: 0.9903
+  Luganda vs Slovak | Similarity Matrix Shape: (5455, 538) | Mean Cosine Similarity: 0.9893
+  Luganda vs Serbian | Similarity Matrix Shape: (5455, 546) | Mean Cosine Similarity: 0.9906
+  Luganda vs Bulgarian | Similarity Matrix Shape: (5455, 539) | Mean Cosine Similarity: 0.9896
+  Luganda vs Czech | Similarity Matrix Shape: (5455, 529) | Mean Cosine Similarity: 0.9888
+  Luganda vs Turkish | Similarity Matrix Shape: (5455, 535) | Mean Cosine Similarity: 0.9895
+  Luganda vs Persian | Similarity Matrix Shape: (5455, 535) | Mean Cosine Similarity: 0.9881
+  Luganda vs Vietnamese | Similarity Matrix Shape: (5455, 530) | Mean Cosine Similarity: 0.9896
+  Luganda vs Indonesian | Similarity Matrix Shape: (5455, 548) | Mean Cosine Similarity: 0.9903
+  Luganda vs Assamese | Similarity Matrix Shape: (5455, 4829) | Mean Cosine Similarity: 0.9907
+  Luganda vs Dogri | Similarity Matrix Shape: (5455, 4874) | Mean Cosine Similarity: 0.9934
+  Luganda vs GOM | Similarity Matrix Shape: (5455, 4831) | Mean Cosine Similarity: 0.9935
+  Luganda vs Kannada | Similarity Matrix Shape: (5455, 11643) | Mean Cosine Similarity: 0.9901
+  Luganda vs Nepali | Similarity Matrix Shape: (5455, 4814) | Mean Cosine Similarity: 0.9912
+  Luganda vs Tamil | Similarity Matrix Shape: (5455, 12841) | Mean Cosine Similarity: 0.9898
+  Luganda vs Sindhi | Similarity Matrix Shape: (5455, 4831) | Mean Cosine Similarity: 0.9903
+  Masaaba vs Nyankole | Similarity Matrix Shape: (6867, 6783) | Mean Cosine Similarity: 0.9968
+  Masaaba vs Soga | Similarity Matrix Shape: (6867, 6219) | Mean Cosine Similarity: 0.9969
+  Masaaba vs Akan | Similarity Matrix Shape: (6867, 10107) | Mean Cosine Similarity: 0.9940
+  Masaaba vs Ewe | Similarity Matrix Shape: (6867, 15054) | Mean Cosine Similarity: 0.9936
+  Masaaba vs Dagbani | Similarity Matrix Shape: (6867, 14231) | Mean Cosine Similarity: 0.9953
+  Masaaba vs Norwegian | Similarity Matrix Shape: (6867, 534) | Mean Cosine Similarity: 0.9890
+  Masaaba vs Slovak | Similarity Matrix Shape: (6867, 538) | Mean Cosine Similarity: 0.9879
+  Masaaba vs Serbian | Similarity Matrix Shape: (6867, 546) | Mean Cosine Similarity: 0.9894
+  Masaaba vs Bulgarian | Similarity Matrix Shape: (6867, 539) | Mean Cosine Similarity: 0.9882
+  Masaaba vs Czech | Similarity Matrix Shape: (6867, 529) | Mean Cosine Similarity: 0.9875
+  Masaaba vs Turkish | Similarity Matrix Shape: (6867, 535) | Mean Cosine Similarity: 0.9881
+  Masaaba vs Persian | Similarity Matrix Shape: (6867, 535) | Mean Cosine Similarity: 0.9867
+  Masaaba vs Vietnamese | Similarity Matrix Shape: (6867, 530) | Mean Cosine Similarity: 0.9883
+  Masaaba vs Indonesian | Similarity Matrix Shape: (6867, 548) | Mean Cosine Similarity: 0.9890
+  Masaaba vs Assamese | Similarity Matrix Shape: (6867, 4829) | Mean Cosine Similarity: 0.9895
+  Masaaba vs Dogri | Similarity Matrix Shape: (6867, 4874) | Mean Cosine Similarity: 0.9926
+  Masaaba vs GOM | Similarity Matrix Shape: (6867, 4831) | Mean Cosine Similarity: 0.9926
+  Masaaba vs Kannada | Similarity Matrix Shape: (6867, 11643) | Mean Cosine Similarity: 0.9887
+  Masaaba vs Nepali | Similarity Matrix Shape: (6867, 4814) | Mean Cosine Similarity: 0.9901
+  Masaaba vs Tamil | Similarity Matrix Shape: (6867, 12841) | Mean Cosine Similarity: 0.9884
+  Masaaba vs Sindhi | Similarity Matrix Shape: (6867, 4831) | Mean Cosine Similarity: 0.9892
+  Nyankole vs Soga | Similarity Matrix Shape: (6783, 6219) | Mean Cosine Similarity: 0.9972
+  Nyankole vs Akan | Similarity Matrix Shape: (6783, 10107) | Mean Cosine Similarity: 0.9943
+  Nyankole vs Ewe | Similarity Matrix Shape: (6783, 15054) | Mean Cosine Similarity: 0.9940
+  Nyankole vs Dagbani | Similarity Matrix Shape: (6783, 14231) | Mean Cosine Similarity: 0.9953
+  Nyankole vs Norwegian | Similarity Matrix Shape: (6783, 534) | Mean Cosine Similarity: 0.9897
+  Nyankole vs Slovak | Similarity Matrix Shape: (6783, 538) | Mean Cosine Similarity: 0.9886
+  Nyankole vs Serbian | Similarity Matrix Shape: (6783, 546) | Mean Cosine Similarity: 0.9900
+  Nyankole vs Bulgarian | Similarity Matrix Shape: (6783, 539) | Mean Cosine Similarity: 0.9887
+  Nyankole vs Czech | Similarity Matrix Shape: (6783, 529) | Mean Cosine Similarity: 0.9881
+  Nyankole vs Turkish | Similarity Matrix Shape: (6783, 535) | Mean Cosine Similarity: 0.9887
+  Nyankole vs Persian | Similarity Matrix Shape: (6783, 535) | Mean Cosine Similarity: 0.9873
+  Nyankole vs Vietnamese | Similarity Matrix Shape: (6783, 530) | Mean Cosine Similarity: 0.9889
+  Nyankole vs Indonesian | Similarity Matrix Shape: (6783, 548) | Mean Cosine Similarity: 0.9896
+  Nyankole vs Assamese | Similarity Matrix Shape: (6783, 4829) | Mean Cosine Similarity: 0.9899
+  Nyankole vs Dogri | Similarity Matrix Shape: (6783, 4874) | Mean Cosine Similarity: 0.9930
+  Nyankole vs GOM | Similarity Matrix Shape: (6783, 4831) | Mean Cosine Similarity: 0.9929
+  Nyankole vs Kannada | Similarity Matrix Shape: (6783, 11643) | Mean Cosine Similarity: 0.9892
+  Nyankole vs Nepali | Similarity Matrix Shape: (6783, 4814) | Mean Cosine Similarity: 0.9905
+  Nyankole vs Tamil | Similarity Matrix Shape: (6783, 12841) | Mean Cosine Similarity: 0.9890
+  Nyankole vs Sindhi | Similarity Matrix Shape: (6783, 4831) | Mean Cosine Similarity: 0.9896
+  Soga vs Akan | Similarity Matrix Shape: (6219, 10107) | Mean Cosine Similarity: 0.9943
+  Soga vs Ewe | Similarity Matrix Shape: (6219, 15054) | Mean Cosine Similarity: 0.9940
+  Soga vs Dagbani | Similarity Matrix Shape: (6219, 14231) | Mean Cosine Similarity: 0.9953
+  Soga vs Norwegian | Similarity Matrix Shape: (6219, 534) | Mean Cosine Similarity: 0.9899
+  Soga vs Slovak | Similarity Matrix Shape: (6219, 538) | Mean Cosine Similarity: 0.9888
+  Soga vs Serbian | Similarity Matrix Shape: (6219, 546) | Mean Cosine Similarity: 0.9902
+  Soga vs Bulgarian | Similarity Matrix Shape: (6219, 539) | Mean Cosine Similarity: 0.9891
+  Soga vs Czech | Similarity Matrix Shape: (6219, 529) | Mean Cosine Similarity: 0.9884
+  Soga vs Turkish | Similarity Matrix Shape: (6219, 535) | Mean Cosine Similarity: 0.9890
+  Soga vs Persian | Similarity Matrix Shape: (6219, 535) | Mean Cosine Similarity: 0.9876
+  Soga vs Vietnamese | Similarity Matrix Shape: (6219, 530) | Mean Cosine Similarity: 0.9892
+  Soga vs Indonesian | Similarity Matrix Shape: (6219, 548) | Mean Cosine Similarity: 0.9898
+  Soga vs Assamese | Similarity Matrix Shape: (6219, 4829) | Mean Cosine Similarity: 0.9904
+  Soga vs Dogri | Similarity Matrix Shape: (6219, 4874) | Mean Cosine Similarity: 0.9933
+  Soga vs GOM | Similarity Matrix Shape: (6219, 4831) | Mean Cosine Similarity: 0.9932
+  Soga vs Kannada | Similarity Matrix Shape: (6219, 11643) | Mean Cosine Similarity: 0.9897
+  Soga vs Nepali | Similarity Matrix Shape: (6219, 4814) | Mean Cosine Similarity: 0.9909
+  Soga vs Tamil | Similarity Matrix Shape: (6219, 12841) | Mean Cosine Similarity: 0.9894
+  Soga vs Sindhi | Similarity Matrix Shape: (6219, 4831) | Mean Cosine Similarity: 0.9900
+  Akan vs Ewe | Similarity Matrix Shape: (10107, 15054) | Mean Cosine Similarity: 0.9963
+  Akan vs Dagbani | Similarity Matrix Shape: (10107, 14231) | Mean Cosine Similarity: 0.9966
+  Akan vs Norwegian | Similarity Matrix Shape: (10107, 534) | Mean Cosine Similarity: 0.9882
+  Akan vs Slovak | Similarity Matrix Shape: (10107, 538) | Mean Cosine Similarity: 0.9873
+  Akan vs Serbian | Similarity Matrix Shape: (10107, 546) | Mean Cosine Similarity: 0.9885
+  Akan vs Bulgarian | Similarity Matrix Shape: (10107, 539) | Mean Cosine Similarity: 0.9877
+  Akan vs Czech | Similarity Matrix Shape: (10107, 529) | Mean Cosine Similarity: 0.9868
+  Akan vs Turkish | Similarity Matrix Shape: (10107, 535) | Mean Cosine Similarity: 0.9876
+  Akan vs Persian | Similarity Matrix Shape: (10107, 535) | Mean Cosine Similarity: 0.9863
+  Akan vs Vietnamese | Similarity Matrix Shape: (10107, 530) | Mean Cosine Similarity: 0.9876
+  Akan vs Indonesian | Similarity Matrix Shape: (10107, 548) | Mean Cosine Similarity: 0.9881
+  Akan vs Assamese | Similarity Matrix Shape: (10107, 4829) | Mean Cosine Similarity: 0.9885
+  Akan vs Dogri | Similarity Matrix Shape: (10107, 4874) | Mean Cosine Similarity: 0.9910
+  Akan vs GOM | Similarity Matrix Shape: (10107, 4831) | Mean Cosine Similarity: 0.9913
+  Akan vs Kannada | Similarity Matrix Shape: (10107, 11643) | Mean Cosine Similarity: 0.9880
+  Akan vs Nepali | Similarity Matrix Shape: (10107, 4814) | Mean Cosine Similarity: 0.9891
+  Akan vs Tamil | Similarity Matrix Shape: (10107, 12841) | Mean Cosine Similarity: 0.9872
+  Akan vs Sindhi | Similarity Matrix Shape: (10107, 4831) | Mean Cosine Similarity: 0.9883
+  Ewe vs Dagbani | Similarity Matrix Shape: (15054, 14231) | Mean Cosine Similarity: 0.9959
+  Ewe vs Norwegian | Similarity Matrix Shape: (15054, 534) | Mean Cosine Similarity: 0.9879
+  Ewe vs Slovak | Similarity Matrix Shape: (15054, 538) | Mean Cosine Similarity: 0.9871
+  Ewe vs Serbian | Similarity Matrix Shape: (15054, 546) | Mean Cosine Similarity: 0.9884
+  Ewe vs Bulgarian | Similarity Matrix Shape: (15054, 539) | Mean Cosine Similarity: 0.9876
+  Ewe vs Czech | Similarity Matrix Shape: (15054, 529) | Mean Cosine Similarity: 0.9868
+  Ewe vs Turkish | Similarity Matrix Shape: (15054, 535) | Mean Cosine Similarity: 0.9874
+  Ewe vs Persian | Similarity Matrix Shape: (15054, 535) | Mean Cosine Similarity: 0.9859
+  Ewe vs Vietnamese | Similarity Matrix Shape: (15054, 530) | Mean Cosine Similarity: 0.9875
+  Ewe vs Indonesian | Similarity Matrix Shape: (15054, 548) | Mean Cosine Similarity: 0.9876
+  Ewe vs Assamese | Similarity Matrix Shape: (15054, 4829) | Mean Cosine Similarity: 0.9883
+  Ewe vs Dogri | Similarity Matrix Shape: (15054, 4874) | Mean Cosine Similarity: 0.9908
+  Ewe vs GOM | Similarity Matrix Shape: (15054, 4831) | Mean Cosine Similarity: 0.9904
+  Ewe vs Kannada | Similarity Matrix Shape: (15054, 11643) | Mean Cosine Similarity: 0.9877
+  Ewe vs Nepali | Similarity Matrix Shape: (15054, 4814) | Mean Cosine Similarity: 0.9886
+  Ewe vs Tamil | Similarity Matrix Shape: (15054, 12841) | Mean Cosine Similarity: 0.9871
+  Ewe vs Sindhi | Similarity Matrix Shape: (15054, 4831) | Mean Cosine Similarity: 0.9879
+  Dagbani vs Norwegian | Similarity Matrix Shape: (14231, 534) | Mean Cosine Similarity: 0.9890
+  Dagbani vs Slovak | Similarity Matrix Shape: (14231, 538) | Mean Cosine Similarity: 0.9881
+  Dagbani vs Serbian | Similarity Matrix Shape: (14231, 546) | Mean Cosine Similarity: 0.9895
+  Dagbani vs Bulgarian | Similarity Matrix Shape: (14231, 539) | Mean Cosine Similarity: 0.9886
+  Dagbani vs Czech | Similarity Matrix Shape: (14231, 529) | Mean Cosine Similarity: 0.9877
+  Dagbani vs Turkish | Similarity Matrix Shape: (14231, 535) | Mean Cosine Similarity: 0.9884
+  Dagbani vs Persian | Similarity Matrix Shape: (14231, 535) | Mean Cosine Similarity: 0.9871
+  Dagbani vs Vietnamese | Similarity Matrix Shape: (14231, 530) | Mean Cosine Similarity: 0.9885
+  Dagbani vs Indonesian | Similarity Matrix Shape: (14231, 548) | Mean Cosine Similarity: 0.9889
+  Dagbani vs Assamese | Similarity Matrix Shape: (14231, 4829) | Mean Cosine Similarity: 0.9893
+  Dagbani vs Dogri | Similarity Matrix Shape: (14231, 4874) | Mean Cosine Similarity: 0.9924
+  Dagbani vs GOM | Similarity Matrix Shape: (14231, 4831) | Mean Cosine Similarity: 0.9923
+  Dagbani vs Kannada | Similarity Matrix Shape: (14231, 11643) | Mean Cosine Similarity: 0.9887
+  Dagbani vs Nepali | Similarity Matrix Shape: (14231, 4814) | Mean Cosine Similarity: 0.9900
+  Dagbani vs Tamil | Similarity Matrix Shape: (14231, 12841) | Mean Cosine Similarity: 0.9883
+  Dagbani vs Sindhi | Similarity Matrix Shape: (14231, 4831) | Mean Cosine Similarity: 0.9890
+  Norwegian vs Slovak | Similarity Matrix Shape: (534, 538) | Mean Cosine Similarity: 0.9974
+  Norwegian vs Serbian | Similarity Matrix Shape: (534, 546) | Mean Cosine Similarity: 0.9975
+  Norwegian vs Bulgarian | Similarity Matrix Shape: (534, 539) | Mean Cosine Similarity: 0.9978
+  Norwegian vs Czech | Similarity Matrix Shape: (534, 529) | Mean Cosine Similarity: 0.9972
+  Norwegian vs Turkish | Similarity Matrix Shape: (534, 535) | Mean Cosine Similarity: 0.9972
+  Norwegian vs Persian | Similarity Matrix Shape: (534, 535) | Mean Cosine Similarity: 0.9973
+  Norwegian vs Vietnamese | Similarity Matrix Shape: (534, 530) | Mean Cosine Similarity: 0.9976
+  Norwegian vs Indonesian | Similarity Matrix Shape: (534, 548) | Mean Cosine Similarity: 0.9976
+  Norwegian vs Assamese | Similarity Matrix Shape: (534, 4829) | Mean Cosine Similarity: 0.9948
+  Norwegian vs Dogri | Similarity Matrix Shape: (534, 4874) | Mean Cosine Similarity: 0.9945
+  Norwegian vs GOM | Similarity Matrix Shape: (534, 4831) | Mean Cosine Similarity: 0.9941
+  Norwegian vs Kannada | Similarity Matrix Shape: (534, 11643) | Mean Cosine Similarity: 0.9955
+  Norwegian vs Nepali | Similarity Matrix Shape: (534, 4814) | Mean Cosine Similarity: 0.9959
+  Norwegian vs Tamil | Similarity Matrix Shape: (534, 12841) | Mean Cosine Similarity: 0.9964
+  Norwegian vs Sindhi | Similarity Matrix Shape: (534, 4831) | Mean Cosine Similarity: 0.9949
+  Slovak vs Serbian | Similarity Matrix Shape: (538, 546) | Mean Cosine Similarity: 0.9979
+  Slovak vs Bulgarian | Similarity Matrix Shape: (538, 539) | Mean Cosine Similarity: 0.9976
+  Slovak vs Czech | Similarity Matrix Shape: (538, 529) | Mean Cosine Similarity: 0.9987
+  Slovak vs Turkish | Similarity Matrix Shape: (538, 535) | Mean Cosine Similarity: 0.9969
+  Slovak vs Persian | Similarity Matrix Shape: (538, 535) | Mean Cosine Similarity: 0.9970
+  Slovak vs Vietnamese | Similarity Matrix Shape: (538, 530) | Mean Cosine Similarity: 0.9975
+  Slovak vs Indonesian | Similarity Matrix Shape: (538, 548) | Mean Cosine Similarity: 0.9974
+  Slovak vs Assamese | Similarity Matrix Shape: (538, 4829) | Mean Cosine Similarity: 0.9947
+  Slovak vs Dogri | Similarity Matrix Shape: (538, 4874) | Mean Cosine Similarity: 0.9941
+  Slovak vs GOM | Similarity Matrix Shape: (538, 4831) | Mean Cosine Similarity: 0.9938
+  Slovak vs Kannada | Similarity Matrix Shape: (538, 11643) | Mean Cosine Similarity: 0.9953
+  Slovak vs Nepali | Similarity Matrix Shape: (538, 4814) | Mean Cosine Similarity: 0.9954
+  Slovak vs Tamil | Similarity Matrix Shape: (538, 12841) | Mean Cosine Similarity: 0.9957
+  Slovak vs Sindhi | Similarity Matrix Shape: (538, 4831) | Mean Cosine Similarity: 0.9947
+  Serbian vs Bulgarian | Similarity Matrix Shape: (546, 539) | Mean Cosine Similarity: 0.9977
+  Serbian vs Czech | Similarity Matrix Shape: (546, 529) | Mean Cosine Similarity: 0.9978
+  Serbian vs Turkish | Similarity Matrix Shape: (546, 535) | Mean Cosine Similarity: 0.9971
+  Serbian vs Persian | Similarity Matrix Shape: (546, 535) | Mean Cosine Similarity: 0.9967
+  Serbian vs Vietnamese | Similarity Matrix Shape: (546, 530) | Mean Cosine Similarity: 0.9973
+  Serbian vs Indonesian | Similarity Matrix Shape: (546, 548) | Mean Cosine Similarity: 0.9974
+  Serbian vs Assamese | Similarity Matrix Shape: (546, 4829) | Mean Cosine Similarity: 0.9949
+  Serbian vs Dogri | Similarity Matrix Shape: (546, 4874) | Mean Cosine Similarity: 0.9944
+  Serbian vs GOM | Similarity Matrix Shape: (546, 4831) | Mean Cosine Similarity: 0.9939
+  Serbian vs Kannada | Similarity Matrix Shape: (546, 11643) | Mean Cosine Similarity: 0.9959
+  Serbian vs Nepali | Similarity Matrix Shape: (546, 4814) | Mean Cosine Similarity: 0.9960
+  Serbian vs Tamil | Similarity Matrix Shape: (546, 12841) | Mean Cosine Similarity: 0.9959
+  Serbian vs Sindhi | Similarity Matrix Shape: (546, 4831) | Mean Cosine Similarity: 0.9953
+  Bulgarian vs Czech | Similarity Matrix Shape: (539, 529) | Mean Cosine Similarity: 0.9973
+  Bulgarian vs Turkish | Similarity Matrix Shape: (539, 535) | Mean Cosine Similarity: 0.9969
+  Bulgarian vs Persian | Similarity Matrix Shape: (539, 535) | Mean Cosine Similarity: 0.9975
+  Bulgarian vs Vietnamese | Similarity Matrix Shape: (539, 530) | Mean Cosine Similarity: 0.9976
+  Bulgarian vs Indonesian | Similarity Matrix Shape: (539, 548) | Mean Cosine Similarity: 0.9975
+  Bulgarian vs Assamese | Similarity Matrix Shape: (539, 4829) | Mean Cosine Similarity: 0.9954
+  Bulgarian vs Dogri | Similarity Matrix Shape: (539, 4874) | Mean Cosine Similarity: 0.9949
+  Bulgarian vs GOM | Similarity Matrix Shape: (539, 4831) | Mean Cosine Similarity: 0.9942
+  Bulgarian vs Kannada | Similarity Matrix Shape: (539, 11643) | Mean Cosine Similarity: 0.9964
+  Bulgarian vs Nepali | Similarity Matrix Shape: (539, 4814) | Mean Cosine Similarity: 0.9966
+  Bulgarian vs Tamil | Similarity Matrix Shape: (539, 12841) | Mean Cosine Similarity: 0.9968
+  Bulgarian vs Sindhi | Similarity Matrix Shape: (539, 4831) | Mean Cosine Similarity: 0.9948
+  Czech vs Turkish | Similarity Matrix Shape: (529, 535) | Mean Cosine Similarity: 0.9969
+  Czech vs Persian | Similarity Matrix Shape: (529, 535) | Mean Cosine Similarity: 0.9969
+  Czech vs Vietnamese | Similarity Matrix Shape: (529, 530) | Mean Cosine Similarity: 0.9973
+  Czech vs Indonesian | Similarity Matrix Shape: (529, 548) | Mean Cosine Similarity: 0.9973
+  Czech vs Assamese | Similarity Matrix Shape: (529, 4829) | Mean Cosine Similarity: 0.9944
+  Czech vs Dogri | Similarity Matrix Shape: (529, 4874) | Mean Cosine Similarity: 0.9939
+  Czech vs GOM | Similarity Matrix Shape: (529, 4831) | Mean Cosine Similarity: 0.9936
+  Czech vs Kannada | Similarity Matrix Shape: (529, 11643) | Mean Cosine Similarity: 0.9951
+  Czech vs Nepali | Similarity Matrix Shape: (529, 4814) | Mean Cosine Similarity: 0.9951
+  Czech vs Tamil | Similarity Matrix Shape: (529, 12841) | Mean Cosine Similarity: 0.9960
+  Czech vs Sindhi | Similarity Matrix Shape: (529, 4831) | Mean Cosine Similarity: 0.9947
+  Turkish vs Persian | Similarity Matrix Shape: (535, 535) | Mean Cosine Similarity: 0.9974
+  Turkish vs Vietnamese | Similarity Matrix Shape: (535, 530) | Mean Cosine Similarity: 0.9974
+  Turkish vs Indonesian | Similarity Matrix Shape: (535, 548) | Mean Cosine Similarity: 0.9977
+  Turkish vs Assamese | Similarity Matrix Shape: (535, 4829) | Mean Cosine Similarity: 0.9951
+  Turkish vs Dogri | Similarity Matrix Shape: (535, 4874) | Mean Cosine Similarity: 0.9944
+  Turkish vs GOM | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.9940
+  Turkish vs Kannada | Similarity Matrix Shape: (535, 11643) | Mean Cosine Similarity: 0.9963
+  Turkish vs Nepali | Similarity Matrix Shape: (535, 4814) | Mean Cosine Similarity: 0.9960
+  Turkish vs Tamil | Similarity Matrix Shape: (535, 12841) | Mean Cosine Similarity: 0.9965
+  Turkish vs Sindhi | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.9952
+  Persian vs Vietnamese | Similarity Matrix Shape: (535, 530) | Mean Cosine Similarity: 0.9979
+  Persian vs Indonesian | Similarity Matrix Shape: (535, 548) | Mean Cosine Similarity: 0.9976
+  Persian vs Assamese | Similarity Matrix Shape: (535, 4829) | Mean Cosine Similarity: 0.9950
+  Persian vs Dogri | Similarity Matrix Shape: (535, 4874) | Mean Cosine Similarity: 0.9948
+  Persian vs GOM | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.9942
+  Persian vs Kannada | Similarity Matrix Shape: (535, 11643) | Mean Cosine Similarity: 0.9961
+  Persian vs Nepali | Similarity Matrix Shape: (535, 4814) | Mean Cosine Similarity: 0.9959
+  Persian vs Tamil | Similarity Matrix Shape: (535, 12841) | Mean Cosine Similarity: 0.9966
+  Persian vs Sindhi | Similarity Matrix Shape: (535, 4831) | Mean Cosine Similarity: 0.9954
+  Vietnamese vs Indonesian | Similarity Matrix Shape: (530, 548) | Mean Cosine Similarity: 0.9983
+  Vietnamese vs Assamese | Similarity Matrix Shape: (530, 4829) | Mean Cosine Similarity: 0.9952
+  Vietnamese vs Dogri | Similarity Matrix Shape: (530, 4874) | Mean Cosine Similarity: 0.9949
+  Vietnamese vs GOM | Similarity Matrix Shape: (530, 4831) | Mean Cosine Similarity: 0.9943
+  Vietnamese vs Kannada | Similarity Matrix Shape: (530, 11643) | Mean Cosine Similarity: 0.9963
+  Vietnamese vs Nepali | Similarity Matrix Shape: (530, 4814) | Mean Cosine Similarity: 0.9961
+  Vietnamese vs Tamil | Similarity Matrix Shape: (530, 12841) | Mean Cosine Similarity: 0.9967
+  Vietnamese vs Sindhi | Similarity Matrix Shape: (530, 4831) | Mean Cosine Similarity: 0.9951
+  Indonesian vs Assamese | Similarity Matrix Shape: (548, 4829) | Mean Cosine Similarity: 0.9954
+  Indonesian vs Dogri | Similarity Matrix Shape: (548, 4874) | Mean Cosine Similarity: 0.9949
+  Indonesian vs GOM | Similarity Matrix Shape: (548, 4831) | Mean Cosine Similarity: 0.9944
+  Indonesian vs Kannada | Similarity Matrix Shape: (548, 11643) | Mean Cosine Similarity: 0.9966
+  Indonesian vs Nepali | Similarity Matrix Shape: (548, 4814) | Mean Cosine Similarity: 0.9963
+  Indonesian vs Tamil | Similarity Matrix Shape: (548, 12841) | Mean Cosine Similarity: 0.9969
+  Indonesian vs Sindhi | Similarity Matrix Shape: (548, 4831) | Mean Cosine Similarity: 0.9952
+  Assamese vs Dogri | Similarity Matrix Shape: (4829, 4874) | Mean Cosine Similarity: 0.9955
+  Assamese vs GOM | Similarity Matrix Shape: (4829, 4831) | Mean Cosine Similarity: 0.9958
+  Assamese vs Kannada | Similarity Matrix Shape: (4829, 11643) | Mean Cosine Similarity: 0.9960
+  Assamese vs Nepali | Similarity Matrix Shape: (4829, 4814) | Mean Cosine Similarity: 0.9969
+  Assamese vs Tamil | Similarity Matrix Shape: (4829, 12841) | Mean Cosine Similarity: 0.9959
+  Assamese vs Sindhi | Similarity Matrix Shape: (4829, 4831) | Mean Cosine Similarity: 0.9959
+  Dogri vs GOM | Similarity Matrix Shape: (4874, 4831) | Mean Cosine Similarity: 0.9980
+  Dogri vs Kannada | Similarity Matrix Shape: (4874, 11643) | Mean Cosine Similarity: 0.9952
+  Dogri vs Nepali | Similarity Matrix Shape: (4874, 4814) | Mean Cosine Similarity: 0.9968
+  Dogri vs Tamil | Similarity Matrix Shape: (4874, 12841) | Mean Cosine Similarity: 0.9952
+  Dogri vs Sindhi | Similarity Matrix Shape: (4874, 4831) | Mean Cosine Similarity: 0.9950
+  GOM vs Kannada | Similarity Matrix Shape: (4831, 11643) | Mean Cosine Similarity: 0.9950
+  GOM vs Nepali | Similarity Matrix Shape: (4831, 4814) | Mean Cosine Similarity: 0.9964
+  GOM vs Tamil | Similarity Matrix Shape: (4831, 12841) | Mean Cosine Similarity: 0.9950
+  GOM vs Sindhi | Similarity Matrix Shape: (4831, 4831) | Mean Cosine Similarity: 0.9955
+  Kannada vs Nepali | Similarity Matrix Shape: (11643, 4814) | Mean Cosine Similarity: 0.9973
+  Kannada vs Tamil | Similarity Matrix Shape: (11643, 12841) | Mean Cosine Similarity: 0.9975
+  Kannada vs Sindhi | Similarity Matrix Shape: (11643, 4831) | Mean Cosine Similarity: 0.9959
+  Nepali vs Tamil | Similarity Matrix Shape: (4814, 12841) | Mean Cosine Similarity: 0.9970
+  Nepali vs Sindhi | Similarity Matrix Shape: (4814, 4831) | Mean Cosine Similarity: 0.9962
+  Tamil vs Sindhi | Similarity Matrix Shape: (12841, 4831) | Mean Cosine Similarity: 0.9960
+
+Generating combined model comparative scatterplots...
+Saved combined multilingual scatterplot to multilingual_models_embedding_space.png
+Done!
+finished

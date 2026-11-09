@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+import umap
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score
@@ -143,9 +144,9 @@ def visualize_multilingual_models_single_plot(
 ):
     """
     Visualizes multilingual embeddings for each model in separate subplots
-    to properly handle differing hidden dimensions across architectures[cite: 5].
+    using UMAP for dimensionality reduction and externalizing the legend.
     """
-    fig, axes = plt.subplots(1, len(models_dict), figsize=(6 * len(models_dict), 6), squeeze=False)
+    fig, axes = plt.subplots(1, len(models_dict), figsize=(7 * len(models_dict), 6), squeeze=False)
     axes = axes.flatten()
 
     markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h', 'X', 'P']
@@ -168,8 +169,10 @@ def visualize_multilingual_models_single_plot(
         model_matrix = np.concatenate(model_embeddings, axis=0)
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(model_matrix)
-        pca = PCA(n_components=2)
-        X_reduced = pca.fit_transform(X_scaled)
+
+        # Replaced PCA with UMAP for non-linear embedding separation
+        reducer = umap.UMAP(n_neighbors=15, min_dist=0.1, metric='cosine', random_state=42)
+        X_reduced = reducer.fit_transform(X_scaled)
 
         start_idx = 0
         for lang_idx, lang_name in enumerate(lang_tracking):
@@ -183,18 +186,23 @@ def visualize_multilingual_models_single_plot(
                 lang_coords[:, 0],
                 lang_coords[:, 1],
                 alpha=0.6,
+                s=15,
                 marker=marker,
                 label=lang_name
             )
 
         ax.set_title(f"{model_name}", fontsize=12)
-        ax.set_xlabel("PCA Component 1")
-        ax.set_ylabel("PCA Component 2")
+        ax.set_xlabel("UMAP Dimension 1")
+        ax.set_ylabel("UMAP Dimension 2")
         ax.grid(True, linestyle="--", alpha=0.5)
-        ax.legend(fontsize=8, loc='best')
 
-    plt.suptitle("Cross-Lingual Embedding Space Comparison Across Models", fontsize=14)
-    plt.tight_layout()
+        # Place the legend outside the subplot area to eliminate crowding
+        ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', fontsize=7, borderaxespad=0.)
+
+    plt.suptitle("Cross-Lingual Embedding Space Comparison Across Models (UMAP)", fontsize=14)
+
+    # Adjust layout to provide padding for the external legends
+    plt.subplots_adjust(right=0.82, wspace=0.3)
     plt.savefig(f"./{output_name}.png", dpi=300, bbox_inches="tight")
     plt.close()
-    print(f"Saved combined multilingual scatterplot to {output_name}.png")
+    print(f"Saved combined multilingual UMAP scatterplot to {output_name}.png")
