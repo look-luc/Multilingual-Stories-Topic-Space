@@ -196,9 +196,16 @@ def visualize_multilingual_models_single_plot(
         ax.set_ylabel("UMAP Dimension 2")
         ax.grid(True, linestyle="--", alpha=0.5)
 
-        # Place the legend outside the subplot area to eliminate crowding
-        ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', fontsize=7, borderaxespad=0.)
+    handles, labels = axes[0].get_legend_handles_labels()
 
+    # Create a single figure-level legend placed at the top or bottom
+    fig.legend(
+        handles,
+        labels,
+        loc='upper center',        # Position of the legend
+        ncol=len(labels),          # Number of columns inside the legend box
+        bbox_to_anchor=(0.5, 1.02) # Fine-tune placement above the subplots
+    )
     plt.suptitle("Cross-Lingual Embedding Space Comparison Across Models (UMAP)", fontsize=14)
 
     # Adjust layout to provide padding for the external legends
