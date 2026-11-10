@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 
 from src.data.get_data import get_all_data, get_some_data
+from src.model.LDA import LDA
 from src.model.model import (
     DeBerta,
     Qwen,
@@ -59,7 +60,7 @@ def setup(data_amount: str = "some"):
         raise Exception("Either: 'some' or 'all'")
 
 
-def main(just_graph:bool=True):
+def main(just_graph:bool=False, lda:bool=False):
     print("Initializing models...")
     deberta = DeBerta()
     qwen = Qwen()
@@ -73,6 +74,22 @@ def main(just_graph:bool=True):
 
     print("Fetching data...")
     data_dict = setup("all")
+
+    if lda:
+        topics = []
+        print("Training language-specific LDA models...")
+        for lang, texts in data_dict.items():
+            if not texts:
+                continue
+            print(f"\n--- LDA Topics for {lang} ---")
+            try:
+                lda_instance = LDA(docs=texts, num_topics=5)
+                idx, topic = lda_instance.lda_model.print_topics(-1)
+                topics.append(topic)
+                for idxs, topics in lda_instance.lda_model.print_topics(-1):
+                    print(f"  Topic {idxs}: {topics}")
+            except Exception as e:
+                print(f"  Could not train LDA for {lang}: {e}")
 
     if not just_graph:
         print("Running individual model visualizations...")
