@@ -7,5 +7,4 @@ if __name__ == "__main__":
     parser.add_argument("--graph", action='store_true', default=True, help="Only render graph")
     args = parser.parse_args()
     main(args.graph)
-    parse_silhouette_scores("35466656.log")
     print("finished")
