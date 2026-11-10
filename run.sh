@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --partition=aa100
+#SBATCH --partition=artxpro6000
 #SBATCH --qos=gpu-normal
-#SBATCH --gres=gpu:a100_80gb:1
+#SBATCH --gres=gpu:rtx_pro_6000_2g.48gb:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --time=13:00:00
+#SBATCH --time=12:00:00
 #SBATCH --output=/projects/%u/Multilingual-Stories-Topic-Space/logs/%j.log
 #SBATCH --job-name=topic-space
 #SBATCH --account=ucb-general
@@ -24,4 +24,4 @@ module load uv
 module load python
 uv sync
 uv pip install tiktoken
-uv run run.py
+uv run run.py "$1"

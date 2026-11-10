@@ -1,6 +1,8 @@
+import re
 from itertools import combinations
 
 import numpy as np
+import pandas as pd
 
 from src.data.get_data import get_all_data, get_some_data
 from src.model.model import (
@@ -11,6 +13,42 @@ from src.model.model import (
     visualize_multilingual_models_single_plot,
 )
 
+
+def parse_silhouette_scores(log_file_path):
+    # Regex pattern to match lines like: [Acholi] DeBERTa Silhouette Score: 0.1994
+    pattern = re.compile(r"\[(.*?)\]\s+(.*?)\s+Silhouette\s+Score:\s+([\d\.]+)")
+    data = []
+
+    with open(log_file_path, "r", encoding="utf-8") as f:
+        for line in f:
+            match = pattern.search(line)
+            if match:
+                lang, model, score = match.groups()
+                data.append({
+                    "Language": lang,
+                    "Model": model,
+                    "Silhouette Score": float(score)
+                })
+
+    if not data:
+        print("No silhouette scores found in the specified log file.")
+        return None
+
+    df = pd.DataFrame(data)
+
+    # Pivot the table so models are columns and languages are rows
+    pivot_df = df.pivot(index="Language", columns="Model", values="Silhouette Score").reset_index()
+
+    # Print Markdown table to console
+    print("\n### Silhouette Scores Table\n")
+    print(pivot_df.to_markdown(index=False))
+
+    # Export to CSV
+    output_csv = "silhouette_scores_table.csv"
+    pivot_df.to_csv(output_csv, index=False)
+    print(f"\nSaved table to {output_csv}")
+
+    return pivot_df
 
 def setup(data_amount: str = "some"):
     if data_amount.lower() == "some":
@@ -72,4 +110,4 @@ def main(just_graph:bool=True):
 
 
 if __name__ == "__main__":
-    main()
+    parse_silhouette_scores("/Users/lucdenardi/Desktop/code_lang/python/Multilingual-Stories-Topic-Space/35466656.log")
