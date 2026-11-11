@@ -301,10 +301,13 @@ def visualize_multilingual_models_single_plot(
     fig.legend(
         handles,
         labels,
-        loc='upper center',        # Position of the legend
-        ncol=len(labels),          # Number of columns inside the legend box
-        bbox_to_anchor=(0.5, 1.02) # Fine-tune placement above the subplots
+        loc='upper center',
+        ncol=3,
+        bbox_to_anchor=(0.5, -0.02)
     )
+
+    # Adjust the bottom margin of the figure to make room for the legend
+    fig.subplots_adjust(bottom=0.2)
     plt.suptitle("Cross-Lingual Embedding Space Comparison Across Models (UMAP)", fontsize=14)
 
     # Adjust layout to provide padding for the external legends

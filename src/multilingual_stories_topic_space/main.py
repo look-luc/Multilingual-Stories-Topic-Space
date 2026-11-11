@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 from itertools import combinations
 
 import numpy as np
@@ -88,8 +89,7 @@ def main(just_graph:bool=False, lda:bool=False):
                 lda_instance = LDA(docs=texts, num_topics=5)
 
                 # Print topics cleanly
-                for idx, topic_desc in lda_instance.lda_model.print_topics(-1):
-                    print(f"  Topic {idx}: {topic_desc}")
+                topics = lda_instance.lda_model.print_topics(-1)
 
                 # Run classification for each model using the correct instance, texts, and corpus
                 print(f"  Running DeBERTa classification for {lang}...")
@@ -106,13 +106,19 @@ def main(just_graph:bool=False, lda:bool=False):
 
             except Exception as e:
                 print(f"  Could not train/categorize LDA for {lang}: {e}")
-        print(
-            f"""
+        topic_counts_deberta = Counter(deberta_assignment)
+        topic_counts_roberta = Counter(roberta_assignment)
+        topic_counts_qwen = Counter(qwen_assignment)
+
+        # Sort them by topic ID for plotting
+        topics = sorted(topic_counts.keys())
+        counts = [topic_counts[t] for t in topics]
+        with open("assignments.txt", "w", encoding="utf-8") as file:
+            file.write(f"""
             deberta assignments: {deberta_assignment}\n
             xlm RoBerta assignments: {roberta_assignment}\n
             Qwen assignments: {qwen_assignment}\n
-            """
-        )
+            """)
 
     if not just_graph:
         print("Running individual model visualizations...")
