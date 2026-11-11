@@ -110,9 +110,9 @@ def main(just_graph:bool=False, lda:bool=False):
         topic_counts_roberta = Counter(roberta_assignment)
         topic_counts_qwen = Counter(qwen_assignment)
 
-        # Sort them by topic ID for plotting
-        topics = sorted(topic_counts.keys())
-        counts = [topic_counts[t] for t in topics]
+        # # Sort them by topic ID for plotting
+        # topics = sorted(topic_counts.keys())
+        # counts = [topic_counts[t] for t in topics]
         with open("assignments.txt", "w", encoding="utf-8") as file:
             file.write(f"""
             deberta assignments: {deberta_assignment}\n
