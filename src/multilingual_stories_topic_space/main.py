@@ -143,15 +143,15 @@ def main(just_graph:bool=False, lda:bool=False):
                 # Run classification for each model using the correct instance, texts, and corpus
                 print(f"  Running DeBERTa classification for {lang}...")
                 deberta_assignments = deberta.lda_category(data=texts, lda_model=lda_instance.lda_model, corpus=lda_instance.corpus)
-                deberta_assignment.append(deberta_assignments)
+                deberta_assignment.extend(deberta_assignments)
 
                 print(f"  Running Qwen classification for {lang}...")
                 qwen_assignments = qwen.lda_category(data=texts, lda_model=lda_instance.lda_model, corpus=lda_instance.corpus)
-                qwen_assignment.append(qwen_assignments)
+                qwen_assignment.extend(qwen_assignments)
 
                 print(f"  Running XLM-RoBERTa classification for {lang}...")
                 roberta_assignments = roberta.lda_category(data=texts, lda_model=lda_instance.lda_model, corpus=lda_instance.corpus)
-                roberta_assignment.append(roberta_assignments)
+                roberta_assignment.extend(roberta_assignments)
 
             except Exception as e:
                 print(f"  Could not train/categorize LDA for {lang}: {e}")
