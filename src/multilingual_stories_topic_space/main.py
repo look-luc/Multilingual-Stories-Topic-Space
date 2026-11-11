@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.spatial.distance import jensenshannon
+from sklearn.cross_decomposition import CCA
 
 from src.data.get_data import get_all_data, get_some_data
 from src.model.LDA import LDA
@@ -43,6 +44,26 @@ def calculate_topic_jsd(lda_model, topic_id_1, topic_id_2, num_words=None):
     js_divergence = js_distance ** 2
 
     return js_divergence
+
+def evaluate_embedding_space_cca(embeddings_model1, embeddings_model2, embeddings_model3, n_components=2):
+    """
+    Performs CCA between two different LLM embedding configurations
+    for the exact same dataset array.
+    """
+    # Initialize CCA configuration
+    cca = CCA(n_components=n_components)
+
+    # Fit and transform both embedding spaces into maximized canonical space
+    X_c, Y_c = cca.fit_transform(embeddings_model1, embeddings_model2, embeddings_model3)
+
+    # Track the canonical correlations across components
+    correlations = []
+    for i in range(n_components):
+        corr_matrix = np.corrcoef(X_c[:, i], Y_c[:, i])
+        # Extract the off-diagonal correlation value
+        correlations.append(corr_matrix[0, 1])
+
+    return correlations
 
 def parse_silhouette_scores(log_file_path):
     # Regex pattern to match lines like: [Acholi] DeBERTa Silhouette Score: 0.1994
@@ -159,6 +180,23 @@ def main(just_graph:bool=False, lda:bool=False):
 
         plt.tight_layout()
         plt.savefig("lda_topic_dist.png")
+        print("finished topic distrinution bar graph at: lda_topic_dist.png")
+        jsd_val = calculate_topic_jsd(lda_instance.lda_model, topic_id_1=0, topic_id_2=1)
+        print(f"[{lang}] JSD between Topic 0 and Topic 1: {jsd_val:.4f}")
+
+        for lang, texts in data_dict.items():
+            if not texts:
+                continue
+
+            # 1. Fetch exact matching document vectors across the two models
+            deberta_embs = deberta.get_embeddings(texts)
+            roberta_embs = roberta.get_embeddings(texts)
+            qwen_embs = qwen.get_embeddings(texts)
+
+            cca_corrs = evaluate_embedding_space_cca(deberta_embs, qwen_embs, roberta_embs, n_components=3)
+
+            print(f"[{lang}] DeBERTa vs Qwen Canonical Correlations: {cca_corrs}")
+
 
     if not just_graph:
         print("Running individual model visualizations...")
