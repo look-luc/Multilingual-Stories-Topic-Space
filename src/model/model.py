@@ -57,6 +57,39 @@ class DeBerta:
         score = silhouette_score(embedding_matrix, pseudo_labels, metric='euclidean')
         print(f"[{lang}] DeBERTa Silhouette Score: {score:.4f}")
 
+    def lda_category(self, data, lda_model, corpus):
+        embeddings = self.get_embeddings(data)
+
+        # Map documents to their dominant LDA topic
+        topic_docs = {}
+        for idx, doc_bow in enumerate(corpus):
+            topics = lda_model.get_document_topics(doc_bow)
+            if not topics:
+                continue
+            dominant_topic = max(topics, key=lambda x: x[1])[0]
+            if dominant_topic not in topic_docs:
+                topic_docs[dominant_topic] = []
+            topic_docs[dominant_topic].append(embeddings[idx])
+
+        # Compute centroids for each topic
+        topic_centroids = {
+            topic: np.mean(vecs, axis=0)
+            for topic, vecs in topic_docs.items() if vecs
+        }
+
+        # Assign stories to the nearest topic centroid
+        assignments = []
+        for emb in embeddings:
+            best_topic = -1
+            max_sim = -1.0
+            for topic, centroid in topic_centroids.items():
+                sim = cosine_similarity([emb], [centroid])[0][0]
+                if sim > max_sim:
+                    max_sim = sim
+                    best_topic = topic
+            assignments.append(best_topic)
+
+        return assignments
 
 class Qwen:
     def __init__(self):
@@ -95,6 +128,39 @@ class Qwen:
         score = silhouette_score(embedding_matrix, pseudo_labels, metric='euclidean')
         print(f"[{lang}] Qwen Silhouette Score: {score:.4f}")
 
+    def lda_category(self, data, lda_model, corpus):
+        embeddings = self.get_embeddings(data)
+
+        # Map documents to their dominant LDA topic
+        topic_docs = {}
+        for idx, doc_bow in enumerate(corpus):
+            topics = lda_model.get_document_topics(doc_bow)
+            if not topics:
+                continue
+            dominant_topic = max(topics, key=lambda x: x[1])[0]
+            if dominant_topic not in topic_docs:
+                topic_docs[dominant_topic] = []
+            topic_docs[dominant_topic].append(embeddings[idx])
+
+        # Compute centroids for each topic
+        topic_centroids = {
+            topic: np.mean(vecs, axis=0)
+            for topic, vecs in topic_docs.items() if vecs
+        }
+
+        # Assign stories to the nearest topic centroid
+        assignments = []
+        for emb in embeddings:
+            best_topic = -1
+            max_sim = -1.0
+            for topic, centroid in topic_centroids.items():
+                sim = cosine_similarity([emb], [centroid])[0][0]
+                if sim > max_sim:
+                    max_sim = sim
+                    best_topic = topic
+            assignments.append(best_topic)
+
+        return assignments
 
 class XLM_RoBerta:
     def __init__(self) -> None:
@@ -136,6 +202,39 @@ class XLM_RoBerta:
         score = silhouette_score(embedding_matrix, pseudo_labels, metric='euclidean')
         print(f"[{lang}] XLM-RoBERTa Silhouette Score: {score:.4f}")
 
+    def lda_category(self, data, lda_model, corpus):
+        embeddings = self.get_embeddings(data)
+
+        # Map documents to their dominant LDA topic
+        topic_docs = {}
+        for idx, doc_bow in enumerate(corpus):
+            topics = lda_model.get_document_topics(doc_bow)
+            if not topics:
+                continue
+            dominant_topic = max(topics, key=lambda x: x[1])[0]
+            if dominant_topic not in topic_docs:
+                topic_docs[dominant_topic] = []
+            topic_docs[dominant_topic].append(embeddings[idx])
+
+        # Compute centroids for each topic
+        topic_centroids = {
+            topic: np.mean(vecs, axis=0)
+            for topic, vecs in topic_docs.items() if vecs
+        }
+
+        # Assign stories to the nearest topic centroid
+        assignments = []
+        for emb in embeddings:
+            best_topic = -1
+            max_sim = -1.0
+            for topic, centroid in topic_centroids.items():
+                sim = cosine_similarity([emb], [centroid])[0][0]
+                if sim > max_sim:
+                    max_sim = sim
+                    best_topic = topic
+            assignments.append(best_topic)
+
+        return assignments
 
 def visualize_multilingual_models_single_plot(
     langs_data: dict,

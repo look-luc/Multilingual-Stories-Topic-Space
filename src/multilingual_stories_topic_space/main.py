@@ -76,20 +76,43 @@ def main(just_graph:bool=False, lda:bool=False):
     data_dict = setup("all")
 
     if lda:
-        topics = []
-        print("Training language-specific LDA models...")
+        deberta_assignment = []
+        qwen_assignment = []
+        roberta_assignment = []
+        print("Training language-specific LDA models and categorizing stories...")
         for lang, texts in data_dict.items():
             if not texts:
                 continue
-            print(f"\n--- LDA Topics for {lang} ---")
+            print(f"\n--- LDA Topics & Categorization for {lang} ---")
             try:
                 lda_instance = LDA(docs=texts, num_topics=5)
-                idx, topic = lda_instance.lda_model.print_topics(-1)
-                topics.append(topic)
-                for idxs, topics in lda_instance.lda_model.print_topics(-1):
-                    print(f"  Topic {idxs}: {topics}")
+
+                # Print topics cleanly
+                for idx, topic_desc in lda_instance.lda_model.print_topics(-1):
+                    print(f"  Topic {idx}: {topic_desc}")
+
+                # Run classification for each model using the correct instance, texts, and corpus
+                print(f"  Running DeBERTa classification for {lang}...")
+                deberta_assignments = deberta.lda_category(data=texts, lda_model=lda_instance.lda_model, corpus=lda_instance.corpus)
+                deberta_assignment.append(deberta_assignments)
+
+                print(f"  Running Qwen classification for {lang}...")
+                qwen_assignments = qwen.lda_category(data=texts, lda_model=lda_instance.lda_model, corpus=lda_instance.corpus)
+                qwen_assignment.append(qwen_assignments)
+
+                print(f"  Running XLM-RoBERTa classification for {lang}...")
+                roberta_assignments = roberta.lda_category(data=texts, lda_model=lda_instance.lda_model, corpus=lda_instance.corpus)
+                roberta_assignment.append(roberta_assignments)
+
             except Exception as e:
-                print(f"  Could not train LDA for {lang}: {e}")
+                print(f"  Could not train/categorize LDA for {lang}: {e}")
+        print(
+            f"""
+            deberta assignments: {deberta_assignment}\n
+            xlm RoBerta assignments: {roberta_assignment}\n
+            Qwen assignments: {qwen_assignment}\n
+            """
+        )
 
     if not just_graph:
         print("Running individual model visualizations...")
