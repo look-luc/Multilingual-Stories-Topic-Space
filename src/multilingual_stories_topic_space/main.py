@@ -2,8 +2,10 @@ import re
 from collections import Counter
 from itertools import combinations
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from scipy.spatial.distance import jensenshannon
 
 from src.data.get_data import get_all_data, get_some_data
 from src.model.LDA import LDA
@@ -15,6 +17,32 @@ from src.model.model import (
     visualize_multilingual_models_single_plot,
 )
 
+
+def calculate_topic_jsd(lda_model, topic_id_1, topic_id_2, num_words=None):
+    """
+    Computes JSD between the word distributions of two LDA topics.
+    """
+    if num_words is None:
+        num_words = len(lda_model.id2word)
+
+    # Get word distributions across the vocabulary for both topics
+    term_dist_1 = lda_model.get_topic_terms(topic_id_1, topn=num_words)
+    term_dist_2 = lda_model.get_topic_terms(topic_id_2, topn=num_words)
+
+    # Reconstruct dense probability vectors mapping word_id -> probability
+    p = np.zeros(len(lda_model.id2word))
+    q = np.zeros(len(lda_model.id2word))
+
+    for word_id, prob in term_dist_1:
+        p[word_id] = prob
+    for word_id, prob in term_dist_2:
+        q[word_id] = prob
+
+    # scipy returns the square root (JS Distance). Square it to get pure Divergence bounded [0, 1]
+    js_distance = jensenshannon(p, q, base=2)
+    js_divergence = js_distance ** 2
+
+    return js_divergence
 
 def parse_silhouette_scores(log_file_path):
     # Regex pattern to match lines like: [Acholi] DeBERTa Silhouette Score: 0.1994
@@ -110,15 +138,27 @@ def main(just_graph:bool=False, lda:bool=False):
         topic_counts_roberta = Counter(roberta_assignment)
         topic_counts_qwen = Counter(qwen_assignment)
 
-        # # Sort them by topic ID for plotting
-        # topics = sorted(topic_counts.keys())
-        # counts = [topic_counts[t] for t in topics]
-        with open("assignments.txt", "w", encoding="utf-8") as file:
-            file.write(f"""
-            deberta assignments: {deberta_assignment}\n
-            xlm RoBerta assignments: {roberta_assignment}\n
-            Qwen assignments: {qwen_assignment}\n
-            """)
+        # Sort them by topic ID for plotting
+        fig, axes = plt.subplots(1, 3, figsize=(15, 5), sharey=True)
+
+        counts_dict = {
+            "DeBERTa": topic_counts_deberta,
+            "XLM-RoBERTa": topic_counts_roberta,
+            "Qwen": topic_counts_qwen
+        }
+
+        for ax, (model_name, t_counts) in zip(axes, counts_dict.items()):
+            topics = sorted(t_counts.keys())
+            frequencies = [t_counts[t] for t in topics]
+
+            ax.bar(topics, frequencies, color='skyblue')
+            ax.set_title(f"{model_name} Topic Distribution")
+            ax.set_xlabel("Topic ID")
+            ax.set_ylabel("Number of Stories")
+            ax.grid(True, linestyle="--", alpha=0.5)
+
+        plt.tight_layout()
+        plt.savefig("lda_topic_dist.png")
 
     if not just_graph:
         print("Running individual model visualizations...")
