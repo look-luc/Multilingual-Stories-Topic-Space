@@ -45,7 +45,7 @@ def calculate_topic_jsd(lda_model, topic_id_1, topic_id_2, num_words=None):
 
     return js_divergence
 
-def evaluate_embedding_space_cca(embeddings_model1, embeddings_model2, embeddings_model3, n_components=2):
+def evaluate_embedding_space_cca(embeddings_model1, embeddings_model2, n_components=2):
     """
     Performs CCA between two different LLM embedding configurations
     for the exact same dataset array.
@@ -54,7 +54,7 @@ def evaluate_embedding_space_cca(embeddings_model1, embeddings_model2, embedding
     cca = CCA(n_components=n_components)
 
     # Fit and transform both embedding spaces into maximized canonical space
-    X_c, Y_c = cca.fit_transform(embeddings_model1, embeddings_model2, embeddings_model3)
+    X_c, Y_c = cca.fit_transform(embeddings_model1, embeddings_model2)
 
     # Track the canonical correlations across components
     correlations = []
@@ -181,6 +181,7 @@ def main(just_graph:bool=False, lda:bool=False):
         plt.tight_layout()
         plt.savefig("lda_topic_dist.png")
         print("finished topic distrinution bar graph at: lda_topic_dist.png")
+
         jsd_val = calculate_topic_jsd(lda_instance.lda_model, topic_id_1=0, topic_id_2=1)
         print(f"[{lang}] JSD between Topic 0 and Topic 1: {jsd_val:.4f}")
 
@@ -188,14 +189,14 @@ def main(just_graph:bool=False, lda:bool=False):
             if not texts:
                 continue
 
-            # 1. Fetch exact matching document vectors across the two models
             deberta_embs = deberta.get_embeddings(texts)
             roberta_embs = roberta.get_embeddings(texts)
             qwen_embs = qwen.get_embeddings(texts)
+            cca_corrs_dq = evaluate_embedding_space_cca(deberta_embs, qwen_embs, n_components=3)
+            cca_corrs_dr = evaluate_embedding_space_cca(deberta_embs, roberta_embs, n_components=3)
+            print(f"[{lang}] DeBERTa vs Qwen CCA Correlations: {cca_corrs_dq}")
+            print(f"[{lang}] DeBERTa vs XLM-RoBERTa CCA Correlations: {cca_corrs_dr}")
 
-            cca_corrs = evaluate_embedding_space_cca(deberta_embs, qwen_embs, roberta_embs, n_components=3)
-
-            print(f"[{lang}] DeBERTa vs Qwen Canonical Correlations: {cca_corrs}")
 
 
     if not just_graph:
