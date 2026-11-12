@@ -1,8 +1,8 @@
-\documentclass[11pt]{article}
+\documentclass[4pt]{article}
 
 % Change "review" to "final" to generate the final (sometimes called camera-ready) version.
 % Change to "preprint" to generate a non-anonymous version with page numbers.
-\usepackage[review]{acl}
+\usepackage[preprint]{acl}
 
 % Standard package includes
 \usepackage{times}
@@ -34,18 +34,24 @@ Language Models}
 
 \begin{document}
     \maketitle
-    \begin{abstract}
-        foundational algorithms~\citep{Aho:72}. This is a placeholder
-    \end{abstract}
 
     \section{Introduction}
+
+    \section{Related work}
+    \citet{conneau2020emerging} \citet{eldan2023tinystories} \citet{adelani-etal-2022-masakhanews}
+
+    \section{Methodology}
+
+    \section{Data}
+
+    \section{Feasible tests}
 
     \section{Results}
 
     \appendix
     \section{Figures and Tables}
-    Refer to \autoref{tab:silhouette_scores} to \ref{tab:xlmr_sim} for the
-    tables and \autoref{fig:embedd} and \ref{lda} for the two figures.
+    Refer to \autoref{tab:silhouette_scores} to \ref{tab:xlmr_sim} for the tables
+    and \autoref{fig:embedd} and \ref{lda} for the two figures.
     \begin{table}[htbp]
         \centering
         \vspace{0.5em}
@@ -82,95 +88,92 @@ Language Models}
         \label{tab:silhouette_scores}
     \end{table}
 
-    \begin{table*}
-        [htbp]
+    \begin{table}[htbp]
         \centering
         \small
         \begin{tabular}{llcc}
-            \toprule \textbf{Language 1} & \textbf{Language 2} & \textbf{Matrix Shape} & \textbf{Mean Cosine Sim.} \\
-            \midrule Acholi              & Luganda             & (4108, 5455)          & 0.9508                    \\
-            Acholi                       & Masaaba             & (4108, 6867)          & 0.9619                    \\
-            Acholi                       & Nyankole            & (4108, 6783)          & 0.9583                    \\
-            Acholi                       & Soga                & (4108, 6219)          & 0.9615                    \\
-            Acholi                       & Akan                & (4108, 10107)         & 0.9490                    \\
-            Acholi                       & Ewe                 & (4108, 15054)         & 0.9513                    \\
-            Acholi                       & Dagbani             & (4108, 14231)         & 0.9727                    \\
-            Acholi                       & Norwegian           & (4108, 534)           & 0.6627                    \\
-            Acholi                       & Slovak              & (4108, 538)           & 0.6109                    \\
-            Acholi                       & Serbian             & (4108, 546)           & 0.6337                    \\
-            Acholi                       & Bulgarian           & (4108, 539)           & 0.5994                    \\
-            Acholi                       & Czech               & (4108, 529)           & 0.5950                    \\
-            Acholi                       & Turkish             & (4108, 535)           & 0.6592                    \\
-            Acholi                       & Persian             & (4108, 535)           & 0.7178                    \\
-            Acholi                       & Vietnamese          & (4108, 530)           & 0.4640                    \\
-            Acholi                       & Indonesian          & (4108, 548)           & 0.6435                    \\
-            Acholi                       & Assamese            & (4108, 4829)          & 0.7712                    \\
-            Acholi                       & Dogri               & (4108, 4874)          & 0.8890                    \\
-            Acholi                       & GOM                 & (4108, 4831)          & 0.9279                    \\
-            Acholi                       & Kannada             & (4108, 11643)         & 0.7280                    \\
-            Acholi                       & Nepali              & (4108, 4814)          & 0.7242                    \\
-            Acholi                       & Tamil               & (4108, 12841)         & 0.7609                    \\
-            Acholi                       & Sindhi              & (4108, 4831)          & 0.7811                    \\
-            Luganda                      & Nyankole            & (5455, 6783)          & 0.9677                    \\
-            Luganda                      & Soga                & (5455, 6219)          & 0.9679                    \\
-            Norwegian                    & Slovak              & (534, 538)            & 0.9842                    \\
-            Norwegian                    & Serbian             & (534, 546)            & 0.9835                    \\
-            Slovak                       & Czech               & (538, 529)            & 0.9935                    \\
-            Kannada                      & Nepali              & (11643, 4814)         & 0.9748                    \\
-            Nepali                       & Sindhi              & (4814, 4831)          & 0.9694                    \\
+            \toprule \textbf{Language 1} & \textbf{Language 2} & \textbf{Mean Cosine Sim.} \\
+            \midrule Acholi              & Luganda             & 0.9508                    \\
+            Acholi                       & Masaaba             & 0.9619                    \\
+            Acholi                       & Nyankole            & 0.9583                    \\
+            Acholi                       & Soga                & 0.9615                    \\
+            Acholi                       & Akan                & 0.9490                    \\
+            Acholi                       & Ewe                 & 0.9513                    \\
+            Acholi                       & Dagbani             & 0.9727                    \\
+            Acholi                       & Norwegian           & 0.6627                    \\
+            Acholi                       & Slovak              & 0.6109                    \\
+            Acholi                       & Serbian             & 0.6337                    \\
+            Acholi                       & Bulgarian           & 0.5994                    \\
+            Acholi                       & Czech               & 0.5950                    \\
+            Acholi                       & Turkish             & 0.6592                    \\
+            Acholi                       & Persian             & 0.7178                    \\
+            Acholi                       & Vietnamese          & 0.4640                    \\
+            Acholi                       & Indonesian          & 0.6435                    \\
+            Acholi                       & Assamese            & 0.7712                    \\
+            Acholi                       & Dogri               & 0.8890                    \\
+            Acholi                       & GOM                 & 0.9279                    \\
+            Acholi                       & Kannada             & 0.7280                    \\
+            Acholi                       & Nepali              & 0.7242                    \\
+            Acholi                       & Tamil               & 0.7609                    \\
+            Acholi                       & Sindhi              & 0.7811                    \\
+            Luganda                      & Nyankole            & 0.9677                    \\
+            Luganda                      & Soga                & 0.9679                    \\
+            Norwegian                    & Slovak              & 0.9842                    \\
+            Norwegian                    & Serbian             & 0.9835                    \\
+            Slovak                       & Czech               & 0.9935                    \\
+            Kannada                      & Nepali              & 0.9748                    \\
+            Nepali                       & Sindhi              & 0.9694                    \\
             \bottomrule
         \end{tabular}
         \caption{Cross-Lingual Cosine Similarity Metrics (DeBERTa Model)}
         \label{tab:deberta_sim}
-    \end{table*}
+    \end{table}
 
-    \begin{table*}
-        [htbp]
+    \begin{table}[htbp]
         \centering
         \small
         \begin{tabular}{llcc}
-            \toprule \textbf{Language 1} & \textbf{Language 2} & \textbf{Matrix Shape} & \textbf{Mean Cosine Sim.} \\
-            \midrule Acholi              & Luganda             & (4108, 5455)          & 0.9033                    \\
-            Acholi                       & Masaaba             & (4108, 6867)          & 0.8999                    \\
-            Acholi                       & Nyankole            & (4108, 6783)          & 0.9018                    \\
-            Acholi                       & Soga                & (4108, 6219)          & 0.9156                    \\
-            Acholi                       & Akan                & (4108, 10107)         & 0.8560                    \\
-            Acholi                       & Norwegian           & (4108, 534)           & 0.5413                    \\
-            Acholi                       & Bulgarian           & (4108, 539)           & -0.1191                   \\
-            Acholi                       & Persian             & (4108, 535)           & -0.1207                   \\
-            Acholi                       & Kannada             & (4108, 11643)         & -0.0689                   \\
-            Luganda                      & Nyankole            & (5455, 6783)          & 0.9606                    \\
-            Norwegian                    & Slovak              & (534, 538)            & 0.4964                    \\
-            Slovak                       & Czech               & (538, 529)            & 0.8998                    \\
-            Dogri                        & GOM                 & (4874, 4831)          & 0.9543                    \\
-            Kannada                      & Tamil               & (11643, 12841)        & 0.5917                    \\
+            \toprule \textbf{Language 1} & \textbf{Language 2} & \textbf{Mean Cosine Sim.} \\
+            \midrule Acholi              & Luganda             & 0.9033                    \\
+            Acholi                       & Masaaba             & 0.8999                    \\
+            Acholi                       & Nyankole            & 0.9018                    \\
+            Acholi                       & Soga                & 0.9156                    \\
+            Acholi                       & Akan                & 0.8560                    \\
+            Acholi                       & Norwegian           & 0.5413                    \\
+            Acholi                       & Bulgarian           & -0.1191                   \\
+            Acholi                       & Persian             & -0.1207                   \\
+            Acholi                       & Kannada             & -0.0689                   \\
+            Luganda                      & Nyankole            & 0.9606                    \\
+            Norwegian                    & Slovak              & 0.4964                    \\
+            Slovak                       & Czech               & 0.8998                    \\
+            Dogri                        & GOM                 & 0.9543                    \\
+            Kannada                      & Tamil               & 0.5917                    \\
             \bottomrule
         \end{tabular}
         \caption{Cross-Lingual Cosine Similarity Metrics (Qwen Model)}
         \label{tab:qwen_sim}
-    \end{table*}
+    \end{table}
 
-    \begin{table*}
-        [htbp]
+    \begin{table}[htbp]
         \centering
         \small
         \begin{tabular}{llcc}
-            \toprule \textbf{Language 1} & \textbf{Language 2} & \textbf{Matrix Shape} & \textbf{Mean Cosine Sim.} \\
-            \midrule Acholi              & Luganda             & (4108, 5455)          & 0.9965                    \\
-            Acholi                       & Masaaba             & (4108, 6867)          & 0.9962                    \\
-            Acholi                       & Nyankole            & (4108, 6783)          & 0.9967                    \\
-            Acholi                       & Norwegian           & (4108, 534)           & 0.9894                    \\
-            Luganda                      & Nyankole            & (5455, 6783)          & 0.9971                    \\
-            Norwegian                    & Slovak              & (534, 538)            & 0.9974                    \\
-            Slovak                       & Czech               & (538, 529)            & 0.9987                    \\
-            Vietnamese                   & Indonesian          & (530, 548)            & 0.9983                    \\
-            Dogri                        & GOM                 & (4874, 4831)          & 0.9980                    \\
-            Kannada                      & Tamil               & (11643, 12841)        & 0.9975                    \\
+            \toprule \textbf{Language 1} & \textbf{Language 2} & \textbf{Mean Cosine Sim.} \\
+            \midrule Acholi              & Luganda             & 0.9965                    \\
+            Acholi                       & Masaaba             & 0.9962                    \\
+            Acholi                       & Nyankole            & 0.9967                    \\
+            Acholi                       & Norwegian           & 0.9894                    \\
+            Luganda                      & Nyankole            & 0.9971                    \\
+            Norwegian                    & Slovak              & 0.9974                    \\
+            Slovak                       & Czech               & 0.9987                    \\
+            Vietnamese                   & Indonesian          & 0.9983                    \\
+            Dogri                        & GOM                 & 0.9980                    \\
+            Kannada                      & Tamil               & 0.9975                    \\
             \bottomrule
         \end{tabular}
         \caption{Cross-Lingual Cosine Similarity Metrics (XLM-RoBERTa Model)}
         \label{tab:xlmr_sim}
-    \end{table*}
+    \end{table}
 
     \begin{figure*}[t]
         \includegraphics[width=\linewidth]{
