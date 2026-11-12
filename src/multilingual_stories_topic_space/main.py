@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 from itertools import combinations
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -110,7 +111,7 @@ def setup(data_amount: str = "some"):
         raise Exception("Either: 'some' or 'all'")
 
 
-def main(just_graph:bool=False, lda:bool=False):
+def main(just_graph:bool=False, lda:bool=False, parse_out:bool=False):
     print("Initializing models...")
     deberta = DeBerta()
     qwen = Qwen()
@@ -197,9 +198,7 @@ def main(just_graph:bool=False, lda:bool=False):
             print(f"[{lang}] DeBERTa vs Qwen CCA Correlations: {cca_corrs_dq}")
             print(f"[{lang}] DeBERTa vs XLM-RoBERTa CCA Correlations: {cca_corrs_dr}")
 
-
-
-    if not just_graph:
+    if just_graph:
         print("Running individual model visualizations...")
         for lang, texts in data_dict.items():
             if not texts:
@@ -228,11 +227,36 @@ def main(just_graph:bool=False, lda:bool=False):
                 print(f"  {lang1} vs {lang2} | Similarity Matrix Shape: {similarity_matrix.shape} | Mean Cosine Similarity: {np.mean(similarity_matrix):.4f}")
 
         print("\nGenerating combined model comparative scatterplots...")
+    if parse_out:
+        line_pattern = re.compile(r"\[(.*?)\]\s+(.*?)\s+CCA Correlations:\s+\[(.*?)\]")
+        float_pattern = re.compile(r"np\.float64\((-?\d+\.\d+)\)")
+
+        rows = []
+        base_path = Path(".") # Adjust to your actual base path
+
+        file_path = base_path / "src/model/more_metrics.txt"
+
+        with open(file_path, "r") as file:
+            for line in file:
+                match = line_pattern.match(line.strip())
+                if match:
+                    lang, model_pair, floats_str = match.groups()
+
+                    # Extract all float values from the bracketed string chunk
+                    floats = [float(v) for v in float_pattern.findall(floats_str)]
+
+                    if len(floats) == 3:
+                        rows.append({
+                            "Language": lang,
+                            "Comparison": model_pair,
+                            "Dim_1": floats[0],
+                            "Dim_2": floats[1],
+                            "Dim_3": floats[2]
+                        })
+
+        df = pd.DataFrame(rows)
+        print(df.to_latex())
     else:
         visualize_multilingual_models_single_plot(data_dict, models)
 
     print("Done!")
-
-
-if __name__ == "__main__":
-    parse_silhouette_scores("/Users/lucdenardi/Desktop/code_lang/python/Multilingual-Stories-Topic-Space/35466656.log")
