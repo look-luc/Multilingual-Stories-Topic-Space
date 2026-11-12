@@ -1,4 +1,4 @@
-PWD /Users/lucdenardi/Desktop/code_lang/python/Multilingual-Stories-Topic-Space/Association_for_Computational_Linguistics__ACL__conference/latex
+PWD /Users/lucdenardi/Desktop/code_lang/python/Multilingual-Stories-Topic-Space/paper/latex
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -192,6 +192,14 @@ INPUT ./multilingual_models_embedding_space.png
 INPUT ./multilingual_models_embedding_space.png
 INPUT ./multilingual_models_embedding_space.png
 INPUT ./multilingual_models_embedding_space.png
+INPUT ./lda_topic_dist.png
+INPUT ./lda_topic_dist.png
+INPUT ./lda_topic_dist.png
+INPUT ./lda_topic_dist.png
+INPUT ./lda_topic_dist.png
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT ./acl_latex.bbl
 INPUT ./acl_latex.bbl
 INPUT acl_latex.bbl
@@ -206,14 +214,14 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/helvetic/phvb.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT acl_latex.aux
 INPUT ./acl_latex.out
 INPUT ./acl_latex.out

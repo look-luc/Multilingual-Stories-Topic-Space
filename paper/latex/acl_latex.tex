@@ -41,6 +41,11 @@ Language Models}
     \section{Introduction}
 
     \section{Results}
+
+    \appendix
+    \section{Figures and Tables}
+    Refer to \autoref{tab:silhouette_scores} to \ref{tab:xlmr_sim} for the
+    tables and \autoref{fig:embedd} and \ref{lda} for the two figures.
     \begin{table}[htbp]
         \centering
         \vspace{0.5em}
@@ -77,7 +82,6 @@ Language Models}
         \label{tab:silhouette_scores}
     \end{table}
 
-    % Using table* to span both columns for wide/long tables
     \begin{table*}
         [htbp]
         \centering
@@ -174,7 +178,71 @@ Language Models}
         }
         \caption{A minimal working example to demonstrate how to place two
         images side-by-side.}
+        \label{fig:embedd}
     \end{figure*}
+
+    \begin{figure*}[t]
+        \includegraphics[width=\linewidth]{lda_topic_dist.png}
+        \caption{LDA topic categorization distribution}
+        \label{lda}
+    \end{figure*}
+
+    \begin{table}[t]
+        \centering
+        \begin{tabular}{lllrrr}
+            \toprule   & Language   & Comparison             & Dimension 1 & Dimension 2 & Dimension 3 \\
+            \midrule 0 & Acholi     & DeBERTa vs Qwen        & 0.999996    & 0.994984    & 0.996444    \\
+            1          & Acholi     & DeBERTa vs XLM-RoBERTa & 0.996180    & 0.983579    & 0.979210    \\
+            2          & Luganda    & DeBERTa vs Qwen        & 0.997958    & 0.996214    & 0.992004    \\
+            3          & Luganda    & DeBERTa vs XLM-RoBERTa & 0.992680    & 0.980998    & 0.978608    \\
+            4          & Masaaba    & DeBERTa vs Qwen        & 0.996729    & 0.994966    & 0.990517    \\
+            5          & Masaaba    & DeBERTa vs XLM-RoBERTa & 0.993225    & 0.980985    & 0.979801    \\
+            6          & Nyankole   & DeBERTa vs Qwen        & 0.994315    & 0.991878    & 0.984842    \\
+            7          & Nyankole   & DeBERTa vs XLM-RoBERTa & 0.988397    & 0.982236    & 0.973999    \\
+            8          & Soga       & DeBERTa vs Qwen        & 0.996412    & 0.994938    & 0.989129    \\
+            9          & Soga       & DeBERTa vs XLM-RoBERTa & 0.992065    & 0.984717    & 0.972391    \\
+            10         & Akan       & DeBERTa vs Qwen        & 0.988052    & 0.992737    & 0.988121    \\
+            11         & Akan       & DeBERTa vs XLM-RoBERTa & 0.988035    & 0.983507    & 0.979119    \\
+            12         & Ewe        & DeBERTa vs Qwen        & 0.992485    & 0.988232    & 0.986231    \\
+            13         & Ewe        & DeBERTa vs XLM-RoBERTa & 0.985299    & 0.987757    & 0.976501    \\
+            14         & Dagbani    & DeBERTa vs Qwen        & 0.992607    & 0.984602    & 0.984641    \\
+            15         & Dagbani    & DeBERTa vs XLM-RoBERTa & 0.990721    & 0.978886    & 0.982787    \\
+            16         & Norwegian  & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            17         & Norwegian  & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            18         & Slovak     & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            19         & Slovak     & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            20         & Serbian    & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            21         & Serbian    & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            22         & Bulgarian  & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            23         & Bulgarian  & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            24         & Czech      & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            25         & Czech      & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            26         & Turkish    & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            27         & Turkish    & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            28         & Persian    & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            29         & Persian    & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            30         & Vietnamese & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            31         & Vietnamese & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            32         & Indonesian & DeBERTa vs Qwen        & 1.000000    & 1.000000    & 1.000000    \\
+            33         & Indonesian & DeBERTa vs XLM-RoBERTa & 1.000000    & 1.000000    & 1.000000    \\
+            34         & Assamese   & DeBERTa vs Qwen        & 0.998580    & 0.998028    & 0.997125    \\
+            35         & Assamese   & DeBERTa vs XLM-RoBERTa & 0.992181    & 0.993391    & 0.987680    \\
+            36         & Dogri      & DeBERTa vs Qwen        & 0.998329    & 0.998787    & 0.997214    \\
+            37         & Dogri      & DeBERTa vs XLM-RoBERTa & 0.992667    & 0.989423    & 0.984441    \\
+            38         & GOM        & DeBERTa vs Qwen        & 0.998587    & 0.998678    & 0.997664    \\
+            39         & GOM        & DeBERTa vs XLM-RoBERTa & 0.993198    & 0.991190    & 0.983822    \\
+            40         & Kannada    & DeBERTa vs Qwen        & 0.994520    & 0.976164    & 0.971726    \\
+            41         & Kannada    & DeBERTa vs XLM-RoBERTa & 0.992557    & 0.988733    & 0.984590    \\
+            42         & Nepali     & DeBERTa vs Qwen        & 0.998997    & 0.998740    & 0.998223    \\
+            43         & Nepali     & DeBERTa vs XLM-RoBERTa & 0.991894    & 0.992935    & 0.986940    \\
+            44         & Tamil      & DeBERTa vs Qwen        & 0.984171    & 0.978970    & 0.974888    \\
+            45         & Tamil      & DeBERTa vs XLM-RoBERTa & 0.991453    & 0.987195    & 0.984323    \\
+            46         & Sindhi     & DeBERTa vs Qwen        & 0.998605    & 0.999204    & 0.998230    \\
+            47         & Sindhi     & DeBERTa vs XLM-RoBERTa & 0.992767    & 0.991836    & 0.985045    \\
+            \bottomrule
+        \end{tabular}
+        \caption{CCA for each language against each model}
+    \end{table}
 
     \bibliography{custom}
 

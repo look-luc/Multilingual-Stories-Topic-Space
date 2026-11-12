@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  9 NOV 2026 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  12 NOV 2026 09:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,24 +378,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 (./acl_latex.aux)
 \openout1 = `acl_latex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -456,25 +456,25 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 37.
+Package hyperref Info: Link coloring ON on input line 35.
 (./acl_latex.out) (./acl_latex.out)
 \@outlinefile=\write3
 \openout3 = `acl_latex.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 37.
-Package microtype Info: Applying patch `item' on input line 37.
-Package microtype Info: Applying patch `toc' on input line 37.
-Package microtype Info: Applying patch `eqnum' on input line 37.
-Package microtype Info: Applying patch `footnote' on input line 37.
-Package microtype Info: Applying patch `verbatim' on input line 37.
-LaTeX Info: Redefining \microtypesetup on input line 37.
+LaTeX Info: Redefining \microtypecontext on input line 35.
+Package microtype Info: Applying patch `item' on input line 35.
+Package microtype Info: Applying patch `toc' on input line 35.
+Package microtype Info: Applying patch `eqnum' on input line 35.
+Package microtype Info: Applying patch `footnote' on input line 35.
+Package microtype Info: Applying patch `verbatim' on input line 35.
+LaTeX Info: Redefining \microtypesetup on input line 35.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 37.
+LaTeX Info: Redefining \showhyphens on input line 35.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -487,28 +487,40 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 38.
+(Font)              <12> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 38.
+(Font)              <8> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 38.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 38
+(Font)              <6> on input line 36.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 36
 .
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 50.
+(Font)              <9> on input line 53.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 50.
-<multilingual_models_embedding_space.png, id=14, 1293.3921pt x 428.5611pt>
+(Font)              <5> on input line 53.
+<multilingual_models_embedding_space.png, id=22, 1105.2492pt x 577.1964pt>
 File: multilingual_models_embedding_space.png Graphic file (type png)
 <use multilingual_models_embedding_space.png>
 Package pdftex.def Info: multilingual_models_embedding_space.png  used on input
- line 176.
-(pdftex.def)             Requested size: 455.24411pt x 150.8422pt.
- (./acl_latex.bbl)
+ line 178.
+(pdftex.def)             Requested size: 455.24411pt x 237.74416pt.
+<lda_topic_dist.png, id=24, 1084.05pt x 361.35pt>
+File: lda_topic_dist.png Graphic file (type png)
+<use lda_topic_dist.png>
+Package pdftex.def Info: lda_topic_dist.png  used on input line 185.
+(pdftex.def)             Requested size: 455.24411pt x 151.74942pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 192.
+
+Overfull \hbox (215.08144pt too wide) in paragraph at lines 192--244
+ [][] 
+ []
+
+(./acl_latex.bbl)
 
 
 
@@ -518,30 +530,37 @@ ocal/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 
-] [2] [3 <./multilingual_models_embedding_space.png>] (./acl_latex.aux)
+] [2] [3 <./multilingual_models_embedding_space.png> <./lda_topic_dist.png>]
+
+
+
+[4
+
+
+] (./acl_latex.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `acl_latex.out' has not changed.
-(rerunfilecheck)             Checksum: FDF1A059BBADAE0BAABCCA42C360C1C3;181.
+(rerunfilecheck)             Checksum: 1B38115386F7AFE31968FB7B39620C72;321.
  ) 
 Here is how much of TeX's memory you used:
- 14021 strings out of 473190
- 225576 string characters out of 5715801
- 691710 words of memory out of 5000000
- 37029 multiletter control sequences out of 15000+600000
- 590286 words of font info for 108 fonts, out of 8000000 for 9000
+ 14045 strings out of 473190
+ 226037 string characters out of 5715801
+ 708765 words of memory out of 5000000
+ 37048 multiletter control sequences out of 15000+600000
+ 591074 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,93p,1006b,480s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/tex
 live/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl_latex.pdf (3 pages, 2103222 bytes).
+Output written on acl_latex.pdf (4 pages, 637260 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 35350 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 82 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 35875 words of extra memory for PDF output out of 42996 (max. 10000000)
 
