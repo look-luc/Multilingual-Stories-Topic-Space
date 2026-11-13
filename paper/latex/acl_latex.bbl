@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Adelani et~al.(2022)Adelani, Abbott, Neubig, Duruaku
@@ -9,6 +9,16 @@ David~Ifeoluwa Adelani, Jade Abbott, Graham Neubig, Ignatius~Ezeani Duruaku,
 \newblock In \emph{Proceedings of the 60th Annual Meeting of the Association
   for Computational Linguistics}.
 
+\bibitem[{Bianchi et~al.(2021)Bianchi, Terragni, Hovy, Nozza, and
+  Fersini}]{bianchi-etal-2021-cross}
+Federico Bianchi, Silvia Terragni, Dirk Hovy, Debora Nozza, and Elisabetta
+  Fersini. 2021.
+\newblock \href {https://doi.org/10.18653/v1/2021.eacl-main.143} {Cross-lingual
+  contextualized topic models with zero-shot learning}.
+\newblock In \emph{Proceedings of the 16th Conference of the {E}uropean Chapter
+  of the {A}ssociation for {C}omputational {L}inguistics: Main Volume}, pages
+  1676--1683, Online. Association for Computational Linguistics.
+
 \bibitem[{Conneau et~al.(2020)Conneau, Khandelwal, Goyal, Chaudhary, Wenzek,
   Guzmán, Grave, Ott, Zettlemoyer, and Stoyanov}]{conneau2020emerging}
 Alexis Conneau, Kartik Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume
@@ -18,10 +28,50 @@ Alexis Conneau, Kartik Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume
 \newblock In \emph{Proceedings of the 58th Annual Meeting of the Association
   for Computational Linguistics}.
 
+\bibitem[{Conneau et~al.(2019)Conneau, Khandelwal, Goyal, Chaudhary, Wenzek,
+  Guzm{\'{a}}n, Grave, Ott, Zettlemoyer, and
+  Stoyanov}]{DBLP:journals/corr/abs-1911-02116}
+Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume
+  Wenzek, Francisco Guzm{\'{a}}n, Edouard Grave, Myle Ott, Luke Zettlemoyer,
+  and Veselin Stoyanov. 2019.
+\newblock \href {https://arxiv.org/abs/1911.02116} {Unsupervised cross-lingual
+  representation learning at scale}.
+\newblock \emph{CoRR}, abs/1911.02116.
+
 \bibitem[{Eldan and Li(2023)}]{eldan2023tinystories}
 Ronen Eldan and Yuanzhi Li. 2023.
 \newblock Tinystories: How small can language models be and still speak
   coherent english?
 \newblock \emph{arXiv preprint arXiv:2305.07759}.
+
+\bibitem[{He et~al.(2021{\natexlab{a}})He, Gao, and Chen}]{he2021debertav3}
+Pengcheng He, Jianfeng Gao, and Weizhu Chen. 2021{\natexlab{a}}.
+\newblock \href {https://arxiv.org/abs/2111.09543} {Debertav3: Improving
+  deberta using electra-style pre-training with gradient-disentangled embedding
+  sharing}.
+\newblock \emph{Preprint}, arXiv:2111.09543.
+
+\bibitem[{He et~al.(2021{\natexlab{b}})He, Liu, Gao, and Chen}]{he2021deberta}
+Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen. 2021{\natexlab{b}}.
+\newblock \href {https://openreview.net/forum?id=XPZIaotutsD} {Deberta:
+  Decoding-enhanced bert with disentangled attention}.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Team(2024)}]{qwen2.5}
+Qwen Team. 2024.
+\newblock \href {https://qwenlm.github.io/blog/qwen2.5/} {Qwen2.5: A party of
+  foundation models}.
+
+\bibitem[{Yang et~al.(2024)Yang, Yang, Hui, Zheng, Yu, Zhou, Li, Li, Liu,
+  Huang, Dong, Wei, Lin, Tang, Wang, Yang, Tu, Zhang, Ma, Xu, Zhou, Bai, He,
+  Lin, Dang, Lu, Chen, Yang, Li, Xue, Ni, Zhang, Wang, Peng, Men, Gao, Lin,
+  Wang, Bai, Tan, Zhu, Li, Liu, Ge, Deng, Zhou, Ren, Zhang, Wei, Ren, Fan, Yao,
+  Zhang, Wan, Chu, Liu, Cui, Zhang, and Fan}]{qwen2}
+An~Yang, Baosong Yang, Binyuan Hui, Bo~Zheng, Bowen Yu, Chang Zhou, Chengpeng
+  Li, Chengyuan Li, Dayiheng Liu, Fei Huang, Guanting Dong, Haoran Wei, Huan
+  Lin, Jialong Tang, Jialin Wang, Jian Yang, Jianhong Tu, Jianwei Zhang,
+  Jianxin Ma, and 40 others. 2024.
+\newblock Qwen2 technical report.
+\newblock \emph{arXiv preprint arXiv:2407.10671}.
 
 \end{thebibliography}

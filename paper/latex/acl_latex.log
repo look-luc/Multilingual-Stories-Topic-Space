@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  12 NOV 2026 10:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  12 NOV 2026 17:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
-(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count196
 \c@section=\count197
@@ -353,10 +353,6 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count295
 \l__pdf_internal_box=\box55
 )
-
-LaTeX Warning: Unused global option(s):
-    [4pt].
-
 (./acl_latex.aux)
 \openout1 = `acl_latex.aux'.
 
@@ -414,16 +410,16 @@ e
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=455.24411pt
-* \textheight=706.0pt
+* \textheight=704.60031pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
 * \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
 * \columnsep=17.07182pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
@@ -490,29 +486,25 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 59.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 59.
-<multilingual_models_embedding_space.png, id=42, 1105.2492pt x 577.1964pt>
-File: multilingual_models_embedding_space.png Graphic file (type png)
-<use multilingual_models_embedding_space.png>
-Package pdftex.def Info: multilingual_models_embedding_space.png  used on input
- line 181.
-(pdftex.def)             Requested size: 455.24411pt x 237.74416pt.
-<lda_topic_dist.png, id=44, 1084.05pt x 361.35pt>
-File: lda_topic_dist.png Graphic file (type png)
-<use lda_topic_dist.png>
-Package pdftex.def Info: lda_topic_dist.png  used on input line 188.
-(pdftex.def)             Requested size: 455.24411pt x 151.74942pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 195.
 
-Overfull \hbox (183.66089pt too wide) in paragraph at lines 195--247
- [][] 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--75
+[][][]\T1/ptm/m/n/10.95 (+20) Adelani et al.[][] ([][]2022[][]) has de-vel-oped
+
  []
 
-(./acl_latex.bbl
+
+Underfull \hbox (badness 2635) in paragraph at lines 71--75
+\T1/ptm/m/n/10.95 (+20) MasakhaNEWS which is the largest dataset
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 111.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 111.
+
+Underfull \vbox (badness 2469) has occurred while \output is active []
 
 
 
@@ -522,16 +514,34 @@ ocal/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
+<multilingual_models_embedding_space.png, id=84, 1105.2492pt x 577.1964pt>
+File: multilingual_models_embedding_space.png Graphic file (type png)
+<use multilingual_models_embedding_space.png>
+Package pdftex.def Info: multilingual_models_embedding_space.png  used on input
+ line 233.
+(pdftex.def)             Requested size: 455.24411pt x 237.74416pt.
+<lda_topic_dist.png, id=86, 1084.05pt x 361.35pt>
+File: lda_topic_dist.png Graphic file (type png)
+<use lda_topic_dist.png>
+Package pdftex.def Info: lda_topic_dist.png  used on input line 240.
+(pdftex.def)             Requested size: 455.24411pt x 151.74942pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 248.
+ (./acl_latex.bbl
 
-)
-
-[2 <./multilingual_models_embedding_space.png> <./lda_topic_dist.png>]
 
 
+[2]
 
-[3
 
-] (./acl_latex.aux)
+
+[3 <./multilingual_models_embedding_space.png> <./lda_topic_dist.png>])
+
+
+
+[4
+
+] [5] (./acl_latex.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -540,21 +550,21 @@ Package rerunfilecheck Info: File `acl_latex.out' has not changed.
 (rerunfilecheck)             Checksum: 6661342037919933C7AA08F96370B5D9;704.
  ) 
 Here is how much of TeX's memory you used:
- 13807 strings out of 473190
- 222060 string characters out of 5715801
- 712845 words of memory out of 5000000
- 36794 multiletter control sequences out of 15000+600000
- 588232 words of font info for 116 fonts, out of 8000000 for 9000
+ 13941 strings out of 473190
+ 223631 string characters out of 5715801
+ 702589 words of memory out of 5000000
+ 36813 multiletter control sequences out of 15000+600000
+ 596717 words of font info for 191 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,10n,93p,1006b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,10n,93p,1006b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
 local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texl
 ive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl_latex.pdf (3 pages, 644126 bytes).
+Output written on acl_latex.pdf (5 pages, 652685 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 34883 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 153 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 38467 words of extra memory for PDF output out of 42996 (max. 10000000)
 
