@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex acl_latex"] 1794530043.68236 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1794530101.41017 0
+["bibtex acl_latex"] 1794591703.2587 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1794591705.02203 0
   "./acl_natbib.bst" 1794501091.7828 45186 3d1af46d62cc9172ef6e42b56c1cd613 ""
-  "./custom.bib" 1794529979.67537 5328 8cf6e510f78a4be663964b69c783cac6 ""
-  "acl_latex.aux" 1794530101.02895 4486 9dd02a12459d02447520683875d8c32a "pdflatex"
+  "./custom.bib" 1794530378.54554 5577 99fb750e402eb61bd312ed13e1461ab2 ""
+  "acl_latex.aux" 1794591704.78482 5044 e22dc9b891cf8fb8dbd53ff1ab0efcab "pdflatex"
   (generated)
   "acl_latex.bbl"
   "acl_latex.blg"
   (rewritten before read)
-["pdflatex"] 1794530098.7278 "acl_latex.tex" "acl_latex.pdf" "acl_latex" 1794530101.41041 0
+["pdflatex"] 1794591703.36866 "acl_latex.tex" "acl_latex.pdf" "acl_latex" 1794591705.02218 0
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -114,10 +114,10 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "acl.sty" 1794501091.77357 11615 e2c027f483aa40e577ed34264c8b0655 ""
-  "acl_latex.aux" 1794530101.02895 4486 9dd02a12459d02447520683875d8c32a "pdflatex"
-  "acl_latex.bbl" 1794530043.83815 3857 2a9a53892d723c911ef9de21d8cfaeed "bibtex acl_latex"
-  "acl_latex.out" 1794530101.03013 704 6661342037919933c7aa08f96370b5d9 "pdflatex"
-  "acl_latex.tex" 1794530098.39975 20026 edf2cba7f586c67955be3ad4c97e4274 ""
+  "acl_latex.aux" 1794591704.78482 5044 e22dc9b891cf8fb8dbd53ff1ab0efcab "pdflatex"
+  "acl_latex.bbl" 1794591703.3653 4101 d79e7585a39f1ed094ae614e30f379a8 "bibtex acl_latex"
+  "acl_latex.out" 1794591704.78563 961 a7f9bf41b893310ce064ab4d506e82fa "pdflatex"
+  "acl_latex.tex" 1794591701.0794 22084 a92b03a29297a79c09c4d148e13a996c ""
   "lda_topic_dist.png" 1794501091.78319 53035 2e63c48466a049fd0b191e5618d8f25b ""
   "multilingual_models_embedding_space.png" 1794501091.78544 648450 0c6347537a6b66c03129c7be95aed389 ""
   (generated)

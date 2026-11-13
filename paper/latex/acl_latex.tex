@@ -90,20 +90,54 @@ Language Models}
     to the mix.
 
     \section{Methodology}
+    \subsection{Pre-trained models}
     I have testing on three different models, two are from the Bert family: XLM-RoBERTa
     base \citep{DBLP:journals/corr/abs-1911-02116} and DeBerta v3 Base \citep{he2021debertav3, he2021deberta}
-    and a Qwen2.5-7B Instruct \citep{qwen2.5, qwen2} model.
+    and a Qwen2.5-7B Instruct \citep{qwen2.5, qwen2} model. Since I am using an Instruct
+    model, one would think of adding instructions to get the desired output, I did
+    not add any instructions and just pulled the pure embedding and raw outputs from
+    this model.
+
+    \subsection{Feasible tests}
+    I have done two distinced umbrella tests using the models.
+
+    The first test is to visualize the embedding space of all of the languages.
+    We can see the visualization in \autoref{fig:embedd} in
+    \autoref{app:fig_tables}. With this embedding space, I calculated the cosine
+    similarity for each model and the silhouette score per language. These tables
+    can be found from \autoref{tab:silhouette_scores} to \ref{tab:xlmr_sim} in \autoref{app:fig_tables}.
+
+    The second test, I introduced a Latent Dirichlet Allocation (LDA) \citep{blei2003latent}
+    to produce some kind of gold standard. I am using the LDA to create a
+    reference because the datasets were not created with a topic column so if I
+    want to find any bias, I would need an unbiased creator. The topics are in
+    the the actual language that the stories are in, trying to translate these topics
+    into English would inroduce some influences and possibly remove any cultural neuance
+    to the topics. The LDA model was prompted to create 5 categories for each
+    language. Using these categories, fed the categories to the pre-trained
+    models and found the distribution that the models had chose for the
+    languages. This distribution can be found in \autoref{lda} in \autoref{app:fig_tables}.
+    Since I have the distribution of the models, I calculated the Canonical Correlation
+    Analysis (CCA) between the models for each language. The table can be found
+    in \autoref{tab:cca} in \autoref{app:fig_tables}. Finally I calculated the Jensen-Shannon
+    score of just the first two topic labels, which I will talk about in
+    \autoref{sec:results}.
 
     \section{Data}
 
-    \section{Feasible tests}
-
     \section{Results}
+    \label{sec:results}
+
+    \section{Conclusion}
+
+    \section*{Limitations}
+
+    \section*{Acknowledgement}
 
     \appendix
     \section{Figures and Tables}
-    Refer to \autoref{tab:silhouette_scores} to \ref{tab:xlmr_sim} for the tables
-    and \autoref{fig:embedd} and \ref{lda} for the two figures.
+    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to \ref{tab:cca}
+    for the tables and \autoref{fig:embedd} and \ref{lda} for the two figures.
     \begin{table}[htbp]
         \centering
         \vspace{0.5em}
@@ -298,6 +332,7 @@ Language Models}
             \bottomrule
         \end{tabular}
         \caption{CCA for each language against each model}
+        \label{tab:cca}
     \end{table*}
 
     \bibliography{custom}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Adelani et~al.(2022)Adelani, Abbott, Neubig, Duruaku
@@ -18,6 +18,11 @@ Federico Bianchi, Silvia Terragni, Dirk Hovy, Debora Nozza, and Elisabetta
 \newblock In \emph{Proceedings of the 16th Conference of the {E}uropean Chapter
   of the {A}ssociation for {C}omputational {L}inguistics: Main Volume}, pages
   1676--1683, Online. Association for Computational Linguistics.
+
+\bibitem[{Blei et~al.(2003)Blei, Ng, and Jordan}]{blei2003latent}
+David~M Blei, Andrew~Y Ng, and Michael~I Jordan. 2003.
+\newblock Latent dirichlet allocation.
+\newblock \emph{Journal of Machine Learning Research}, 3(Jan):993--1022.
 
 \bibitem[{Conneau et~al.(2020)Conneau, Khandelwal, Goyal, Chaudhary, Wenzek,
   Guzmán, Grave, Ott, Zettlemoyer, and Stoyanov}]{conneau2020emerging}
@@ -57,8 +62,8 @@ Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen. 2021{\natexlab{b}}.
   Decoding-enhanced bert with disentangled attention}.
 \newblock In \emph{International Conference on Learning Representations}.
 
-\bibitem[{Team(2024)}]{qwen2.5}
-Qwen Team. 2024.
+\bibitem[{{Qwen Team}(2024)}]{qwen2.5}
+{Qwen Team}. 2024.
 \newblock \href {https://qwenlm.github.io/blog/qwen2.5/} {Qwen2.5: A party of
   foundation models}.
 
