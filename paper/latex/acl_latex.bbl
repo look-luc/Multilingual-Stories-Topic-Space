@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Adelani et~al.(2022)Adelani, Abbott, Neubig, Duruaku
@@ -8,6 +8,11 @@ David~Ifeoluwa Adelani, Jade Abbott, Graham Neubig, Ignatius~Ezeani Duruaku,
 \newblock {M}asakha{NEWS}: News topic classification for african languages.
 \newblock In \emph{Proceedings of the 60th Annual Meeting of the Association
   for Computational Linguistics}.
+
+\bibitem[{Anonymous(2026)}]{waxal2026}
+Anonymous. 2026.
+\newblock Waxal: A large-scale multilingual african language speech corpus.
+\newblock \emph{arXiv preprint arXiv:2602.02734}.
 
 \bibitem[{Bianchi et~al.(2021)Bianchi, Terragni, Hovy, Nozza, and
   Fersini}]{bianchi-etal-2021-cross}
@@ -42,6 +47,18 @@ Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume
 \newblock \href {https://arxiv.org/abs/1911.02116} {Unsupervised cross-lingual
   representation learning at scale}.
 \newblock \emph{CoRR}, abs/1911.02116.
+
+\bibitem[{Deepon~Halder(2026)}]{multilingual_tinystories_2026}
+Angira~Mukherjee Deepon~Halder. 2026.
+\newblock Multilingual tinystories: A synthetic combinatorial corpus of indic
+  children's stories for training small language models.
+\newblock
+  \url{https://huggingface.co/datasets/deeponh/multilingual-tinystories}.
+
+\bibitem[{Dxniz(2026)}]{dxniz2026tinystoriesmultilingual}
+Dxniz. 2026.
+\newblock Tinystories-multilingual.
+\newblock \url{https://huggingface.co/datasets/Dxniz/TinyStories-Multilingual}.
 
 \bibitem[{Eldan and Li(2023)}]{eldan2023tinystories}
 Ronen Eldan and Yuanzhi Li. 2023.

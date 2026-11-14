@@ -3,7 +3,7 @@
 % Change "review" to "final" to generate the final (sometimes called camera-ready) version.
 % Change to "preprint" to generate a non-anonymous version with page numbers.
 \usepackage[preprint]{acl}
-
+\usepackage{makecell}
 % Standard package includes
 \usepackage{times}
 \usepackage{latexsym}
@@ -30,10 +30,18 @@
 \title{Analyzing Cross-Lingual Topic Spaces and Story Representations in Pre-Trained
 Language Models}
 
-\author{Luc De Nardi \\ University of Colorado, Boulder \\ \texttt{denardiluc@gmail.com}}
+\author{Luc De Nardi \\ University of Colorado, Boulder \\ \texttt{Luc.DeNardi@colorado.edu}}
 
 \begin{document}
-    \maketitle
+    % \maketitle
+
+    \twocolumn[
+    \begin{center}
+        \vspace*{0.125in}
+        {\Large\bfseries Analyzing Cross-Lingual Topic Spaces and Story Representations in Pre-Trained Language Models \par}
+        \vspace*{0.25in}
+    \end{center}
+    ]
 
     \section{Introduction}
     Storytelling is an inherently human creation brings communities together. Culture
@@ -124,9 +132,50 @@ Language Models}
     \autoref{sec:results}.
 
     \section{Data}
+    I have used three different datasets.
+
+    \citet{waxal2026} is a large multilingual speech corpus for several African languages.
+    This dataset ``... provides datasets for both Automated Speech Recognition (ASR)
+    and Text-to-Speech (TTS) for African languages'' \citep{waxal2026}. \citet{waxal2026}
+    has gathered this data through partnerships with Makerere University, The
+    University of Ghana, Digital Umuganda, Media Trust, Loud and Clear, and AIMS
+    Senegal with the senegalese languages provided by AIMS Senegal. For this study,
+    I used the ASR portion of the data, which has 19 African languages as seen in
+    \autoref{tab:waxak-asr} in \autoref{app:data}. Out of these 19 languages, I use
+    these languages: Acholi, Luganda, Masaaba, Nyankole, Soga, Akan, Ewe, Dagbani.
+
+    The second dataset I used is \citet{multilingual_tinystories_2026}. The full span
+    of languages in this dataset can be seen in \autoref{tab:language-stats}.
+    \citet{multilingual_tinystories_2026} is a collection of children's stories in
+    17 Indian languages, generated for language model training. Out of those languages,
+    I used: Assamese, Dogri, GOM, Kannada, Nepali, Tamil, Sindhi. \citet{multilingual_tinystories_2026}
+    has provided the process on how the stories are generated, as seen in this
+    sequence:
+    \begin{enumerate}
+        \item Generation: Stories generated using Sarvam AI models
+
+        \item Cleaning: Removed emojis, English words, and formatting artifacts
+
+        \item Native Scripts: All stories are in their native scripts (Gujarati,
+            Kannada, Malayalam, Devanagari, etc.)
+
+        \item Quality: Each story is a complete, coherent narrative suitable for children
+    \end{enumerate}
+
+    The final dataset that I used is \citet{dxniz2026tinystoriesmultilingual} which
+    is a multilingual synthetic short, child-safe fiction dataset. The dataset is
+    derived from the broader Novelist ecosystem. This subset primarily focuses
+    on simple narrative with complex moral and social themes. \autoref{tab:languages}
+    shows what languages \citet{dxniz2026tinystoriesmultilingual} provides. Out of
+    these languages, I chose Norwegian, Slovak, Serbian, Bulgarian, Czech, Turkish,
+    Persian, Vietnamese, Indonesian.
 
     \section{Results}
     \label{sec:results}
+    \subsection{Embedding space}
+    In \autoref{fig:embedd}, we can see that none of the models have similar embeddingi
+    spaces which is interesting. We would expect that the two Bert style models
+    would have similar spaces.
 
     \section{Conclusion}
 
@@ -135,9 +184,69 @@ Language Models}
     \section*{Acknowledgement}
 
     \appendix
+    \section{Dataset Languages}
+    \label{app:data} \autoref{tab:waxak-asr} to \ref{tab:languages} are the tables
+    for each datasets' languages.
+    \begin{table}[htbp]
+        \centering
+        \caption{\citet{waxal2026} ASR languages}
+        \label{tab:waxak-asr}
+        \begin{tabular}{lc}
+            \toprule \textbf{Provider}           & \textbf{Language}                                                                            \\
+            \midrule\midrule Makerere University & \makecell[c]{Acholi, Luganda,Masaaba, \\Nyankole, Soga}                                      \\
+            \midrule University of Ghana         & \makecell[c]{Akan, Ewe, Dagbani, \\Dagaare, Ikposo}                                          \\
+            \midrule Digital Umuganda            & \makecell[c]{Fula, Lingala, Shona, \\Malagasy, Amharic, Oromo, \\Sidama, Tigrinya, Wolaytta} \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[htbp]
+        \centering
+        \caption{\citet{multilingual_tinystories_2026} Language Dataset Statistics}
+        \label{tab:language-stats}
+        \begin{tabular}{llrrl}
+            \toprule \textbf{Code} & \textbf{Language} & \textbf{Stories} & \textbf{Tokens} &  \\
+            \midrule \texttt{as}   & Assamese          & 4,829            & 3,083,984        \\
+            \texttt{doi}           & Dogri             & 4,874            & 2,552,223        \\
+            \texttt{gom}           & GOM               & 4,831            & 2,434,006        \\
+            \texttt{gu}            & Gujarati          & 12,852           & 9,845,781        \\
+            \texttt{kn}            & Kannada           & 11,643           & 9,884,021        \\
+            \texttt{mai}           & Maithili          & 4,819            & 2,360,107        \\
+            \texttt{ml}            & Malayalam         & 10,230           & 9,707,172        \\
+            \texttt{mni}           & Manipuri          & 4,870            & 6,448,326        \\
+            \texttt{ne}            & Nepali            & 4,814            & 2,306,291        \\
+            \texttt{or}            & Odia              & 10,933           & 9,422,155        \\
+            \texttt{pa}            & Punjabi           & 12,531           & 9,626,763        \\
+            \texttt{sa}            & Sanskrit          & 4,824            & 2,601,443        \\
+            \texttt{sat}           & Santali           & 4,883            & 6,555,546        \\
+            \texttt{sd}            & Sindhi            & 4,831            & 2,026,769        \\
+            \texttt{ta}            & Tamil             & 12,841           & 9,830,796        \\
+            \texttt{te}            & Telugu            & 10,875           & 9,853,048        \\
+            \texttt{ur}            & Urdu              & 3,323            & 1,516,812        \\
+            \midrule \texttt{brx}  & Bodo              & ---              & ---              \\
+            \texttt{kok}           & Konkani           & ---              & ---              \\
+            \texttt{ks}            & Kashmiri          & ---              & ---              \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[ht]
+        \centering
+        \caption{\citet{dxniz2026tinystoriesmultilingual} Supported Languages by Group}
+        \label{tab:languages}
+        \begin{tabular}{lc}
+            \toprule \textbf{Group}               & \textbf{Languages}                                                                                                                                                                                           \\
+            \midrule \textbf{European}            & \makecell[c]{English, French, German, \\Spanish, Portuguese, Italian,\\Dutch, Polish, Swedish, \\Danish, Norwegian, Slovak, \\Serbian, Bulgarian, Czech, \\Hungarian, Greek, Romanian, \\Russian, Ukrainian} \\
+            \addlinespace \textbf{Middle Eastern} & Turkish, Arabic, Persian.                                                                                                                                                                                    \\
+            \addlinespace \textbf{Asian}          & \makecell[c]{Chinese, Japanese, Korean, \\Hindi, Vietnamese, Indonesian}                                                                                                                                     \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
     \section{Figures and Tables}
-    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to \ref{tab:cca}
-    for the tables and \autoref{fig:embedd} and \ref{lda} for the two figures.
+    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to
+    \ref{tab:cca} for the tables and \autoref{fig:embedd} and \ref{lda} for the
+    two figures.
     \begin{table}[htbp]
         \centering
         \vspace{0.5em}
