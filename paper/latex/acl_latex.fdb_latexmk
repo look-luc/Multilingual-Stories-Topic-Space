@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex acl_latex"] 1794699098.58133 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1794699101.46083 0
+["bibtex acl_latex"] 1794699656.14699 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1794699659.50156 0
   "./acl_natbib.bst" 1794501091.7828 45186 3d1af46d62cc9172ef6e42b56c1cd613 ""
   "./custom.bib" 1794697289.77034 6340 267148357309341669541d43281ce115 ""
-  "acl_latex.aux" 1794699101.08405 6881 6a11179371ba3093b202a9029547c97b "pdflatex"
+  "acl_latex.aux" 1794699659.13937 6881 2f5b64dcfec3259154f57ba0d482ec2b "pdflatex"
   (generated)
   "acl_latex.bbl"
   "acl_latex.blg"
   (rewritten before read)
-["pdflatex"] 1794699098.75273 "acl_latex.tex" "acl_latex.pdf" "acl_latex" 1794699101.46105 0
+["pdflatex"] 1794699656.36789 "acl_latex.tex" "acl_latex.pdf" "acl_latex" 1794699659.5018 0
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -114,10 +114,10 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "acl.sty" 1794501091.77357 11615 e2c027f483aa40e577ed34264c8b0655 ""
-  "acl_latex.aux" 1794699101.08405 6881 6a11179371ba3093b202a9029547c97b "pdflatex"
-  "acl_latex.bbl" 1794699098.74827 4793 cb0fdbf4246c274d039eb6943ff5fbf8 "bibtex acl_latex"
-  "acl_latex.out" 1794699101.08542 1230 9d0b556f204581c919b0f8727f431be2 "pdflatex"
-  "acl_latex.tex" 1794699096.52816 29380 9e284cfed19a98935e7178be19c2b29f ""
+  "acl_latex.aux" 1794699659.13937 6881 2f5b64dcfec3259154f57ba0d482ec2b "pdflatex"
+  "acl_latex.bbl" 1794699656.3625 4793 cb0fdbf4246c274d039eb6943ff5fbf8 "bibtex acl_latex"
+  "acl_latex.out" 1794699659.14067 1230 9d0b556f204581c919b0f8727f431be2 "pdflatex"
+  "acl_latex.tex" 1794699651.87339 29627 1e3d31e72694e901af279fbb47243787 ""
   "lda_topic_dist.png" 1794501091.78319 53035 2e63c48466a049fd0b191e5618d8f25b ""
   "multilingual_models_embedding_space.png" 1794501091.78544 648450 0c6347537a6b66c03129c7be95aed389 ""
   (generated)

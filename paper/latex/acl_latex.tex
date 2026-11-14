@@ -175,7 +175,10 @@ Language Models}
     \subsection{Embedding space}
     In \autoref{fig:embedd}, we can see that none of the models have similar embeddingi
     spaces which is interesting. We would expect that the two Bert style models
-    would have similar spaces.
+    would have similar spaces. I have calculated the cosine similarity for each model
+    and it seems like the geographic location of the language, the more similar
+    the model embedds them. For each model, we can see that the African
+    languages have near 1 cosine similarity
 
     \section{Conclusion}
 
@@ -185,8 +188,8 @@ Language Models}
 
     \appendix
     \section{Dataset Languages}
-    \label{app:data} \autoref{tab:waxak-asr} to \ref{tab:languages} are the tables
-    for each datasets' languages.
+    \label{app:data} \autoref{tab:waxak-asr} to \ref{tab:languages} are the
+    tables for each datasets' languages.
     \begin{table}[htbp]
         \centering
         \caption{\citet{waxal2026} ASR languages}
@@ -244,9 +247,8 @@ Language Models}
     \end{table}
 
     \section{Figures and Tables}
-    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to
-    \ref{tab:cca} for the tables and \autoref{fig:embedd} and \ref{lda} for the
-    two figures.
+    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to \ref{tab:cca}
+    for the tables and \autoref{fig:embedd} and \ref{lda} for the two figures.
     \begin{table}[htbp]
         \centering
         \vspace{0.5em}

@@ -212,13 +212,17 @@ def main(just_graph:bool=False, lda:bool=False, parse_out:bool=False):
 
         for model_name, model_instance in models.items():
             print(f"\n--- Model: {model_name} ---")
+
             # Cache model embeddings per language to avoid redundant computations
-            lang_embeddings = {
-                lang: model_instance.get_embeddings(texts)
-                for lang, texts in data_dict.items() if texts
-            }
+            lang_embeddings = {}
+            for lang, texts in data_dict.items():
+                if not texts:
+                    continue
+                # Optional: slice texts[:100] if memory/time is constrained for large models like Qwen
+                lang_embeddings[lang] = model_instance.get_embeddings(texts)
 
             valid_langs = list(lang_embeddings.keys())
+
             for lang1, lang2 in combinations(valid_langs, 2):
                 similarity_matrix = evaluate_cross_lingual_similarity(
                     lang_embeddings[lang1],

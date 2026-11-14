@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  14 NOV 2026 16:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  14 NOV 2026 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -498,23 +498,23 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 194.
+(Font)              <10.95> on input line 197.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 194.
+(Font)              <8> on input line 197.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 194.
+(Font)              <6> on input line 197.
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 19
-4.
+7.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (20.11198pt too wide) in paragraph at lines 194--201
+Overfull \hbox (20.11198pt too wide) in paragraph at lines 197--204
  [][] 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 20
-9.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 21
+2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -523,30 +523,32 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (12.4248pt too wide) in paragraph at lines 237--244
+Overfull \hbox (12.4248pt too wide) in paragraph at lines 240--247
  [][] 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 254.
+(Font)              <9> on input line 256.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 254.
-
-
-[2]
-<multilingual_models_embedding_space.png, id=170, 1105.2492pt x 577.1964pt>
+(Font)              <5> on input line 256.
+<multilingual_models_embedding_space.png, id=147, 1105.2492pt x 577.1964pt>
 File: multilingual_models_embedding_space.png Graphic file (type png)
 <use multilingual_models_embedding_space.png>
 Package pdftex.def Info: multilingual_models_embedding_space.png  used on input
- line 376.
+ line 378.
 (pdftex.def)             Requested size: 455.24411pt x 237.74416pt.
-<lda_topic_dist.png, id=172, 1084.05pt x 361.35pt>
+<lda_topic_dist.png, id=149, 1084.05pt x 361.35pt>
 File: lda_topic_dist.png Graphic file (type png)
 <use lda_topic_dist.png>
-Package pdftex.def Info: lda_topic_dist.png  used on input line 383.
+Package pdftex.def Info: lda_topic_dist.png  used on input line 385.
 (pdftex.def)             Requested size: 455.24411pt x 151.74942pt.
- (./acl_latex.bbl
+(./acl_latex.bbl
 
+[2]
+
+
+
+[3 <./multilingual_models_embedding_space.png> <./lda_topic_dist.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 56.
 
@@ -560,9 +562,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--62
 \T1/pcr/m/n/10 / / huggingface . co / datasets / Dxniz /
  []
 
+
+
 )
 
-[3] [4 <./multilingual_models_embedding_space.png> <./lda_topic_dist.png>]
+[4]
 
 
 
@@ -575,18 +579,18 @@ Package rerunfilecheck Info: File `acl_latex.out' has not changed.
 (rerunfilecheck)             Checksum: 9D0B556F204581C919B0F8727F431BE2;1230.
  ) 
 Here is how much of TeX's memory you used:
- 14196 strings out of 473190
- 226957 string characters out of 5715801
- 713012 words of memory out of 5000000
+ 14199 strings out of 473190
+ 226981 string characters out of 5715801
+ 712012 words of memory out of 5000000
  37005 multiletter control sequences out of 15000+600000
- 600054 words of font info for 219 fonts, out of 8000000 for 9000
+ 600184 words of font info for 221 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,16n,93p,1006b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,16n,93p,1006b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
 local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texl
 ive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl_latex.pdf (6 pages, 665066 bytes).
+Output written on acl_latex.pdf (6 pages, 665439 bytes).
 PDF statistics:
  245 PDF objects out of 1000 (max. 8388607)
  216 compressed objects within 3 object streams

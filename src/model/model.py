@@ -16,8 +16,13 @@ from transformers import (
 def evaluate_cross_lingual_similarity(embeddings_lang1, embeddings_lang2):
     """
     Computes the cosine similarity matrix between two language embedding spaces.
+    Safely handles both 2D arrays (document collections) and 1D arrays (centroids or single vectors).
     """
-    similarity_matrix = cosine_similarity(embeddings_lang1, embeddings_lang2)
+    # Ensure inputs are 2D arrays (n_samples, n_features)
+    X = np.atleast_2d(embeddings_lang1)
+    Y = np.atleast_2d(embeddings_lang2)
+
+    similarity_matrix = cosine_similarity(X, Y)
     return similarity_matrix
 
 
