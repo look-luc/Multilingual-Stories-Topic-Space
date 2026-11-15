@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex acl_latex"] 1794757175.53158 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1794757425.74142 0
-  "./acl_natbib.bst" 1794501091.7828 45186 3d1af46d62cc9172ef6e42b56c1cd613 ""
-  "./custom.bib" 1794697289.77034 6340 267148357309341669541d43281ce115 ""
-  "acl_latex.aux" 1794757425.35407 6982 fbb30dcbcf994205c9ad95a79f794438 "pdflatex"
+["bibtex acl_latex"] 1794775268.96919 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1794775990.75218 0
+  "./acl_natbib.bst" 1794774494.72463 45186 3d1af46d62cc9172ef6e42b56c1cd613 ""
+  "./custom.bib" 1794774494.72485 6340 267148357309341669541d43281ce115 ""
+  "acl_latex.aux" 1794775990.35628 6982 8ce8d7ab523deef9586cb83ce70c95ba "pdflatex"
   (generated)
   "acl_latex.bbl"
   "acl_latex.blg"
   (rewritten before read)
-["pdflatex"] 1794757422.90516 "acl_latex.tex" "acl_latex.pdf" "acl_latex" 1794757425.74172 0
+["pdflatex"] 1794775987.85635 "acl_latex.tex" "acl_latex.pdf" "acl_latex" 1794775990.75243 0
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -117,13 +117,13 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1769366432 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "acl.sty" 1794501091.77357 11615 e2c027f483aa40e577ed34264c8b0655 ""
-  "acl_latex.aux" 1794757425.35407 6982 fbb30dcbcf994205c9ad95a79f794438 "pdflatex"
-  "acl_latex.bbl" 1794757175.68699 4793 cb0fdbf4246c274d039eb6943ff5fbf8 "bibtex acl_latex"
-  "acl_latex.out" 1794757425.3554 1341 c9778b483ff0d688acf17102ee46ae7f "pdflatex"
-  "acl_latex.tex" 1794757421.68411 91220 387de4706c0011302a416e52e888139a ""
-  "lda_topic_dist.png" 1794501091.78319 53035 2e63c48466a049fd0b191e5618d8f25b ""
-  "multilingual_models_embedding_space.png" 1794501091.78544 648450 0c6347537a6b66c03129c7be95aed389 ""
+  "acl.sty" 1794774494.71812 11615 e2c027f483aa40e577ed34264c8b0655 ""
+  "acl_latex.aux" 1794775990.35628 6982 8ce8d7ab523deef9586cb83ce70c95ba "pdflatex"
+  "acl_latex.bbl" 1794775269.12245 4793 cb0fdbf4246c274d039eb6943ff5fbf8 "bibtex acl_latex"
+  "acl_latex.out" 1794775990.3576 1341 c9778b483ff0d688acf17102ee46ae7f "pdflatex"
+  "acl_latex.tex" 1794775987.78843 91880 ceafb8e052fa77af7503e81511359925 ""
+  "lda_topic_dist.png" 1794774494.72521 53035 2e63c48466a049fd0b191e5618d8f25b ""
+  "multilingual_models_embedding_space.png" 1794774494.72841 648450 0c6347537a6b66c03129c7be95aed389 ""
   (generated)
   "acl_latex.aux"
   "acl_latex.log"
