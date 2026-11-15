@@ -215,15 +215,33 @@ Language Models}
     very close to a single topic entirely.
 
     \section{Conclusion}
+    In this work, we saw that pre-trained language models represent cross-lingual
+    topic spaces stories. If we look back to the hypothesis, the embedding similarity
+    shows partial support for language-family and geographic clustering. However,
+    the low silhouette scores across all three models shows that the clusters are
+    weakly separated. This substantial overlap near decision boundaries rather
+    than forming distinct clusters. Although, sharing encoder architectures, DeBERTa
+    and XLM-RoBERTa produce different embedding spaces from compared to the Qwen2.5
+    model.
 
-    \section*{Limitations}
-
-    \section*{Acknowledgement}
+    When looking at the topic alignment against the LDA baseline, the models remarkably
+    categorize the stories into one specific topic. The JSD score of $0.3759$
+    between the top two topics can indicating this moderate thematic overlap
+    alongside distinct cultural or lexical variations. We can conclude that the pre-trained
+    models can capture the broad regional area of a set of languages, but when
+    it comes to categorizing the stories, there is a weak clustering separation and
+    a divergance in the latent spaces. This suggests that they are relying on
+    the raw embeddings/zero-instruction outputs that introduces risks of
+    flattening the cultural nuances of these low/medium resourced language
+    storytelling. Some future work could be explore targeted instruction tuning and
+    culturally grounded pre-training for non-western languages, this would aim
+    to improve cross-lingual topic representation and reduce any biases in the
+    downstream summarization and translation.
 
     \appendix
     \section{Dataset Languages}
-    \label{app:data} \autoref{tab:waxak-asr} to \ref{tab:languages} are the tables
-    for each datasets' languages.
+    \label{app:data} \autoref{tab:waxak-asr} to \ref{tab:languages} are the
+    tables for each datasets' languages.
     \begin{table}[htbp]
         \centering
         \caption{\citet{waxal2026} ASR languages}
@@ -281,9 +299,8 @@ Language Models}
     \end{table}
 
     \section{Figures and Tables}
-    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to
-    \ref{tab:cca} for the tables and \autoref{fig:embedd} and \ref{lda} for the
-    two figures.
+    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to \ref{tab:cca}
+    for the tables and \autoref{fig:embedd} and \ref{lda} for the two figures.
     \begin{table}[htbp]
         \centering
         \vspace{0.5em}
