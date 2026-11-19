@@ -101,60 +101,73 @@ Language Models}
     models. I am adding the option for low-resource languages and story telling
     to the mix.
 
+    The traditional bag-of-words view of the zero-shot models are known to
+    struggle with sparce vocabulary if presented with different monolingual
+    corpora. If we use the zerp-shot cross-lingual models as contextualized topic
+    models, we can implement a technique to mitigate the problem of space
+    vocabularies; the models can be designed to take advantage of the shared vector/embedding
+    space from pre-trained (if we are pulling from a pre-existing model) or take note
+    from training. So, instead of relying on using the lexical overlap directly,
+    the models can transfer the semantic representations of the topics that was
+    learned in their high-resourced language and apply it to the targetted low-/medium-resourced
+    languages through an aligned multilingual representation.
+
     \section{Methodology}
     \subsection{Pre-trained models}
     I have testing on three different models, two are from the Bert family: XLM-RoBERTa
     base \citep{DBLP:journals/corr/abs-1911-02116} and DeBerta v3 Base \citep{he2021debertav3, he2021deberta}
-    and a Qwen2.5-7B Instruct \citep{qwen2.5, qwen2} model. Since I am using an Instruct
-    model, one would think of adding instructions to get the desired output, I did
-    not add any instructions and just pulled the pure embedding and raw outputs from
-    this model.
+    and a Qwen2.5-7B Instruct \citep{qwen2.5, qwen2} model. Since I am using an
+    Instruct model, one would think of adding instructions to get the desired output,
+    I did not add any instructions and just pulled the pure embedding and raw
+    outputs from this model.
 
     \subsection{Feasible tests}
     I have done two distinced umbrella tests using the models.
 
-    The first test is to visualize the embedding space of all of the languages.
-    We can see the visualization in \autoref{fig:embedd} in
-    \autoref{app:fig_tables}. With this embedding space, I calculated the cosine
-    similarity for each model and the silhouette score per language. These tables
-    can be found from \autoref{tab:silhouette_scores} to \ref{tab:xlmr-sim} in \autoref{app:fig_tables}.
+    The first test is to visualize the embedding space of all of the languages. We
+    can see the visualization in \autoref{fig:embedd} in \autoref{app:fig_tables}.
+    With this embedding space, I calculated the cosine similarity for each model and
+    the silhouette score per language. These tables can be found from
+    \autoref{tab:silhouette_scores} to \ref{tab:xlmr-sim} in
+    \autoref{app:fig_tables}.
 
     The second test, I introduced a Latent Dirichlet Allocation (LDA) \citep{blei2003latent}
-    to produce some kind of gold standard. I am using the LDA to create a
-    reference because the datasets were not created with a topic column so if I
-    want to find any bias, I would need an unbiased creator. The topics are in
-    the the actual language that the stories are in, trying to translate these topics
-    into English would inroduce some influences and possibly remove any cultural neuance
-    to the topics. The LDA model was prompted to create 5 categories for each
-    language. Using these categories, fed the categories to the pre-trained
-    models and found the distribution that the models had chose for the
-    languages. This distribution can be found in \autoref{lda} in \autoref{app:fig_tables}.
-    Since I have the distribution of the models, I calculated the Canonical Correlation
-    Analysis (CCA) between the models for each language. The table can be found
-    in \autoref{tab:cca} in \autoref{app:fig_tables}. Finally I calculated the Jensen-Shannon
-    score of just the first two topic labels, which I will talk about in
-    \autoref{sec:results}.
+    to produce some kind of gold standard. I am using the LDA to create a reference
+    because the datasets were not created with a topic column so if I want to find
+    any bias, I would need an unbiased creator. The topics are in the the actual language
+    that the stories are in, trying to translate these topics into English would
+    inroduce some influences and possibly remove any cultural neuance to the
+    topics. The LDA model was prompted to create 5 categories for each language.
+    Using these categories, fed the categories to the pre-trained models and found
+    the distribution that the models had chose for the languages. This
+    distribution can be found in \autoref{lda} in \autoref{app:fig_tables}. Since
+    I have the distribution of the models, I calculated the Canonical
+    Correlation Analysis (CCA) between the models for each language. The table can
+    be found in \autoref{tab:cca} in \autoref{app:fig_tables}. Finally I
+    calculated the Jensen-Shannon score of just the first two topic labels, which
+    I will talk about in \autoref{sec:results}.
 
     \section{Data}
     I have used three different datasets.
 
-    \citet{waxal2026} is a large multilingual speech corpus for several African languages.
-    This dataset ``... provides datasets for both Automated Speech Recognition (ASR)
-    and Text-to-Speech (TTS) for African languages'' \citep{waxal2026}. \citet{waxal2026}
-    has gathered this data through partnerships with Makerere University, The
-    University of Ghana, Digital Umuganda, Media Trust, Loud and Clear, and AIMS
-    Senegal with the senegalese languages provided by AIMS Senegal. For this study,
-    I used the ASR portion of the data, which has 19 African languages as seen in
-    \autoref{tab:waxak-asr} in \autoref{app:data}. Out of these 19 languages, I use
-    these languages: Acholi, Luganda, Masaaba, Nyankole, Soga, Akan, Ewe, Dagbani.
+    \citet{waxal2026} is a large multilingual speech corpus for several African
+    languages. This dataset ``... provides datasets for both Automated Speech Recognition
+    (ASR) and Text-to-Speech (TTS) for African languages'' \citep{waxal2026}. \citet{waxal2026}
+    has gathered this data through partnerships with Makerere University, The University
+    of Ghana, Digital Umuganda, Media Trust, Loud and Clear, and AIMS Senegal with
+    the senegalese languages provided by AIMS Senegal. For this study, I used the
+    ASR portion of the data, which has 19 African languages as seen in
+    \autoref{tab:waxak-asr} in \autoref{app:data}. Out of these 19 languages, I
+    use these languages: Acholi, Luganda, Masaaba, Nyankole, Soga, Akan, Ewe,
+    Dagbani.
 
-    The second dataset I used is \citet{multilingual_tinystories_2026}. The full span
-    of languages in this dataset can be seen in \autoref{tab:language-stats}.
-    \citet{multilingual_tinystories_2026} is a collection of children's stories in
-    17 Indian languages, generated for language model training. Out of those languages,
-    I used: Assamese, Dogri, GOM, Kannada, Nepali, Tamil, Sindhi. \citet{multilingual_tinystories_2026}
-    has provided the process on how the stories are generated, as seen in this
-    sequence:
+    The second dataset I used is \citet{multilingual_tinystories_2026}. The full
+    span of languages in this dataset can be seen in
+    \autoref{tab:language-stats}. \citet{multilingual_tinystories_2026} is a
+    collection of children's stories in 17 Indian languages, generated for language
+    model training. Out of those languages, I used: Assamese, Dogri, GOM, Kannada,
+    Nepali, Tamil, Sindhi. \citet{multilingual_tinystories_2026} has provided
+    the process on how the stories are generated, as seen in this sequence:
     \begin{enumerate}
         \item Generation: Stories generated using Sarvam AI models
 
@@ -166,82 +179,92 @@ Language Models}
         \item Quality: Each story is a complete, coherent narrative suitable for children
     \end{enumerate}
 
-    The final dataset that I used is \citet{dxniz2026tinystoriesmultilingual} which
-    is a multilingual synthetic short, child-safe fiction dataset. The dataset is
-    derived from the broader Novelist ecosystem. This subset primarily focuses
-    on simple narrative with complex moral and social themes. \autoref{tab:languages}
-    shows what languages \citet{dxniz2026tinystoriesmultilingual} provides. Out of
-    these languages, I chose Norwegian, Slovak, Serbian, Bulgarian, Czech, Turkish,
-    Persian, Vietnamese, Indonesian.
+    The final dataset that I used is \citet{dxniz2026tinystoriesmultilingual}
+    which is a multilingual synthetic short, child-safe fiction dataset. The
+    dataset is derived from the broader Novelist ecosystem. This subset primarily
+    focuses on simple narrative with complex moral and social themes.
+    \autoref{tab:languages} shows what languages \citet{dxniz2026tinystoriesmultilingual}
+    provides. Out of these languages, I chose Norwegian, Slovak, Serbian,
+    Bulgarian, Czech, Turkish, Persian, Vietnamese, Indonesian.
 
     \section{Results}
     \label{sec:results}
     \subsection{Embedding space}
-    In \autoref{fig:embedd}, we can see that none of the models have similar embeddingi
-    spaces which is interesting. We would expect that the two Bert style models
-    would have similar spaces.
+    In \autoref{fig:embedd}, we can see that none of the models have similar
+    embeddingi spaces which is interesting. We would expect that the two Bert style
+    models would have similar spaces.
 
-    I have calculated the cosine similarity for each model (as can be seen in \autoref{tab:deberta-sim}
-    to \ref{tab:xlmr-sim}) and it seems like the geographic location of the
-    language, the more similar the model embedds them. For each model, we can see
-    that the African languages have near 1 cosine similarity. As expected
+    I have calculated the cosine similarity for each model (as can be seen in
+    \autoref{tab:deberta-sim} to \ref{tab:xlmr-sim}) and it seems like the geographic
+    location of the language, the more similar the model embedds them. For each model,
+    we can see that the African languages have near 1 cosine similarity. As expected
     language families seem to be represented similarly with these models.
 
-    I also calculated the Silhouette Score for each language across the three
-    models. We can see that the DeBerta model shows weak cluster structuring with
-    significant overlap between groups. Both the Qwen and XLM-RoBerta show that
-    they cluster the languages very near to the decision boundary between two
-    overlapping language clusters.
+    I also calculated the Silhouette Score for each language across the three models.
+    We can see that the DeBerta model shows weak cluster structuring with
+    significant overlap between groups. Both the Qwen and XLM-RoBerta show that they
+    cluster the languages very near to the decision boundary between two overlapping
+    language clusters.
 
     \subsection{LDA topics}
-    I calculated the Jensen-Shannon Divergence between topic 0 and topic 1 only, which
-    I found to be $0.3759$. We can see that the distribution between these two
-    topics share a moderate amount of overlap while still maintaining noticeable
-    differences.
+    I calculated the Jensen-Shannon Divergence between topic 0 and topic 1 only,
+    which I found to be $0.3759$. We can see that the distribution between these two
+    topics share a moderate amount of overlap while still maintaining noticeable differences.
 
-    Using the topics from the LDA \citep{blei2003latent}, I provided a
-    distribution of how each model categorized the stories that the LDA produced.
-    \autoref{lda} shows this distribution. We can see that each model primarily
-    categorize the stories in the second (1, in the bar graphs) and roughly equal
-    amount to the other categories.
+    Using the topics from the LDA \citep{blei2003latent}, I provided a distribution
+    of how each model categorized the stories that the LDA produced.
+    \autoref{lda} shows this distribution. We can see that each model primarily categorize
+    the stories in the second (1, in the bar graphs) and roughly equal amount to
+    the other categories.
 
-    I have calculated the CCA scores as seen in \autoref{tab:cca}. A note to
-    mention is that for element 16 to 33, we see a CCA of exactly 1, this can be
-    seen as either an error in the calculations or there is a perfect linear
-    relationship between the projected linear combination of the first language
-    and the projected linear combination of the second language. The later might not
-    be feasible. It would need to be evaluated further to double check if this
-    correlation is actually 1.0. Regardless, we can see that the stories are
-    very close to a single topic entirely.
+    I have calculated the CCA scores as seen in \autoref{tab:cca}. A note to mention
+    is that for element 16 to 33, we see a CCA of exactly 1, this can be seen as either
+    an error in the calculations or there is a perfect linear relationship between
+    the projected linear combination of the first language and the projected linear
+    combination of the second language. The later might not be feasible. It would
+    need to be evaluated further to double check if this correlation is actually 1.0.
+    Regardless, we can see that the stories are very close to a single topic entirely.
 
     \section{Conclusion}
     In this work, we saw that pre-trained language models represent cross-lingual
-    topic spaces stories. If we look back to the hypothesis, the embedding similarity
-    shows partial support for language-family and geographic clustering. However,
-    the low silhouette scores across all three models shows that the clusters are
-    weakly separated. This substantial overlap near decision boundaries rather
-    than forming distinct clusters. Although, sharing encoder architectures, DeBERTa
-    and XLM-RoBERTa produce different embedding spaces from compared to the Qwen2.5
-    model.
+    topic spaces stories. If we look back to the hypothesis, the embedding
+    similarity shows partial support for language-family and geographic
+    clustering. However, the low silhouette scores across all three models shows
+    that the clusters are weakly separated. This substantial overlap near decision
+    boundaries rather than forming distinct clusters. Although, sharing encoder architectures,
+    DeBERTa and XLM-RoBERTa produce different embedding spaces from compared to
+    the Qwen2.5 model.
 
-    When looking at the topic alignment against the LDA baseline, the models remarkably
-    categorize the stories into one specific topic. The JSD score of $0.3759$
-    between the top two topics can indicating this moderate thematic overlap
-    alongside distinct cultural or lexical variations. We can conclude that the pre-trained
-    models can capture the broad regional area of a set of languages, but when
-    it comes to categorizing the stories, there is a weak clustering separation and
-    a divergance in the latent spaces. This suggests that they are relying on
-    the raw embeddings/zero-instruction outputs that introduces risks of
-    flattening the cultural nuances of these low/medium resourced language
-    storytelling. Some future work could be explore targeted instruction tuning and
-    culturally grounded pre-training for non-western languages, this would aim
-    to improve cross-lingual topic representation and reduce any biases in the
-    downstream summarization and translation.
+    When looking at the topic alignment against the LDA baseline, the models
+    remarkably categorize the stories into one specific topic. The JSD score of $0
+    .3759$ between the top two topics can indicating this moderate thematic overlap
+    alongside distinct cultural or lexical variations. We can conclude that the
+    pre-trained models can capture the broad regional area of a set of languages,
+    but when it comes to categorizing the stories, there is a weak clustering
+    separation and a divergance in the latent spaces. This suggests that they are
+    relying on the raw embeddings/zero-instruction outputs that introduces risks of
+    flattening the cultural nuances of these low/medium resourced language storytelling.
+    Some future work could be explore targeted instruction tuning and culturally
+    grounded pre-training for non-western languages, this would aim to improve cross-lingual
+    topic representation and reduce any biases in the downstream summarization and
+    translation.
+
+    \subsection{Future work}
+    Some future work that would be interesting to conduct is to test some instruction
+    prompts on Qwen2.5-7B-Instruct \citep{qwen2.5, qwen2} rather than relying on extracting
+    the raw embeddings/zero-instruction outputs. Another work that could be done
+    is comparing a language specific LDA against a shared multilingual topic
+    baseline model to see whether a topic collapse, e.g. concentration in Topic
+    1 in as seen in \autoref{lda}, comes from the LDA baseline, centroid
+    assignment, or truely model bias. A final future work would be evaluating
+    downstream impact on low-resource translation and/or summarization.
+
+    \bibliography{custom}
 
     \appendix
     \section{Dataset Languages}
-    \label{app:data} \autoref{tab:waxak-asr} to \ref{tab:languages} are the
-    tables for each datasets' languages.
+    \label{app:data} \autoref{tab:waxak-asr} to \ref{tab:languages} are the tables
+    for each datasets' languages.
     \begin{table}[htbp]
         \centering
         \caption{\citet{waxal2026} ASR languages}
@@ -299,8 +322,9 @@ Language Models}
     \end{table}
 
     \section{Figures and Tables}
-    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to \ref{tab:cca}
-    for the tables and \autoref{fig:embedd} and \ref{lda} for the two figures.
+    \label{app:fig_tables} Refer to \autoref{tab:silhouette_scores} to
+    \ref{tab:cca} for the tables and \autoref{fig:embedd} and \ref{lda} for the
+    two figures.
     \begin{table}[htbp]
         \centering
         \vspace{0.5em}
@@ -770,8 +794,4 @@ Language Models}
         \caption{CCA for each language against each model}
         \label{tab:cca}
     \end{table*}
-
-    \bibliography{custom}
-
-    \appendix
 \end{document}

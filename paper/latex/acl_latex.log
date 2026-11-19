@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  15 NOV 2026 14:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 NOV 2026 16:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -513,61 +513,27 @@ ocal/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 1688) in paragraph at lines 141--150
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 153--163
 [][][]\T1/ptm/m/n/10.95 (+20) Anonymous[][] ([][]2026[][]) is a large mul-ti-li
 n-gual
  []
 
 
 
-
-
 [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 198.
+(Font)              <10.95> on input line 211.
 
 
-
-Overfull \hbox (20.11198pt too wide) in paragraph at lines 249--256
- [][] 
- []
-
-
-Overfull \hbox (12.4248pt too wide) in paragraph at lines 292--299
- [][] 
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 308.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 308.
-
-LaTeX Warning: Float too large for page by 10.44057pt on input line 458.
-
-
-LaTeX Warning: Float too large for page by 10.44057pt on input line 578.
-
-
-LaTeX Warning: Float too large for page by 10.44057pt on input line 698.
-
-<multilingual_models_embedding_space.png, id=180, 1105.2492pt x 577.1964pt>
-File: multilingual_models_embedding_space.png Graphic file (type png)
-<use multilingual_models_embedding_space.png>
-Package pdftex.def Info: multilingual_models_embedding_space.png  used on input
- line 703.
-(pdftex.def)             Requested size: 455.24411pt x 237.74416pt.
-<lda_topic_dist.png, id=182, 1084.05pt x 361.35pt>
-File: lda_topic_dist.png Graphic file (type png)
-<use lda_topic_dist.png>
-Package pdftex.def Info: lda_topic_dist.png  used on input line 710.
-(pdftex.def)             Requested size: 455.24411pt x 151.74942pt.
 (./acl_latex.bbl
 
 [3]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 56.
-
-
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 56.
 
 Underfull \hbox (badness 1102) in paragraph at lines 59--62
 []\T1/ptm/m/n/10 (+20) Dxniz. 2026.  Tinystories-multilingual.  [][]$\T1/pcr/m/
@@ -579,38 +545,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--62
 \T1/pcr/m/n/10 / / huggingface . co / datasets / Dxniz /
  []
 
+)
+Overfull \hbox (20.11198pt too wide) in paragraph at lines 272--279
+ [][] 
+ []
 
 
-[4 <./multilingual_models_embedding_space.png> <./lda_topic_dist.png>])
+
+
+Overfull \hbox (12.4248pt too wide) in paragraph at lines 315--322
+ [][] 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 332.
+
+LaTeX Warning: Float too large for page by 10.44057pt on input line 482.
+
+
+LaTeX Warning: Float too large for page by 10.44057pt on input line 602.
+
+
+LaTeX Warning: Float too large for page by 10.44057pt on input line 722.
+
+<multilingual_models_embedding_space.png, id=206, 1105.2492pt x 577.1964pt>
+File: multilingual_models_embedding_space.png Graphic file (type png)
+<use multilingual_models_embedding_space.png>
+Package pdftex.def Info: multilingual_models_embedding_space.png  used on input
+ line 727.
+(pdftex.def)             Requested size: 455.24411pt x 237.74416pt.
+<lda_topic_dist.png, id=208, 1084.05pt x 361.35pt>
+File: lda_topic_dist.png Graphic file (type png)
+<use lda_topic_dist.png>
+Package pdftex.def Info: lda_topic_dist.png  used on input line 734.
+(pdftex.def)             Requested size: 455.24411pt x 151.74942pt.
+
+
+[4]
 
 
 
-[5] [6] [7] [8] [9] (./acl_latex.aux)
+[5
+
+ <./multilingual_models_embedding_space.png> <./lda_topic_dist.png>]
+
+
+
+[6
+
+] [7] [8] [9] [10] (./acl_latex.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `acl_latex.out' has not changed.
-(rerunfilecheck)             Checksum: C9778B483FF0D688ACF17102EE46AE7F;1341.
+(rerunfilecheck)             Checksum: F327A67CD59AAE6979770E2CCA8A97DB;1457.
  ) 
 Here is how much of TeX's memory you used:
- 14248 strings out of 473190
- 227507 string characters out of 5715801
- 840109 words of memory out of 5000000
- 37020 multiletter control sequences out of 15000+600000
+ 14251 strings out of 473190
+ 227544 string characters out of 5715801
+ 838309 words of memory out of 5000000
+ 37021 multiletter control sequences out of 15000+600000
  609333 words of font info for 246 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,16n,93p,1006b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,16n,93p,1006b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 /usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loc
 al/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl_latex.pdf (9 pages, 693244 bytes).
+Output written on acl_latex.pdf (10 pages, 695164 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
- 52843 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 52851 words of extra memory for PDF output out of 61914 (max. 10000000)
 
