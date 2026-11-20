@@ -20,6 +20,7 @@
 \usepackage{tabularx}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{amsmath}
 
 \definecolor{primary}{RGB}{30, 41, 59}
 \definecolor{secondary}{RGB}{71, 85, 105}
@@ -119,10 +120,25 @@ Language Models}
     and a Qwen2.5-7B Instruct \citep{qwen2.5, qwen2} model. Since I am using an
     Instruct model, one would think of adding instructions to get the desired output,
     I did not add any instructions and just pulled the pure embedding and raw
-    outputs from this model.
+    outputs from this model. Additionally, the DeBerta v3 Base \citep{he2021debertav3, he2021deberta}
+    and XLM-RoBERTa base \citep{DBLP:journals/corr/abs-1911-02116} are encoder
+    models—with XLM-RoBERTa-base. For the attention implementation for each model,
+    I implemented the scaled dot-product attention (sdpa). Because these models rely
+    on different tokenizers and subword vocabulary techniques, the input texts
+    of different scripts and orthographies may be fragmented into varying
+    numbers of subword tokens depending on the model's techniques.
+
+    For each story in a language's dataset, I tokenized the text with padding and
+    truncated to a maximum sequence length of $512$ tokens. I ran a forward pass
+    in the evaluation mode without the gradient computation mode. I then extract the
+    final hidden state to get for the embedding space. The final hidden state
+    has the mean pooling applied to obtain a fixed sized representation per
+    story. I truncated at $512$ tokens to bound the context length for longer stories,
+    and mean pooling aggregates across all retained subword tokens rather than
+    relying on a single pooled token representation.
 
     \subsection{Feasible tests}
-    I have done two distinced umbrella tests using the models.
+    I have done two distinct umbrella tests using the models.
 
     The first test is to visualize the embedding space of all of the languages. We
     can see the visualization in \autoref{fig:embedd} in \autoref{app:fig_tables}.
@@ -136,7 +152,7 @@ Language Models}
     because the datasets were not created with a topic column so if I want to find
     any bias, I would need an unbiased creator. The topics are in the the actual language
     that the stories are in, trying to translate these topics into English would
-    inroduce some influences and possibly remove any cultural neuance to the
+    introduce some influences and possibly remove any cultural nuance to the
     topics. The LDA model was prompted to create 5 categories for each language.
     Using these categories, fed the categories to the pre-trained models and found
     the distribution that the models had chose for the languages. This
@@ -146,6 +162,28 @@ Language Models}
     be found in \autoref{tab:cca} in \autoref{app:fig_tables}. Finally I
     calculated the Jensen-Shannon score of just the first two topic labels, which
     I will talk about in \autoref{sec:results}.
+
+    I have set the UMAP configurations to n neighbors to $15$, minimum
+    distribution to $0.1$, and the metric to cosine. The UMAP computes over a
+    standard scoar normalized embeddings across all of the languages which
+    simultaneously produce the comparative projections, while the per-language Silhouette
+    Scores are computed in the unreduced embedding space using Euclidean distance
+    over $k$-means pseudo-clusters.
+
+    For the LDA configuration \& centroid assignment, I used gensim's LDA model
+    and set the number of topics to 5, 20 passes, 400 iterations, auto setting alpha,
+    and set the eta to auto. After lowercasing and removing whitespace and passing
+    to the tokenizer, I set the extreme-frequency filtering. I have this extreme-frequency
+    filtering set to not go above $0.9$ and nothing below 2 for the topics.
+    Rather than feeding the topic keywords tom the pre-trained models alone, each
+    story is mapped to its dominant LDA topic. The topic centroids are then
+    computed by averaging the neural embeddings of stories assigned to each
+    topic, and then every story is reassigned to its nearest centroid by cosine similarity.
+
+    The JSD is base-2, this means that the divergence is squared from the JS
+    distance over the full vocabulary term distributions. The 3-component Canonical
+    Correlation Analysis (CCA) align the paired embedding matrices across each model
+    pair.
 
     \section{Data}
     I have used three different datasets.
@@ -187,11 +225,17 @@ Language Models}
     provides. Out of these languages, I chose Norwegian, Slovak, Serbian,
     Bulgarian, Czech, Turkish, Persian, Vietnamese, Indonesian.
 
+    \subsection{Domain Mismatch}
+    Waxal \citep{waxal2026} consists of transcribed African ASR speech, whereas Deepon
+    Halder \citep{multilingual_tinystories_2026} and Dxniz \citep{dxniz2026tinystoriesmultilingual}
+    are LLM-generated synthetic children's fiction. So these two mismatch could
+    cause some under 
+
     \section{Results}
     \label{sec:results}
     \subsection{Embedding space}
     In \autoref{fig:embedd}, we can see that none of the models have similar
-    embeddingi spaces which is interesting. We would expect that the two Bert style
+    embedding spaces which is interesting. We would expect that the two Bert style
     models would have similar spaces.
 
     I have calculated the cosine similarity for each model (as can be seen in
@@ -248,6 +292,18 @@ Language Models}
     grounded pre-training for non-western languages, this would aim to improve cross-lingual
     topic representation and reduce any biases in the downstream summarization and
     translation.
+
+    \subsection{Limitations}
+    There are a few limitations that need to be into consideration. Whitespace
+    tokenization from the LDA model does not perform morphological stemming or
+    script-specific segmentation. The JSD score was evaluated between Topic 0 and
+    Topic 1 on a single language distribution rather than averaged across all $10$
+    topic pairs and all 24 languages. The last limitations that has came up is
+    mixing spoken ASR transcripts with synthetic children's stories conflates
+    genre/domain effects with language family effects. This mixing would come up in
+    the under-representation of actual story telling, especially with the
+    synthetic. This mixing would not be a good representation of the different span
+    of types of storytelling.
 
     \subsection{Future work}
     Some future work that would be interesting to conduct is to test some instruction
