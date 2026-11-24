@@ -19,4 +19,20 @@ def get_all_data():
 
         data_dict[waxal_lang] = [ex["text"] for ex in ds_waxal]
 
+    amazight = load_dataset(
+        "Tamazight-NLP/1002-Amazigh-Proverbs",
+        split="train",
+        streaming=True,
+        columns="amazight"
+    ).rename_column("amazight", "text")
+
+    data_dict["Amazight"] = [ex["text"] for ex in amazight]
+
+    ds_yor = load_dataset(
+        "saaga/yoruba-cultural-reasoning-blindspots",
+        split="train",
+        streaming=True,
+        columns="input"
+    ).rename_column("input", "text")
+
     return data_dict
