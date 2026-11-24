@@ -35,4 +35,24 @@ def get_all_data():
         columns="input"
     ).rename_column("input", "text")
 
+    data_dict["Yoruba cultural"] = [ex["text"] for ex in ds_yor]
+
+    ds_yor_prov = load_dataset(
+        "mxronga/yoruba-proverbs-parallel-corpora",
+        split="train",
+        streaming=True,
+        columns="yoruba"
+    ).rename_column("yoruba", "text")
+
+    data_dict["Yoruba proverb"] = [ex["text"] for ex in ds_yor_prov]
+
+    ds_ilubench = load_dataset(
+        "UUAMNI/ilubench",
+        "probes",
+        streaming=True,
+        columns="proverb_ig"
+    ).rename_column("proverb_ig", "text")
+
+    data_dict["Igbo"] = [ex["text"] for ex in ds_ilubench]
+
     return data_dict
