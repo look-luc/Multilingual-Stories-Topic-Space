@@ -9,7 +9,7 @@ import pandas as pd
 from scipy.spatial.distance import jensenshannon
 from sklearn.cross_decomposition import CCA
 
-from src.data.get_data import get_all_data, get_some_data
+from src.data.get_data import get_all_data
 from src.model.LDA import LDA
 from src.model.model import (
     DeBerta,
