@@ -23,7 +23,7 @@ def get_all_data():
         "Tamazight-NLP/1002-Amazigh-Proverbs",
         split="train",
         streaming=True,
-        columns="amazight"
+        columns=["amazight"]
     ).rename_column("amazight", "text")
 
     data_dict["Amazight"] = [ex["text"] for ex in amazight]
@@ -32,14 +32,14 @@ def get_all_data():
         "saaga/yoruba-cultural-reasoning-blindspots",
         split="train",
         streaming=True,
-        columns="input"
+        columns=["input"]
     ).rename_column("input", "text")
 
     ds_yor_prov = load_dataset(
         "mxronga/yoruba-proverbs-parallel-corpora",
         split="train",
         streaming=True,
-        columns="yoruba"
+        columns=["yoruba"]
     ).rename_column("yoruba", "text")
 
     yoruba = concatenate_datasets([ds_yor, ds_yor_prov])
@@ -50,7 +50,7 @@ def get_all_data():
         "UUAMNI/ilubench",
         "probes",
         streaming=True,
-        columns="proverb_ig"
+        columns=["proverb_ig"]
     ).rename_column("proverb_ig", "text")
 
     data_dict["Igbo"] = [ex["text"] for ex in ds_ilubench]
@@ -59,7 +59,7 @@ def get_all_data():
         "mamakobe/luhya-multilingual-dataset",
         split="train",
         streaming=True,
-        columns="luhya_text"
+        columns=["luhya_text"]
     ).rename_column("luhya_text", "text")
 
     data_dict["Luyia"] = [ex["text"] for ex in ds_luyia]
@@ -89,7 +89,7 @@ def get_all_data():
         "aimeri/ticuna-spanish-portuguese",
         "monolingual",
         streaming=True,
-        column="source"
+        columns=["source"]
     ).rename_column("source", "text")
 
     data_dict["Ticuna"] = [ex["text"] for ex in ds_ticuna]
