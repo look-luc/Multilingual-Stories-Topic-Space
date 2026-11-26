@@ -7,6 +7,7 @@ if __name__ == "__main__":
     parser.add_argument("--graph", action='store_true', default=False, help="Only render graph")
     parser.add_argument("--lda", action='store_true', default=False, help="LDA traier")
     parser.add_argument("--parse_out", action='store_true', default=False, help="Parsing output from LDA run")
+    parser.add_argument("--full_pass", action='store_true', default=False, help="Runs the full visualization")
     args = parser.parse_args()
-    main(args.graph, args.lda, args.parse_out)
+    main(args.graph, args.lda, args.parse_out, args.full_pass)
     print("finished")

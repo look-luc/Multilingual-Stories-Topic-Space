@@ -111,7 +111,7 @@ def setup(data_amount: str = "some"):
         raise Exception("Either: 'some' or 'all'")
 
 
-def main(just_graph:bool=False, lda:bool=False, parse_out:bool=False):
+def main(just_graph:bool=False, lda:bool=False, parse_out:bool=False, full_pass:bool=False):
     print("Initializing models...")
     deberta = DeBerta()
     qwen = Qwen()
@@ -231,7 +231,7 @@ def main(just_graph:bool=False, lda:bool=False, parse_out:bool=False):
                 print(f"  {lang1} vs {lang2} | Similarity Matrix Shape: {similarity_matrix.shape} | Mean Cosine Similarity: {np.mean(similarity_matrix):.4f}")
 
         print("\nGenerating combined model comparative scatterplots...")
-    else:
+    elif full_pass:
         visualize_multilingual_models_single_plot(data_dict, models)
 
     print("Done!")
