@@ -1,4 +1,4 @@
-from datasets import concatenate_datasets, load_dataset
+from datasets import Audio, concatenate_datasets, load_dataset
 
 from src.data.lang_codes import RIDDLE_LANG_CODE, WAXAL_LANG_CODE
 
@@ -14,7 +14,7 @@ def get_all_data():
             f"{waxal_code}_asr",
             split="train",
             streaming=True,
-        )
+        ).cast_column("audio", Audio(decode=False))
         data_dict[waxal_lang] = [ex["transcription"] for ex in ds_waxal if ex.get("transcription")]
 
     amazight = load_dataset(

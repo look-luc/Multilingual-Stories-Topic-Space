@@ -23,4 +23,4 @@ export LOCAL_OUTPUT_DIR="$SLURM_TMPDIR/outputs"
 module load uv
 module load python
 uv sync
-uv run run.py "$1" "$1"
+uv run run.py "$1"
