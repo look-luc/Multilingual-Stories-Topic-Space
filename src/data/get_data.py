@@ -9,13 +9,23 @@ def get_all_data():
     print("Getting languages from Google/Waxal...")
     for waxal_lang, waxal_code in WAXAL_LANG_CODE.items():
         print(f"Getting {waxal_lang} data...")
-        ds_waxal = load_dataset(
-            "google/WaxalNLP",
-            f"{waxal_code}_asr",
-            split="train",
-            streaming=True,
-        ).cast_column("audio", Audio(decode=False))
-        data_dict[waxal_lang] = [ex["transcription"] for ex in ds_waxal if ex.get("transcription")]
+        try:
+            ds_waxal = (
+                load_dataset(
+                    "google/WaxalNLP",
+                    f"{waxal_code}_asr",
+                    split="train",
+                    streaming=True,
+                )
+                .cast_column("audio", Audio(decode=False))
+                .select_columns(["transcription"])
+            )
+            data_dict[waxal_lang] = [
+                ex["transcription"] for ex in ds_waxal if ex.get("transcription")
+            ]
+        except Exception as exc:
+            print(f"Warning: skipping Waxal {waxal_lang} ({waxal_code}_asr) due to error: {exc}")
+            data_dict[waxal_lang] = []
 
     amazight = load_dataset(
         "Tamazight-NLP/1002-Amazigh-Proverbs",
